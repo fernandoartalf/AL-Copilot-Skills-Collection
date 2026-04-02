@@ -1,40 +1,49 @@
-# AL-Copilot-Skills-Collection
+# AL Copilot Skills Collection
 
-> Purpose-built AL Copilot Skills that help agents implement consistent Business Central patterns and development best practices.
->
-> Boost agentic AL development with composable, community-driven skills.
+> Install a collection of purpose-built GitHub Copilot skills for Business Central AL development — with a single command.
 
+[![Version](https://img.shields.io/badge/version-1.0.1-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
 
 ---
 
-## What Is This?
+## Quick Start
 
-AL-Copilot-Skills-Collection is an open-source repository of **composable Copilot Skills** for Microsoft Dynamics 365 Business Central AL development. Each skill is a self-contained package of instructions, references, and templates that turns a general-purpose AI agent into a **specialized AL development assistant**.
-
-Skills follow the open [Agent Skills](https://agentskills.io/) standard — a portable format adopted by multiple agent products (Claude Code, Cursor, Roo Code, GitHub Copilot, and others).
-
----
-
-## Key Features
-
-- **Composable skills** — Each skill focuses on a single AL pattern or concern and can be loaded independently or combined with others.
-- **Community-driven** — Contributors propose new skills via monthly release plans, get them approved, and submit implementations through Pull Requests.
-- **BC cumulative update alignment** — Release plans follow the Business Central wave and cumulative update cadence so skills can target specific platform versions.
-- **Agent-agnostic** — Skills work with any agent that supports the Agent Skills standard.
+1. **Install** the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Fernando-artigas.al-copilot-skills-collection).
+2. **Open** any AL project in VS Code.
+3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) and run **"AL Copilot Skills Collection: Install Skills"**.
+4. Skills are deployed to `.github/skills/` and instructions to `.github/instructions/` in your workspace.
+5. **Start using Copilot** — skills are automatically picked up when the task matches.
 
 ---
 
-## Available Skills
+## Features
 
-| Skill | Description |
-|---|---|
+### One-Command Skill Installation
+
+Open the Command Palette (`Ctrl+Shift+P`) and run:
+
+- **AL Copilot Skills Collection: Install Skills** — Installs all bundled skills and instructions to your workspace.
+- **AL Copilot Skills Collection: Update Skills** — Updates existing skills to the latest version (with confirmation prompt).
+
+The extension automatically:
+- Creates the `.github/skills/` and `.github/instructions/` folder structure
+- Copies all skill packages with their references and examples
+- Shows progress notifications during installation
+- Reports exactly how many skills and instruction files were deployed
+
+### Bundled Skills
+
+Each skill is a self-contained package of instructions, references, and templates that turns GitHub Copilot into a **specialized AL development assistant**.
+
+| Skill | What It Does |
+|-------|-------------|
 | `bc-api-page-generator` | Generates AL API pages following OData/REST patterns |
 | `bc-api-query-generator` | Generates AL API query objects |
 | `bc-attachments-generator` | Generates attachment handling patterns |
-| `bc-business-events-generator` | Generates Business Event definitions |
+| `bc-business-events-generator` | Generates Business Event definitions for Power Automate |
 | `bc-cds-page-generator` | Generates CDS (Dataverse) integration pages |
 | `bc-dataverse-entity-generator` | Generates Dataverse entity integration code and scripts |
 | `bc-dataverse-mapping-generator` | Generates Dataverse entity mapping configurations |
@@ -46,57 +55,45 @@ Skills follow the open [Agent Skills](https://agentskills.io/) standard — a po
 | `bc-test-codeunit-generator` | Generates test codeunits with Given/When/Then structure |
 | `bc-upgrade-codeunit-generator` | Generates upgrade codeunits for extension versioning |
 
+### Agent-Agnostic Skills
+
+Skills follow the open [Agent Skills](https://agentskills.io/) standard — a portable format adopted by multiple agent products (GitHub Copilot, Claude Code, Cursor, Roo Code, and others). The extension deploys them to `.github/skills/` by default, but you can copy them to your agent's preferred location.
+
 ---
 
-## Skill Structure
+## Requirements
 
-Each skill lives in its own folder under `skills/` and follows a consistent layout:
+- **Visual Studio Code** 1.85.0 or higher
+- **AL Language Extension** for Business Central development
+- **GitHub Copilot** (or any agent supporting the [Agent Skills](https://agentskills.io/) standard)
+
+---
+
+## How It Works
+
+When you run **"AL Copilot Skills Collection: Install Skills"**, the extension:
+
+1. Detects your workspace root folder.
+2. Creates `.github/skills/` and `.github/instructions/` if they don't exist.
+3. Copies all bundled skill packages (SKILL.md, references, examples) into your workspace.
+4. GitHub Copilot automatically discovers and loads skills when you ask it to perform a matching task.
+
+Each skill folder follows this structure:
 
 ```text
-skills/
-└── {skill-name}/
+.github/skills/
+└── bc-api-page-generator/
     ├── SKILL.md              ← Main instructions (loaded by the agent)
     ├── AUTHORS.md            ← Author and co-author information
     ├── CHANGELOG.md          ← Version history
     └── references/           ← Supporting files, examples, templates
-        ├── examples.md
-        └── patterns.md
 ```
 
 ---
 
-## Repository Structure
+## Extension Settings
 
-```text
-AL-Copilot-Skills-Collection/
-├── instructions/
-│   └── skills-creation.instructions.md   ← Guidelines for creating skills
-├── releaseplan/
-│   ├── RELEASE-PLAN-GUIDE.md             ← How release plans work
-│   ├── TEMPLATE.md                       ← Blank template for reference
-│   ├── 2026/                             ← Monthly plans for 2026
-│   │   ├── 04-april.md
-│   │   └── ...
-│   └── 2027/                             ← Monthly plans for 2027
-│       ├── 01-january.md
-│       └── ...
-├── skills/                               ← All published skills
-│   ├── bc-api-page-generator/
-│   ├── bc-test-codeunit-generator/
-│   └── ...
-├── CONTRIBUTING.md                       ← Contribution guidelines
-├── SECURITY.md                           ← Security policy
-├── LICENSE                               ← MIT License
-└── README.md                             ← This file
-```
-
----
-
-## Quick Start
-
-1. **Browse available skills** in the [`skills/`](skills/) directory.
-2. **Copy a skill folder** into your project's skill directory (e.g. `.github/skills/` for GitHub Copilot or `.claude/skills/` for Claude Code).
-3. **Invoke your agent** — the skill will be loaded automatically when the task matches the skill's domain.
+This extension does not add any VS Code settings. It activates automatically when an AL file is detected in the workspace.
 
 ---
 
@@ -110,27 +107,6 @@ We welcome contributions from the Business Central community. See [CONTRIBUTING.
 2. Open a Pull Request for approval.
 3. Once approved, develop the skill following the [skill creation guidelines](instructions/skills-creation.instructions.md).
 4. Submit the completed skill via Pull Request.
-
----
-
-## Release Plan
-
-Skills are planned and tracked through monthly release plan files aligned with Business Central cumulative updates. See the [Release Plan Guide](releaseplan/RELEASE-PLAN-GUIDE.md) for details.
-
----
-
-## Requirements
-
-- **Visual Studio Code** 1.85.0 or higher
-- **GitHub Copilot** or any agent supporting the [Agent Skills](https://agentskills.io/) standard
-- **AL Language Extension** for Business Central development
-
----
-
-## Author
-
-**Fernando Artigas Alfonso**
-[GitHub](https://github.com/fernandoartalf) · [LinkedIn](https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b)
 
 ---
 
@@ -148,4 +124,7 @@ MIT — See [LICENSE](LICENSE) for details.
 
 ---
 
-**Last Updated**: 2026-04-01
+## Author
+
+**Fernando Artigas Alfonso**
+[GitHub](https://github.com/fernandoartalf) · [LinkedIn](https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b)
