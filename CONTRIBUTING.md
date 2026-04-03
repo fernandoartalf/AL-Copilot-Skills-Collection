@@ -86,6 +86,26 @@ Once your plan is approved:
 
 ---
 
+## Community Badges
+
+Contributors are recognized with badges based on the number of skills they author or co-author. Badges are displayed on the [Contributors page](https://www.alcopilotskills.com/contributors) and automatically awarded as follows: 
+
+| Badge | Skills Required | Description |
+|-------|-----------------|-------------|
+| 🥉 **Bronze** | 1 skill | First-time contributor |
+| 🥈 **Silver** | 2 skills | Active contributor |
+| 🥇 **Gold** | 3-4 skills | Core contributor |
+| 💎 **Diamond** | 5+ skills | Elite contributor |
+
+**How it works**:
+- Badges are calculated automatically based on the AUTHORS.md file in each skill folder.
+- Both primary authors and co-authors count toward the total.
+- Badges update when your skill PR is merged to `main`.
+
+**To earn a badge**, simply contribute skills following the process above. Quality and completeness matter more than quantity — each skill should provide real value to the AL developer community.
+
+---
+
 ## Status Lifecycle
 
 ```
