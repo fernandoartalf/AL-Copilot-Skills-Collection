@@ -1,0 +1,24 @@
+{
+  "id": "2026/may",
+  "title": "Release Plan — May 2026",
+  "description": "Business Central 2026 Wave 1 — CU1",
+  "source": "@site/../releaseplan/2026/05-may.md",
+  "sourceDirName": "2026",
+  "slug": "/2026/may",
+  "permalink": "/al-copilot-skills-site/roadmap/2026/may",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "previous": {
+    "title": "April",
+    "permalink": "/al-copilot-skills-site/roadmap/2026/april"
+  },
+  "next": {
+    "title": "June",
+    "permalink": "/al-copilot-skills-site/roadmap/2026/june"
+  }
+}

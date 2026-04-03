@@ -1,0 +1,28 @@
+{
+  "id": "SECURITY",
+  "title": "Security Policy",
+  "description": "Security policy and vulnerability reporting guidelines",
+  "source": "@site/docs/SECURITY.md",
+  "sourceDirName": ".",
+  "slug": "/SECURITY",
+  "permalink": "/al-copilot-skills-site/docs/SECURITY",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 101,
+  "frontMatter": {
+    "title": "Security Policy",
+    "description": "Security policy and vulnerability reporting guidelines",
+    "sidebar_position": 101
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Contributing Guide",
+    "permalink": "/al-copilot-skills-site/docs/contributing"
+  },
+  "next": {
+    "title": "License",
+    "permalink": "/al-copilot-skills-site/docs/LICENSE"
+  }
+}

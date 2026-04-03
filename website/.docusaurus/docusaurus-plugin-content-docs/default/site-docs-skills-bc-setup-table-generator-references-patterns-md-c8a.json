@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-setup-table-generator/references/patterns",
+  "title": "Advanced Setup Table Patterns",
+  "description": "This file contains advanced patterns and variations for setup tables not included in the main SKILL.md to keep it concise.",
+  "source": "@site/docs/skills/bc-setup-table-generator/references/patterns.md",
+  "sourceDirName": "skills/bc-setup-table-generator/references",
+  "slug": "/skills/bc-setup-table-generator/references/patterns",
+  "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/references/patterns",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Business Central Setup Table Generator",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/SKILL"
+  },
+  "next": {
+    "title": "BC Setup Wizard Generator",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/SKILL"
+  }
+}
