@@ -1,0 +1,6 @@
+# Everything requires review
+* @fernandoartalf
+
+# Critical infrastructure
+.github/workflows/* @fernandoartalf
+website/* @fernandoartalf
