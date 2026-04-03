@@ -88,7 +88,7 @@ Once your plan is approved:
 
 ## Community Badges
 
-Contributors are recognized with badges based on the number of skills they author or co-author. Badges are displayed on the [Contributors page](https://fernandoartalf.github.io/al-copilot-skills-site/contributors) and automatically awarded as follows:
+Contributors are recognized with badges based on the number of skills they author or co-author. Badges are displayed on the [Contributors page](https://www.alcopilotskills.com/contributors) and automatically awarded as follows: 
 
 | Badge | Skills Required | Description |
 |-------|-----------------|-------------|
