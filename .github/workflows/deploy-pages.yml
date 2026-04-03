@@ -16,10 +16,10 @@ jobs:
         working-directory: website
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@FULL_40_CHAR_SHA
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@FULL_40_CHAR_SHA
         with:
           node-version: '20'
           cache: npm
@@ -32,9 +32,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@FULL_40_CHAR_SHA
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./website/build
           publish_branch: gh-pages
-          cname: alcopilotskills.com
+          cname: www.alcopilotskills.com
