@@ -1,0 +1,20 @@
+{
+  "id": "2027/december",
+  "title": "Release Plan — December 2027",
+  "description": "Business Central 2027 Wave 2 — CU2",
+  "source": "@site/../releaseplan/2027/12-december.md",
+  "sourceDirName": "2027",
+  "slug": "/2027/december",
+  "permalink": "/al-copilot-skills-site/roadmap/2027/december",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "previous": {
+    "title": "November",
+    "permalink": "/al-copilot-skills-site/roadmap/2027/november"
+  }
+}

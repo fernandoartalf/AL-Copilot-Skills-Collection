@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-cds-page-generator/references/quick-start",
+  "title": "Quick Start Guide",
+  "description": "Generate AL list pages for CDS (Dataverse) tables with proper integration patterns.",
+  "source": "@site/docs/skills/bc-cds-page-generator/references/quick-start.md",
+  "sourceDirName": "skills/bc-cds-page-generator/references",
+  "slug": "/skills/bc-cds-page-generator/references/quick-start",
+  "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "CDS Page Field Layout Patterns",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/field-layout"
+  },
+  "next": {
+    "title": "Standard Components for CDS List Pages",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/standard-components"
+  }
+}

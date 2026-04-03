@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-attachments-generator/references/code-templates",
+  "title": "BC Attachments Generator - Code Templates",
+  "description": "This file contains detailed AL code templates for implementing attachments, links, and notes on custom Business Central tables.",
+  "source": "@site/docs/skills/bc-attachments-generator/references/code-templates.md",
+  "sourceDirName": "skills/bc-attachments-generator/references",
+  "slug": "/skills/bc-attachments-generator/references/code-templates",
+  "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/references/code-templates",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "BC Attachments, Links & Notes Generator",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/SKILL"
+  },
+  "next": {
+    "title": "BC Business Events Generator",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-business-events-generator/SKILL"
+  }
+}
