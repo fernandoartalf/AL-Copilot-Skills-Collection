@@ -19,3 +19,5 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+#GitHub folder for workflows, issue templates, etc.
+.github/
