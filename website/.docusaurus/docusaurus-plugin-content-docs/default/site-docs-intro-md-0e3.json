@@ -5,7 +5,7 @@
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
-  "permalink": "/al-copilot-skills-site/docs/intro",
+  "permalink": "/docs/intro",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -19,6 +19,6 @@
   "sidebar": "tutorialSidebar",
   "next": {
     "title": "Business Central API Page Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/SKILL"
+    "permalink": "/docs/skills/bc-api-page-generator/SKILL"
   }
 }

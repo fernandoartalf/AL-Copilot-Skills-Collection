@@ -1,232 +1,232 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/al-copilot-skills-site/docs",
+      "path": "/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/al-copilot-skills-site/docs",
+          "path": "/docs",
           "mainDocId": "intro",
           "docs": [
             {
               "id": "contributing",
-              "path": "/al-copilot-skills-site/docs/contributing",
+              "path": "/docs/contributing",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "instructions/README",
-              "path": "/al-copilot-skills-site/docs/instructions/"
+              "path": "/docs/instructions/"
             },
             {
               "id": "instructions/skills-creation.instructions",
-              "path": "/al-copilot-skills-site/docs/instructions/skills-creation.instructions",
+              "path": "/docs/instructions/skills-creation.instructions",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "intro",
-              "path": "/al-copilot-skills-site/docs/intro",
+              "path": "/docs/intro",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "LICENSE",
-              "path": "/al-copilot-skills-site/docs/LICENSE",
+              "path": "/docs/LICENSE",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "releasenotes/2026/april",
-              "path": "/al-copilot-skills-site/docs/releasenotes/2026/april",
+              "path": "/docs/releasenotes/2026/april",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "SECURITY",
-              "path": "/al-copilot-skills-site/docs/SECURITY",
+              "path": "/docs/SECURITY",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-api-page-generator/references/api-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/references/api-examples",
+              "path": "/docs/skills/bc-api-page-generator/references/api-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-api-page-generator/references/api-patterns",
-              "path": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/references/api-patterns",
+              "path": "/docs/skills/bc-api-page-generator/references/api-patterns",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-api-page-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/SKILL",
+              "path": "/docs/skills/bc-api-page-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-api-query-generator/references/query-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/references/query-examples",
+              "path": "/docs/skills/bc-api-query-generator/references/query-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-api-query-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/SKILL",
+              "path": "/docs/skills/bc-api-query-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-attachments-generator/references/code-templates",
-              "path": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/references/code-templates",
+              "path": "/docs/skills/bc-attachments-generator/references/code-templates",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-attachments-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/SKILL",
+              "path": "/docs/skills/bc-attachments-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-business-events-generator/references/code-templates",
-              "path": "/al-copilot-skills-site/docs/skills/bc-business-events-generator/references/code-templates",
+              "path": "/docs/skills/bc-business-events-generator/references/code-templates",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-business-events-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-business-events-generator/SKILL",
+              "path": "/docs/skills/bc-business-events-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-cds-page-generator/references/examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/examples",
+              "path": "/docs/skills/bc-cds-page-generator/references/examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-cds-page-generator/references/field-layout",
-              "path": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/field-layout",
+              "path": "/docs/skills/bc-cds-page-generator/references/field-layout",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-cds-page-generator/references/quick-start",
-              "path": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/quick-start",
+              "path": "/docs/skills/bc-cds-page-generator/references/quick-start",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-cds-page-generator/references/standard-components",
-              "path": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/standard-components",
+              "path": "/docs/skills/bc-cds-page-generator/references/standard-components",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-cds-page-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/SKILL",
+              "path": "/docs/skills/bc-cds-page-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-entity-generator/references/generate-entity-list-script",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/references/generate-entity-list-script",
+              "path": "/docs/skills/bc-dataverse-entity-generator/references/generate-entity-list-script",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-entity-generator/references/generate-entity-script",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/references/generate-entity-script",
+              "path": "/docs/skills/bc-dataverse-entity-generator/references/generate-entity-script",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-entity-generator/references/workflow-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/references/workflow-examples",
+              "path": "/docs/skills/bc-dataverse-entity-generator/references/workflow-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-entity-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/SKILL",
+              "path": "/docs/skills/bc-dataverse-entity-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
+              "path": "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
+              "path": "/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-dataverse-mapping-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/SKILL",
+              "path": "/docs/skills/bc-dataverse-mapping-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-install-codeunit-generator/references/install-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-install-codeunit-generator/references/install-examples",
+              "path": "/docs/skills/bc-install-codeunit-generator/references/install-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-install-codeunit-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-install-codeunit-generator/SKILL",
+              "path": "/docs/skills/bc-install-codeunit-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-number-series-generator/references/number-series-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/references/number-series-examples",
+              "path": "/docs/skills/bc-number-series-generator/references/number-series-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-number-series-generator/references/number-series-troubleshooting",
-              "path": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/references/number-series-troubleshooting",
+              "path": "/docs/skills/bc-number-series-generator/references/number-series-troubleshooting",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-number-series-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/SKILL",
+              "path": "/docs/skills/bc-number-series-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-setup-table-generator/references/patterns",
-              "path": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/references/patterns",
+              "path": "/docs/skills/bc-setup-table-generator/references/patterns",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-setup-table-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/SKILL",
+              "path": "/docs/skills/bc-setup-table-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-setup-wizard-generator/references/code-templates",
-              "path": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/references/code-templates",
+              "path": "/docs/skills/bc-setup-wizard-generator/references/code-templates",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-setup-wizard-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/SKILL",
+              "path": "/docs/skills/bc-setup-wizard-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-telemetry-generator/references/kql-queries",
-              "path": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/references/kql-queries",
+              "path": "/docs/skills/bc-telemetry-generator/references/kql-queries",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-telemetry-generator/references/telemetry-reference",
-              "path": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/references/telemetry-reference",
+              "path": "/docs/skills/bc-telemetry-generator/references/telemetry-reference",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-telemetry-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/SKILL",
+              "path": "/docs/skills/bc-telemetry-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-test-codeunit-generator/references/test-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-test-codeunit-generator/references/test-examples",
+              "path": "/docs/skills/bc-test-codeunit-generator/references/test-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-test-codeunit-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-test-codeunit-generator/SKILL",
+              "path": "/docs/skills/bc-test-codeunit-generator/SKILL",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-upgrade-codeunit-generator/references/upgrade-examples",
-              "path": "/al-copilot-skills-site/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples",
+              "path": "/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "skills/bc-upgrade-codeunit-generator/SKILL",
-              "path": "/al-copilot-skills-site/docs/skills/bc-upgrade-codeunit-generator/SKILL",
+              "path": "/docs/skills/bc-upgrade-codeunit-generator/SKILL",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -234,7 +234,7 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/al-copilot-skills-site/docs/intro",
+                "path": "/docs/intro",
                 "label": "intro"
               }
             }
@@ -244,135 +244,135 @@
       "breadcrumbs": true
     },
     "roadmap": {
-      "path": "/al-copilot-skills-site/roadmap",
+      "path": "/roadmap",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/al-copilot-skills-site/roadmap",
+          "path": "/roadmap",
           "mainDocId": "RELEASE-PLAN-GUIDE",
           "docs": [
             {
               "id": "2026/april",
-              "path": "/al-copilot-skills-site/roadmap/2026/april",
+              "path": "/roadmap/2026/april",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/august",
-              "path": "/al-copilot-skills-site/roadmap/2026/august",
+              "path": "/roadmap/2026/august",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/december",
-              "path": "/al-copilot-skills-site/roadmap/2026/december",
+              "path": "/roadmap/2026/december",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/july",
-              "path": "/al-copilot-skills-site/roadmap/2026/july",
+              "path": "/roadmap/2026/july",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/june",
-              "path": "/al-copilot-skills-site/roadmap/2026/june",
+              "path": "/roadmap/2026/june",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/may",
-              "path": "/al-copilot-skills-site/roadmap/2026/may",
+              "path": "/roadmap/2026/may",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/november",
-              "path": "/al-copilot-skills-site/roadmap/2026/november",
+              "path": "/roadmap/2026/november",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/october",
-              "path": "/al-copilot-skills-site/roadmap/2026/october",
+              "path": "/roadmap/2026/october",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2026/september",
-              "path": "/al-copilot-skills-site/roadmap/2026/september",
+              "path": "/roadmap/2026/september",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/april",
-              "path": "/al-copilot-skills-site/roadmap/2027/april",
+              "path": "/roadmap/2027/april",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/august",
-              "path": "/al-copilot-skills-site/roadmap/2027/august",
+              "path": "/roadmap/2027/august",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/december",
-              "path": "/al-copilot-skills-site/roadmap/2027/december",
+              "path": "/roadmap/2027/december",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/february",
-              "path": "/al-copilot-skills-site/roadmap/2027/february",
+              "path": "/roadmap/2027/february",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/january",
-              "path": "/al-copilot-skills-site/roadmap/2027/january",
+              "path": "/roadmap/2027/january",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/july",
-              "path": "/al-copilot-skills-site/roadmap/2027/july",
+              "path": "/roadmap/2027/july",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/june",
-              "path": "/al-copilot-skills-site/roadmap/2027/june",
+              "path": "/roadmap/2027/june",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/march",
-              "path": "/al-copilot-skills-site/roadmap/2027/march",
+              "path": "/roadmap/2027/march",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/may",
-              "path": "/al-copilot-skills-site/roadmap/2027/may",
+              "path": "/roadmap/2027/may",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/november",
-              "path": "/al-copilot-skills-site/roadmap/2027/november",
+              "path": "/roadmap/2027/november",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/october",
-              "path": "/al-copilot-skills-site/roadmap/2027/october",
+              "path": "/roadmap/2027/october",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "2027/september",
-              "path": "/al-copilot-skills-site/roadmap/2027/september",
+              "path": "/roadmap/2027/september",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "RELEASE-PLAN-GUIDE",
-              "path": "/al-copilot-skills-site/roadmap/RELEASE-PLAN-GUIDE",
+              "path": "/roadmap/RELEASE-PLAN-GUIDE",
               "sidebar": "roadmapSidebar"
             },
             {
               "id": "TEMPLATE",
-              "path": "/al-copilot-skills-site/roadmap/TEMPLATE"
+              "path": "/roadmap/TEMPLATE"
             }
           ],
           "draftIds": [],
           "sidebars": {
             "roadmapSidebar": {
               "link": {
-                "path": "/al-copilot-skills-site/roadmap/RELEASE-PLAN-GUIDE",
+                "path": "/roadmap/RELEASE-PLAN-GUIDE",
                 "label": "Release Plan Guide"
               }
             }

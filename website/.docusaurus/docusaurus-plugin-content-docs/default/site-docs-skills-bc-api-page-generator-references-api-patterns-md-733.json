@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-api-page-generator/references/api-patterns.md",
   "sourceDirName": "skills/bc-api-page-generator/references",
   "slug": "/skills/bc-api-page-generator/references/api-patterns",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/references/api-patterns",
+  "permalink": "/docs/skills/bc-api-page-generator/references/api-patterns",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "API Page Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/references/api-examples"
+    "permalink": "/docs/skills/bc-api-page-generator/references/api-examples"
   },
   "next": {
     "title": "Business Central API Query Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/SKILL"
+    "permalink": "/docs/skills/bc-api-query-generator/SKILL"
   }
 }

@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-setup-table-generator/references/patterns.md",
   "sourceDirName": "skills/bc-setup-table-generator/references",
   "slug": "/skills/bc-setup-table-generator/references/patterns",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/references/patterns",
+  "permalink": "/docs/skills/bc-setup-table-generator/references/patterns",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Business Central Setup Table Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/SKILL"
+    "permalink": "/docs/skills/bc-setup-table-generator/SKILL"
   },
   "next": {
     "title": "BC Setup Wizard Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/SKILL"
+    "permalink": "/docs/skills/bc-setup-wizard-generator/SKILL"
   }
 }

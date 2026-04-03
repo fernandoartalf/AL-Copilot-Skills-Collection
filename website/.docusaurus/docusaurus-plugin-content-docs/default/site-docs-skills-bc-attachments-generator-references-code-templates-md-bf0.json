@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-attachments-generator/references/code-templates.md",
   "sourceDirName": "skills/bc-attachments-generator/references",
   "slug": "/skills/bc-attachments-generator/references/code-templates",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/references/code-templates",
+  "permalink": "/docs/skills/bc-attachments-generator/references/code-templates",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "BC Attachments, Links & Notes Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/SKILL"
+    "permalink": "/docs/skills/bc-attachments-generator/SKILL"
   },
   "next": {
     "title": "BC Business Events Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-business-events-generator/SKILL"
+    "permalink": "/docs/skills/bc-business-events-generator/SKILL"
   }
 }

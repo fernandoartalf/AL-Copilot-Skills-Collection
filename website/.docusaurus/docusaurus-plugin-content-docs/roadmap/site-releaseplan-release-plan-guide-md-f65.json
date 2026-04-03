@@ -5,7 +5,7 @@
   "source": "@site/../releaseplan/RELEASE-PLAN-GUIDE.md",
   "sourceDirName": ".",
   "slug": "/RELEASE-PLAN-GUIDE",
-  "permalink": "/al-copilot-skills-site/roadmap/RELEASE-PLAN-GUIDE",
+  "permalink": "/roadmap/RELEASE-PLAN-GUIDE",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,6 +14,6 @@
   "sidebar": "roadmapSidebar",
   "next": {
     "title": "April",
-    "permalink": "/al-copilot-skills-site/roadmap/2026/april"
+    "permalink": "/roadmap/2026/april"
   }
 }

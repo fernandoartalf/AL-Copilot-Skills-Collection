@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-telemetry-generator/references/telemetry-reference.md",
   "sourceDirName": "skills/bc-telemetry-generator/references",
   "slug": "/skills/bc-telemetry-generator/references/telemetry-reference",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/references/telemetry-reference",
+  "permalink": "/docs/skills/bc-telemetry-generator/references/telemetry-reference",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "KQL Queries for Application Insights",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/references/kql-queries"
+    "permalink": "/docs/skills/bc-telemetry-generator/references/kql-queries"
   },
   "next": {
     "title": "Business Central Test Codeunit Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-test-codeunit-generator/SKILL"
+    "permalink": "/docs/skills/bc-test-codeunit-generator/SKILL"
   }
 }

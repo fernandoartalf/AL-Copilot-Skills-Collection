@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-api-query-generator/references/query-examples.md",
   "sourceDirName": "skills/bc-api-query-generator/references",
   "slug": "/skills/bc-api-query-generator/references/query-examples",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/references/query-examples",
+  "permalink": "/docs/skills/bc-api-query-generator/references/query-examples",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Business Central API Query Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/SKILL"
+    "permalink": "/docs/skills/bc-api-query-generator/SKILL"
   },
   "next": {
     "title": "BC Attachments, Links & Notes Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/SKILL"
+    "permalink": "/docs/skills/bc-attachments-generator/SKILL"
   }
 }

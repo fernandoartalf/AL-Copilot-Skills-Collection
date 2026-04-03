@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-attachments-generator/SKILL.md",
   "sourceDirName": "skills/bc-attachments-generator",
   "slug": "/skills/bc-attachments-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/SKILL",
+  "permalink": "/docs/skills/bc-attachments-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "API Query Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/references/query-examples"
+    "permalink": "/docs/skills/bc-api-query-generator/references/query-examples"
   },
   "next": {
     "title": "BC Attachments Generator - Code Templates",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/references/code-templates"
+    "permalink": "/docs/skills/bc-attachments-generator/references/code-templates"
   }
 }

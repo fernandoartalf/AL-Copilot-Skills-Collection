@@ -7,16 +7,14 @@ const config: Config = {
   tagline: 'Supercharge your Business Central development with sharp skills',
   favicon: 'img/ALCSC_LOGO.png',
 
-  // Set the production url of your site here
-  url: 'https://fernandoartalf.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // Use DOCUSAURUS_DEPLOY to distinguish between local serve and GitHub Pages deploy
-  baseUrl: process.env.DOCUSAURUS_DEPLOY === 'true' ? '/al-copilot-skills-site/' : '/',
+  // Production URL — custom domain
+  url: 'https://alcopilotskills.com',
+  // Custom domain serves at root, no path prefix needed
+  baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'fernandoartalf', // Usually your GitHub org/user name.
-  projectName: 'al-copilot-skills-site', // Usually your repo name.
+  organizationName: 'fernandoartalf',
+  projectName: 'AL-Copilot-Skills-Collection',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',

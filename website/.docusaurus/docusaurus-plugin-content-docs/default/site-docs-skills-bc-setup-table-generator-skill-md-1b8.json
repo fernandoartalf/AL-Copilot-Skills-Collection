@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-setup-table-generator/SKILL.md",
   "sourceDirName": "skills/bc-setup-table-generator",
   "slug": "/skills/bc-setup-table-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/SKILL",
+  "permalink": "/docs/skills/bc-setup-table-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Number Series Troubleshooting",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/references/number-series-troubleshooting"
+    "permalink": "/docs/skills/bc-number-series-generator/references/number-series-troubleshooting"
   },
   "next": {
     "title": "Advanced Setup Table Patterns",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/references/patterns"
+    "permalink": "/docs/skills/bc-setup-table-generator/references/patterns"
   }
 }

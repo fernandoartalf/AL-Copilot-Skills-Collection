@@ -7,10 +7,10 @@ export default {
   "title": "AL Copilot Skills Collection",
   "tagline": "Supercharge your Business Central development with sharp skills",
   "favicon": "img/ALCSC_LOGO.png",
-  "url": "https://fernandoartalf.github.io",
-  "baseUrl": "/al-copilot-skills-site/",
+  "url": "https://alcopilotskills.com",
+  "baseUrl": "/",
   "organizationName": "fernandoartalf",
-  "projectName": "al-copilot-skills-site",
+  "projectName": "AL-Copilot-Skills-Collection",
   "onBrokenLinks": "warn",
   "markdown": {
     "format": "md",

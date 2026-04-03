@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping.md",
   "sourceDirName": "skills/bc-dataverse-mapping-generator/references",
   "slug": "/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
+  "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Custom Entity Mapping — Complete Code Reference",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping"
+    "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping"
   },
   "next": {
     "title": "Business Central Install Codeunit Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-install-codeunit-generator/SKILL"
+    "permalink": "/docs/skills/bc-install-codeunit-generator/SKILL"
   }
 }

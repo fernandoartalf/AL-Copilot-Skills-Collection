@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples.md",
   "sourceDirName": "skills/bc-upgrade-codeunit-generator/references",
   "slug": "/skills/bc-upgrade-codeunit-generator/references/upgrade-examples",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples",
+  "permalink": "/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Business Central Upgrade Codeunit Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-upgrade-codeunit-generator/SKILL"
+    "permalink": "/docs/skills/bc-upgrade-codeunit-generator/SKILL"
   },
   "next": {
     "title": "Custom Skills Creation Guidelines",
-    "permalink": "/al-copilot-skills-site/docs/instructions/skills-creation.instructions"
+    "permalink": "/docs/instructions/skills-creation.instructions"
   }
 }

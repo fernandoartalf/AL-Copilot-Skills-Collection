@@ -1,5 +1,5 @@
 export const removeDefaultStemmer = false;
-export { default as Mark } from "C:\\Users\\FernandoArtigasAlfon\\Documents\\AL\\al-copilot-skills-site\\website\\node_modules\\mark.js\\dist\\mark.js"
+export { default as Mark } from "C:\\Users\\FernandoArtigasAlfon\\Documents\\AL\\AL-Copilot-Skills-Collection\\website\\node_modules\\mark.js\\dist\\mark.js"
 export const searchResultContextMaxLength = 50;
 export const explicitSearchResultPath = false;
 export const searchBarShortcut = true;

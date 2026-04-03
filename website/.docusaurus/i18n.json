@@ -13,8 +13,8 @@
       "calendar": "gregory",
       "path": "en",
       "translate": false,
-      "url": "https://fernandoartalf.github.io",
-      "baseUrl": "/al-copilot-skills-site/"
+      "url": "https://alcopilotskills.com",
+      "baseUrl": "/"
     }
   }
 }

@@ -5,7 +5,7 @@
   "source": "@site/../releaseplan/2027/12-december.md",
   "sourceDirName": "2027",
   "slug": "/2027/december",
-  "permalink": "/al-copilot-skills-site/roadmap/2027/december",
+  "permalink": "/roadmap/2027/december",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -15,6 +15,6 @@
   "sidebar": "roadmapSidebar",
   "previous": {
     "title": "November",
-    "permalink": "/al-copilot-skills-site/roadmap/2027/november"
+    "permalink": "/roadmap/2027/november"
   }
 }
