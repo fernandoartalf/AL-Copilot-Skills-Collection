@@ -11,7 +11,7 @@
 
 ## Quick Start
 
-1. **Install** the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Fernando-artigas.al-copilot-skills-collection).
+1. **Install** the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=FernandoArtigasAlfonso.al-copilot-skills-collection).
 2. **Open** any AL project in VS Code.
 3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) and run **"AL Copilot Skills Collection: Install Skills"**.
 4. Skills are deployed to `.github/skills/` and instructions to `.github/instructions/` in your workspace.
