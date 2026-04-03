@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL Copilot Skills Collection - Supercharge your Business Central development</title>
+    <meta name="description" content="Purpose-built AL Copilot Skills that help agents implement consistent Business Central patterns and development best practices.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292f;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            margin-top: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .stat {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            padding: 25px;
+            background: #f6f8fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            color: #586069;
+            line-height: 1.7;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #24292f;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .link-card {
+            padding: 20px;
+            background: #f6f8fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #24292f;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e1e4e8;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .link-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .tagline { font-size: 1.4rem; }
+            .content { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AL Copilot Skills Collection</h1>
+            <p class="tagline">Supercharge your Business Central development with sharp skills</p>
+            <p class="subtitle">Purpose-built AL Copilot Skills that help agents implement consistent Business Central patterns and development best practices.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection" class="btn btn-primary">View on GitHub</a>
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/skills" class="btn btn-secondary">Browse Skills</a>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Production-Ready Skills</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Open Source</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">v28.0</span>
+                    <span class="stat-label">Business Central Ready</span>
+                </div>
+            </div>
+            
+            <h2>✨ Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🧩 Composable Skills</h3>
+                    <p>Each skill focuses on a single AL pattern or concern and can be loaded independently or combined with others.</p>
+                </div>
+                <div class="feature">
+                    <h3>🌍 Community-Driven</h3>
+                    <p>Contributors propose new skills via monthly release plans, get them approved, and submit implementations through Pull Requests.</p>
+                </div>
+                <div class="feature">
+                    <h3>📅 BC Update Alignment</h3>
+                    <p>Release plans follow the Business Central wave and cumulative update cadence so skills can target specific platform versions.</p>
+                </div>
+                <div class="feature">
+                    <h3>🤝 Agent-Agnostic</h3>
+                    <p>Skills work with any agent that supports the Agent Skills standard—GitHub Copilot, Claude Code, Cursor, and more.</p>
+                </div>
+            </div>
+            
+            <h2>📚 Quick Links</h2>
+            <div class="links">
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection#readme" class="link-card">
+                    <h3>📖 README</h3>
+                    <p>Learn about the project, structure, and how to use the skills</p>
+                </a>
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/skills" class="link-card">
+                    <h3>🎯 All Skills</h3>
+                    <p>Browse all 14 available skills for Business Central development</p>
+                </a>
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/blob/main/CONTRIBUTING.md" class="link-card">
+                    <h3>🤝 Contributing</h3>
+                    <p>Learn how to contribute your own skills to the collection</p>
+                </a>
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/releaseplan" class="link-card">
+                    <h3>📅 Release Plans</h3>
+                    <p>View monthly release plans and submit your skill proposals</p>
+                </a>
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/releasenotes" class="link-card">
+                    <h3>📝 Release Notes</h3>
+                    <p>See what's new in each monthly release</p>
+                </a>
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/blob/main/instructions/skills-creation.instructions.md" class="link-card">
+                    <h3>🛠️ Skill Creation Guide</h3>
+                    <p>Guidelines for creating high-quality Copilot skills</p>
+                </a>
+            </div>
+            
+            <h2>🚀 Get Started</h2>
+            <div class="feature" style="max-width: 800px; margin: 20px auto;">
+                <h3>Using the Skills</h3>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>Browse available skills in the <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/skills" style="color: #667eea;">skills/</a> directory</li>
+                    <li>Copy a skill folder into your project's skill directory (e.g., <code>.github/skills/</code> for GitHub Copilot)</li>
+                    <li>Invoke your agent — the skill will be loaded automatically when the task matches the skill's domain</li>
+                </ol>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>AL Copilot Skills Collection</strong> &mdash; MIT License</p>
+            <p>Created by <a href="https://github.com/fernandoartalf">Fernando Artigas Alfonso</a></p>
+            <p style="margin-top: 20px; opacity: 0.8;">
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues">Report Issues</a> · 
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/discussions">Discussions</a> · 
+                <a href="https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/blob/main/SECURITY.md">Security</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
