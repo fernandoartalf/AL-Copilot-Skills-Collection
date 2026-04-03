@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping.md",
   "sourceDirName": "skills/bc-dataverse-mapping-generator/references",
   "slug": "/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
+  "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Business Central Dataverse Mapping Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/SKILL"
+    "permalink": "/docs/skills/bc-dataverse-mapping-generator/SKILL"
   },
   "next": {
     "title": "OOB Entity Mapping — Extra Field Mappings Reference",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping"
+    "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping"
   }
 }

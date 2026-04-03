@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-dataverse-mapping-generator/SKILL.md",
   "sourceDirName": "skills/bc-dataverse-mapping-generator",
   "slug": "/skills/bc-dataverse-mapping-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/SKILL",
+  "permalink": "/docs/skills/bc-dataverse-mapping-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Workflow Examples & Troubleshooting",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/references/workflow-examples"
+    "permalink": "/docs/skills/bc-dataverse-entity-generator/references/workflow-examples"
   },
   "next": {
     "title": "Custom Entity Mapping — Complete Code Reference",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping"
+    "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping"
   }
 }

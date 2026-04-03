@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-dataverse-entity-generator/SKILL.md",
   "sourceDirName": "skills/bc-dataverse-entity-generator",
   "slug": "/skills/bc-dataverse-entity-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/SKILL",
+  "permalink": "/docs/skills/bc-dataverse-entity-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Standard Components for CDS List Pages",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/standard-components"
+    "permalink": "/docs/skills/bc-cds-page-generator/references/standard-components"
   },
   "next": {
     "title": "Generate-Entity-List.ps1 — Full Script Reference",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-dataverse-entity-generator/references/generate-entity-list-script"
+    "permalink": "/docs/skills/bc-dataverse-entity-generator/references/generate-entity-list-script"
   }
 }

@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-number-series-generator/SKILL.md",
   "sourceDirName": "skills/bc-number-series-generator",
   "slug": "/skills/bc-number-series-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/SKILL",
+  "permalink": "/docs/skills/bc-number-series-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Install Codeunit Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-install-codeunit-generator/references/install-examples"
+    "permalink": "/docs/skills/bc-install-codeunit-generator/references/install-examples"
   },
   "next": {
     "title": "Number Series Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/references/number-series-examples"
+    "permalink": "/docs/skills/bc-number-series-generator/references/number-series-examples"
   }
 }

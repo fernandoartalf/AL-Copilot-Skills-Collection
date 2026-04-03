@@ -5,7 +5,7 @@
   "source": "@site/../releaseplan/2027/04-april.md",
   "sourceDirName": "2027",
   "slug": "/2027/april",
-  "permalink": "/al-copilot-skills-site/roadmap/2027/april",
+  "permalink": "/roadmap/2027/april",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "roadmapSidebar",
   "previous": {
     "title": "March",
-    "permalink": "/al-copilot-skills-site/roadmap/2027/march"
+    "permalink": "/roadmap/2027/march"
   },
   "next": {
     "title": "May",
-    "permalink": "/al-copilot-skills-site/roadmap/2027/may"
+    "permalink": "/roadmap/2027/may"
   }
 }

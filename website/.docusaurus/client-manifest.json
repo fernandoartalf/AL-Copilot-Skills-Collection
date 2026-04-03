@@ -39,6 +39,9 @@
       8792,
       5354
     ],
+    "0058b4c6": [
+      849
+    ],
     "0716680d": [
       1567
     ],
@@ -116,9 +119,6 @@
     "4d54d076": [
       1459
     ],
-    "4ecba165": [
-      4300
-    ],
     "51e7ccce": [
       4239
     ],
@@ -192,6 +192,9 @@
       1869,
       3825
     ],
+    "a3a957de": [
+      4112
+    ],
     "a7456010": [
       1235
     ],
@@ -231,9 +234,6 @@
     ],
     "b81fa8f9": [
       7064
-    ],
-    "be6721bc": [
-      8171
     ],
     "bf05fdbb": [
       6820
@@ -292,9 +292,9 @@
     "354": {
       "js": [
         {
-          "file": "assets/js/f6532a3c.aa24a073.js",
-          "hash": "0ce700ecd7ab5ba9",
-          "publicPath": "/al-copilot-skills-site/assets/js/f6532a3c.aa24a073.js"
+          "file": "assets/js/f6532a3c.878205ad.js",
+          "hash": "047bbf7f23ca9cb9",
+          "publicPath": "/assets/js/f6532a3c.878205ad.js"
         }
       ]
     },
@@ -302,17 +302,17 @@
       "js": [
         {
           "file": "assets/js/489.3ff84b9b.js",
-          "hash": "a89899acb8dfe273",
-          "publicPath": "/al-copilot-skills-site/assets/js/489.3ff84b9b.js"
+          "hash": "09f76423d868efb7",
+          "publicPath": "/assets/js/489.3ff84b9b.js"
         }
       ]
     },
     "504": {
       "js": [
         {
-          "file": "assets/js/f30905b0.e69bacce.js",
-          "hash": "5dcd3120f9d7224c",
-          "publicPath": "/al-copilot-skills-site/assets/js/f30905b0.e69bacce.js"
+          "file": "assets/js/f30905b0.466ec13c.js",
+          "hash": "c7e24e06f9e92b20",
+          "publicPath": "/assets/js/f30905b0.466ec13c.js"
         }
       ]
     },
@@ -320,80 +320,89 @@
       "js": [
         {
           "file": "assets/js/540.40e91835.js",
-          "hash": "dd874512cd94e8d4",
-          "publicPath": "/al-copilot-skills-site/assets/js/540.40e91835.js"
+          "hash": "a8d5317d19329fd0",
+          "publicPath": "/assets/js/540.40e91835.js"
         }
       ]
     },
     "780": {
       "js": [
         {
-          "file": "assets/js/1b845085.1d0987ea.js",
-          "hash": "c877b09a942da6be",
-          "publicPath": "/al-copilot-skills-site/assets/js/1b845085.1d0987ea.js"
+          "file": "assets/js/1b845085.f64da8a5.js",
+          "hash": "410cad067bd60d61",
+          "publicPath": "/assets/js/1b845085.f64da8a5.js"
+        }
+      ]
+    },
+    "849": {
+      "js": [
+        {
+          "file": "assets/js/0058b4c6.ccab0d5a.js",
+          "hash": "9ec6c111934702f4",
+          "publicPath": "/assets/js/0058b4c6.ccab0d5a.js"
         }
       ]
     },
     "858": {
       "js": [
         {
-          "file": "assets/js/a864b042.8e785498.js",
-          "hash": "f474402868ca830f",
-          "publicPath": "/al-copilot-skills-site/assets/js/a864b042.8e785498.js"
+          "file": "assets/js/a864b042.00887faa.js",
+          "hash": "76cc95b4522843b9",
+          "publicPath": "/assets/js/a864b042.00887faa.js"
         }
       ]
     },
     "917": {
       "js": [
         {
-          "file": "assets/js/62df6dae.77c066d0.js",
-          "hash": "203164a5f17cc77e",
-          "publicPath": "/al-copilot-skills-site/assets/js/62df6dae.77c066d0.js"
+          "file": "assets/js/62df6dae.d6f60ee1.js",
+          "hash": "d8aeca5be45941da",
+          "publicPath": "/assets/js/62df6dae.d6f60ee1.js"
         }
       ]
     },
     "1038": {
       "js": [
         {
-          "file": "assets/js/ae9c3c78.3758c575.js",
-          "hash": "6cd7205bb3aa14a5",
-          "publicPath": "/al-copilot-skills-site/assets/js/ae9c3c78.3758c575.js"
+          "file": "assets/js/ae9c3c78.9060f2ae.js",
+          "hash": "2308e82563e012cd",
+          "publicPath": "/assets/js/ae9c3c78.9060f2ae.js"
         }
       ]
     },
     "1088": {
       "js": [
         {
-          "file": "assets/js/1a84475a.26bc0b84.js",
-          "hash": "e45bb8f8400c68c6",
-          "publicPath": "/al-copilot-skills-site/assets/js/1a84475a.26bc0b84.js"
+          "file": "assets/js/1a84475a.c4dade30.js",
+          "hash": "ca564f11bc880658",
+          "publicPath": "/assets/js/1a84475a.c4dade30.js"
         }
       ]
     },
     "1134": {
       "js": [
         {
-          "file": "assets/js/08d818e9.6994ebe9.js",
-          "hash": "05493e15aeccf5b5",
-          "publicPath": "/al-copilot-skills-site/assets/js/08d818e9.6994ebe9.js"
+          "file": "assets/js/08d818e9.b8f6e2fb.js",
+          "hash": "fa21543821e1bc84",
+          "publicPath": "/assets/js/08d818e9.b8f6e2fb.js"
         }
       ]
     },
     "1147": {
       "js": [
         {
-          "file": "assets/js/619a99b9.41af7e21.js",
-          "hash": "bedab794d30a59cd",
-          "publicPath": "/al-copilot-skills-site/assets/js/619a99b9.41af7e21.js"
+          "file": "assets/js/619a99b9.88f2ed4b.js",
+          "hash": "35aa4f21f5240c32",
+          "publicPath": "/assets/js/619a99b9.88f2ed4b.js"
         }
       ]
     },
     "1175": {
       "js": [
         {
-          "file": "assets/js/cdb8836b.bf28c9c5.js",
-          "hash": "2e6874a210cb497c",
-          "publicPath": "/al-copilot-skills-site/assets/js/cdb8836b.bf28c9c5.js"
+          "file": "assets/js/cdb8836b.d883a28a.js",
+          "hash": "2e4aa1da6d128876",
+          "publicPath": "/assets/js/cdb8836b.d883a28a.js"
         }
       ]
     },
@@ -402,43 +411,43 @@
         {
           "file": "assets/js/a7456010.dbd1b284.js",
           "hash": "cb9e56c92890c3f6",
-          "publicPath": "/al-copilot-skills-site/assets/js/a7456010.dbd1b284.js"
+          "publicPath": "/assets/js/a7456010.dbd1b284.js"
         }
       ]
     },
     "1459": {
       "js": [
         {
-          "file": "assets/js/4d54d076.22c0ecc3.js",
-          "hash": "18a040205915af45",
-          "publicPath": "/al-copilot-skills-site/assets/js/4d54d076.22c0ecc3.js"
+          "file": "assets/js/4d54d076.64ab69a0.js",
+          "hash": "0e3379d57435e72b",
+          "publicPath": "/assets/js/4d54d076.64ab69a0.js"
         }
       ]
     },
     "1567": {
       "js": [
         {
-          "file": "assets/js/0716680d.b70a1453.js",
-          "hash": "c20c289b1b8a0075",
-          "publicPath": "/al-copilot-skills-site/assets/js/0716680d.b70a1453.js"
+          "file": "assets/js/0716680d.2c49d6e6.js",
+          "hash": "19582555ed40f4ac",
+          "publicPath": "/assets/js/0716680d.2c49d6e6.js"
         }
       ]
     },
     "1869": {
       "css": [
         {
-          "file": "assets/css/styles.577c8b8e.css",
-          "hash": "b16c238d0bfef407",
-          "publicPath": "/al-copilot-skills-site/assets/css/styles.577c8b8e.css"
+          "file": "assets/css/styles.4a75f654.css",
+          "hash": "8888a7defccb3c86",
+          "publicPath": "/assets/css/styles.4a75f654.css"
         }
       ]
     },
     "1922": {
       "js": [
         {
-          "file": "assets/js/5b148b81.9cd31ffb.js",
-          "hash": "f0c43e2b901bf97c",
-          "publicPath": "/al-copilot-skills-site/assets/js/5b148b81.9cd31ffb.js"
+          "file": "assets/js/5b148b81.041a06ef.js",
+          "hash": "f3b05a8094018669",
+          "publicPath": "/assets/js/5b148b81.041a06ef.js"
         }
       ]
     },
@@ -446,8 +455,8 @@
       "js": [
         {
           "file": "assets/js/1a4e3797.c43ed149.js",
-          "hash": "1bdcecca63c56079",
-          "publicPath": "/al-copilot-skills-site/assets/js/1a4e3797.c43ed149.js"
+          "hash": "8770a9394e6ae863",
+          "publicPath": "/assets/js/1a4e3797.c43ed149.js"
         }
       ]
     },
@@ -455,197 +464,197 @@
       "js": [
         {
           "file": "assets/js/2237.49bf0ca9.js",
-          "hash": "e79ec7d6fc7accab",
-          "publicPath": "/al-copilot-skills-site/assets/js/2237.49bf0ca9.js"
+          "hash": "e2f6b04a8c69bebc",
+          "publicPath": "/assets/js/2237.49bf0ca9.js"
         }
       ]
     },
     "2242": {
       "js": [
         {
-          "file": "assets/js/b7150309.1fcae4d8.js",
-          "hash": "7be5966e185d5f8c",
-          "publicPath": "/al-copilot-skills-site/assets/js/b7150309.1fcae4d8.js"
+          "file": "assets/js/b7150309.5811d641.js",
+          "hash": "7669a884962356bf",
+          "publicPath": "/assets/js/b7150309.5811d641.js"
         }
       ]
     },
     "2346": {
       "js": [
         {
-          "file": "assets/js/d3d29e0f.6e1a2e8a.js",
-          "hash": "c7afff8ea1fee954",
-          "publicPath": "/al-copilot-skills-site/assets/js/d3d29e0f.6e1a2e8a.js"
+          "file": "assets/js/d3d29e0f.c74e659a.js",
+          "hash": "a273a8b6347abcd1",
+          "publicPath": "/assets/js/d3d29e0f.c74e659a.js"
         }
       ]
     },
     "2558": {
       "js": [
         {
-          "file": "assets/js/48d2f351.78bd23fe.js",
-          "hash": "8247edd4cb48cb69",
-          "publicPath": "/al-copilot-skills-site/assets/js/48d2f351.78bd23fe.js"
+          "file": "assets/js/48d2f351.29d0bbca.js",
+          "hash": "411a820aea673725",
+          "publicPath": "/assets/js/48d2f351.29d0bbca.js"
         }
       ]
     },
     "2589": {
       "js": [
         {
-          "file": "assets/js/ddc5c223.0e98b899.js",
-          "hash": "177ac4d4a16c8962",
-          "publicPath": "/al-copilot-skills-site/assets/js/ddc5c223.0e98b899.js"
+          "file": "assets/js/ddc5c223.334d02b0.js",
+          "hash": "3714e21f6563132f",
+          "publicPath": "/assets/js/ddc5c223.334d02b0.js"
         }
       ]
     },
     "2924": {
       "js": [
         {
-          "file": "assets/js/549fbf4e.8e6d4d6e.js",
-          "hash": "4ce3e9b55adbb015",
-          "publicPath": "/al-copilot-skills-site/assets/js/549fbf4e.8e6d4d6e.js"
+          "file": "assets/js/549fbf4e.7f2c1d4c.js",
+          "hash": "3dd4bbb11a0e2e9d",
+          "publicPath": "/assets/js/549fbf4e.7f2c1d4c.js"
         }
       ]
     },
     "3125": {
       "js": [
         {
-          "file": "assets/js/d1dba34e.b263ece9.js",
-          "hash": "b004161587b37ff5",
-          "publicPath": "/al-copilot-skills-site/assets/js/d1dba34e.b263ece9.js"
+          "file": "assets/js/d1dba34e.767fbbe2.js",
+          "hash": "c47ef268b22ab17c",
+          "publicPath": "/assets/js/d1dba34e.767fbbe2.js"
         }
       ]
     },
     "3246": {
       "js": [
         {
-          "file": "assets/js/0c036612.94d88fc6.js",
-          "hash": "c553e1505cb77f1d",
-          "publicPath": "/al-copilot-skills-site/assets/js/0c036612.94d88fc6.js"
+          "file": "assets/js/0c036612.481f80c7.js",
+          "hash": "a7ad5b3954904d15",
+          "publicPath": "/assets/js/0c036612.481f80c7.js"
         }
       ]
     },
     "3353": {
       "js": [
         {
-          "file": "assets/js/73308e39.a38d175d.js",
-          "hash": "ed4a1b214443bafe",
-          "publicPath": "/al-copilot-skills-site/assets/js/73308e39.a38d175d.js"
+          "file": "assets/js/73308e39.26b0a457.js",
+          "hash": "d3d3cc866454085c",
+          "publicPath": "/assets/js/73308e39.26b0a457.js"
         }
       ]
     },
     "3395": {
       "js": [
         {
-          "file": "assets/js/8750357e.93c4ef33.js",
-          "hash": "ff5f5d5e55c946f8",
-          "publicPath": "/al-copilot-skills-site/assets/js/8750357e.93c4ef33.js"
+          "file": "assets/js/8750357e.69c0c4d8.js",
+          "hash": "d50989d5697a75d5",
+          "publicPath": "/assets/js/8750357e.69c0c4d8.js"
         }
       ]
     },
     "3623": {
       "js": [
         {
-          "file": "assets/js/691fc487.e4291284.js",
-          "hash": "2aac14734e7a5a67",
-          "publicPath": "/al-copilot-skills-site/assets/js/691fc487.e4291284.js"
+          "file": "assets/js/691fc487.b1be8e9e.js",
+          "hash": "b48de418e534abf6",
+          "publicPath": "/assets/js/691fc487.b1be8e9e.js"
         }
       ]
     },
     "3667": {
       "js": [
         {
-          "file": "assets/js/723dc26c.b61f13f2.js",
-          "hash": "092db6abab9470ea",
-          "publicPath": "/al-copilot-skills-site/assets/js/723dc26c.b61f13f2.js"
+          "file": "assets/js/723dc26c.b2bc168a.js",
+          "hash": "523adbccbf0e09c3",
+          "publicPath": "/assets/js/723dc26c.b2bc168a.js"
         }
       ]
     },
     "3691": {
       "js": [
         {
-          "file": "assets/js/0f993166.c2ff1efb.js",
-          "hash": "84beaaaef7b52c07",
-          "publicPath": "/al-copilot-skills-site/assets/js/0f993166.c2ff1efb.js"
+          "file": "assets/js/0f993166.5265ac2e.js",
+          "hash": "b80b861ebea629b4",
+          "publicPath": "/assets/js/0f993166.5265ac2e.js"
         }
       ]
     },
     "3694": {
       "js": [
         {
-          "file": "assets/js/b8160e6a.94829e91.js",
-          "hash": "0161e9bd65d58fc9",
-          "publicPath": "/al-copilot-skills-site/assets/js/b8160e6a.94829e91.js"
+          "file": "assets/js/b8160e6a.f590f478.js",
+          "hash": "d53d0bb6eece5b57",
+          "publicPath": "/assets/js/b8160e6a.f590f478.js"
         }
       ]
     },
     "3726": {
       "js": [
         {
-          "file": "assets/js/96136be3.407ddc12.js",
-          "hash": "d7f95d5d64aecf93",
-          "publicPath": "/al-copilot-skills-site/assets/js/96136be3.407ddc12.js"
+          "file": "assets/js/96136be3.640f71b0.js",
+          "hash": "0e451af3aef6c0a7",
+          "publicPath": "/assets/js/96136be3.640f71b0.js"
         }
       ]
     },
     "3825": {
       "js": [
         {
-          "file": "assets/js/9f2a01e2.972c448e.js",
-          "hash": "edbc44f80f8c466b",
-          "publicPath": "/al-copilot-skills-site/assets/js/9f2a01e2.972c448e.js"
+          "file": "assets/js/9f2a01e2.4a27d88a.js",
+          "hash": "5a23649d72d5587a",
+          "publicPath": "/assets/js/9f2a01e2.4a27d88a.js"
         }
       ]
     },
     "3885": {
       "js": [
         {
-          "file": "assets/js/53538d95.59936d01.js",
-          "hash": "cc2aa04cdd8e861b",
-          "publicPath": "/al-copilot-skills-site/assets/js/53538d95.59936d01.js"
+          "file": "assets/js/53538d95.6b60c5b6.js",
+          "hash": "da10dc9c9a3c7591",
+          "publicPath": "/assets/js/53538d95.6b60c5b6.js"
         }
       ]
     },
     "3976": {
       "js": [
         {
-          "file": "assets/js/0e384e19.177c0a9f.js",
-          "hash": "512b6e621993a4f2",
-          "publicPath": "/al-copilot-skills-site/assets/js/0e384e19.177c0a9f.js"
+          "file": "assets/js/0e384e19.0c023d3f.js",
+          "hash": "7a535c47023b9b34",
+          "publicPath": "/assets/js/0e384e19.0c023d3f.js"
         }
       ]
     },
     "4001": {
       "js": [
         {
-          "file": "assets/js/4baf9495.8a037ba6.js",
-          "hash": "8f1e40b6899d3234",
-          "publicPath": "/al-copilot-skills-site/assets/js/4baf9495.8a037ba6.js"
+          "file": "assets/js/4baf9495.ff7cfebb.js",
+          "hash": "0606b01168716312",
+          "publicPath": "/assets/js/4baf9495.ff7cfebb.js"
+        }
+      ]
+    },
+    "4112": {
+      "js": [
+        {
+          "file": "assets/js/a3a957de.7e7564b2.js",
+          "hash": "d773133f8cb9aa39",
+          "publicPath": "/assets/js/a3a957de.7e7564b2.js"
         }
       ]
     },
     "4239": {
       "js": [
         {
-          "file": "assets/js/51e7ccce.eea58667.js",
-          "hash": "9121c269f849f828",
-          "publicPath": "/al-copilot-skills-site/assets/js/51e7ccce.eea58667.js"
-        }
-      ]
-    },
-    "4300": {
-      "js": [
-        {
-          "file": "assets/js/4ecba165.07c08258.js",
-          "hash": "a7a538ddce34d8a6",
-          "publicPath": "/al-copilot-skills-site/assets/js/4ecba165.07c08258.js"
+          "file": "assets/js/51e7ccce.33c48e43.js",
+          "hash": "4e09d151995a1192",
+          "publicPath": "/assets/js/51e7ccce.33c48e43.js"
         }
       ]
     },
     "4549": {
       "js": [
         {
-          "file": "assets/js/f8b562cf.86c82bdb.js",
-          "hash": "4753672c200493ff",
-          "publicPath": "/al-copilot-skills-site/assets/js/f8b562cf.86c82bdb.js"
+          "file": "assets/js/f8b562cf.f9515911.js",
+          "hash": "2d2724c4c793c134",
+          "publicPath": "/assets/js/f8b562cf.f9515911.js"
         }
       ]
     },
@@ -654,25 +663,25 @@
         {
           "file": "assets/js/1df93b7f.f67c8d0f.js",
           "hash": "b9e7cdaa59877656",
-          "publicPath": "/al-copilot-skills-site/assets/js/1df93b7f.f67c8d0f.js"
+          "publicPath": "/assets/js/1df93b7f.f67c8d0f.js"
         }
       ]
     },
     "4769": {
       "js": [
         {
-          "file": "assets/js/53e22c37.1168b383.js",
-          "hash": "9d56268ff260e662",
-          "publicPath": "/al-copilot-skills-site/assets/js/53e22c37.1168b383.js"
+          "file": "assets/js/53e22c37.c8b6c5b8.js",
+          "hash": "6a172908969e0e75",
+          "publicPath": "/assets/js/53e22c37.c8b6c5b8.js"
         }
       ]
     },
     "4809": {
       "js": [
         {
-          "file": "assets/js/4809.5d58968a.js",
-          "hash": "40dc8d64a64cf4ee",
-          "publicPath": "/al-copilot-skills-site/assets/js/4809.5d58968a.js"
+          "file": "assets/js/4809.9ac72b97.js",
+          "hash": "2406f4249f15f038",
+          "publicPath": "/assets/js/4809.9ac72b97.js"
         }
       ]
     },
@@ -681,79 +690,79 @@
         {
           "file": "assets/js/138e0e15.30d0159a.js",
           "hash": "9208376119057fa9",
-          "publicPath": "/al-copilot-skills-site/assets/js/138e0e15.30d0159a.js"
+          "publicPath": "/assets/js/138e0e15.30d0159a.js"
         }
       ]
     },
     "5038": {
       "js": [
         {
-          "file": "assets/js/2b2c0b8b.2da064b4.js",
-          "hash": "8c8141c4761087d2",
-          "publicPath": "/al-copilot-skills-site/assets/js/2b2c0b8b.2da064b4.js"
+          "file": "assets/js/2b2c0b8b.4169883a.js",
+          "hash": "0516ab73edb49ca8",
+          "publicPath": "/assets/js/2b2c0b8b.4169883a.js"
         }
       ]
     },
     "5087": {
       "js": [
         {
-          "file": "assets/js/23353f59.c5b01aed.js",
-          "hash": "33d284be699891cf",
-          "publicPath": "/al-copilot-skills-site/assets/js/23353f59.c5b01aed.js"
+          "file": "assets/js/23353f59.205a4622.js",
+          "hash": "e9a2250f0893d853",
+          "publicPath": "/assets/js/23353f59.205a4622.js"
         }
       ]
     },
     "5190": {
       "js": [
         {
-          "file": "assets/js/16938e30.70f087e4.js",
-          "hash": "67af308a4786825c",
-          "publicPath": "/al-copilot-skills-site/assets/js/16938e30.70f087e4.js"
+          "file": "assets/js/16938e30.118f5ba8.js",
+          "hash": "f0f1804986bec958",
+          "publicPath": "/assets/js/16938e30.118f5ba8.js"
         }
       ]
     },
     "5327": {
       "js": [
         {
-          "file": "assets/js/58e2e4ef.d5fdd54b.js",
-          "hash": "bb1f24a5e418c7bf",
-          "publicPath": "/al-copilot-skills-site/assets/js/58e2e4ef.d5fdd54b.js"
+          "file": "assets/js/58e2e4ef.80169140.js",
+          "hash": "571206ad9b4a557d",
+          "publicPath": "/assets/js/58e2e4ef.80169140.js"
         }
       ]
     },
     "5354": {
       "js": [
         {
-          "file": "assets/js/runtime~main.6784497f.js",
-          "hash": "977ff8030539b825",
-          "publicPath": "/al-copilot-skills-site/assets/js/runtime~main.6784497f.js"
+          "file": "assets/js/runtime~main.b1dd18e0.js",
+          "hash": "7fac59cf08bf326a",
+          "publicPath": "/assets/js/runtime~main.b1dd18e0.js"
         }
       ]
     },
     "5367": {
       "js": [
         {
-          "file": "assets/js/ae7ab36a.4bcbe8e5.js",
-          "hash": "9e30ae99d249404c",
-          "publicPath": "/al-copilot-skills-site/assets/js/ae7ab36a.4bcbe8e5.js"
+          "file": "assets/js/ae7ab36a.28bff791.js",
+          "hash": "ab8aae40679dad38",
+          "publicPath": "/assets/js/ae7ab36a.28bff791.js"
         }
       ]
     },
     "5532": {
       "js": [
         {
-          "file": "assets/js/9d20cd03.e010bfd0.js",
-          "hash": "896020cdb1284b80",
-          "publicPath": "/al-copilot-skills-site/assets/js/9d20cd03.e010bfd0.js"
+          "file": "assets/js/9d20cd03.8ff66004.js",
+          "hash": "e0e95ff075af465b",
+          "publicPath": "/assets/js/9d20cd03.8ff66004.js"
         }
       ]
     },
     "5727": {
       "js": [
         {
-          "file": "assets/js/48f245e2.6f61eead.js",
-          "hash": "6474d113e33eb4e1",
-          "publicPath": "/al-copilot-skills-site/assets/js/48f245e2.6f61eead.js"
+          "file": "assets/js/48f245e2.d786e1c5.js",
+          "hash": "9eb6b456c5c707c4",
+          "publicPath": "/assets/js/48f245e2.d786e1c5.js"
         }
       ]
     },
@@ -762,7 +771,7 @@
         {
           "file": "assets/js/5741.c4544462.js",
           "hash": "98e86f2ef1ac75eb",
-          "publicPath": "/al-copilot-skills-site/assets/js/5741.c4544462.js"
+          "publicPath": "/assets/js/5741.c4544462.js"
         }
       ]
     },
@@ -771,79 +780,79 @@
         {
           "file": "assets/js/aba21aa0.c72e458e.js",
           "hash": "d7503a16b80824a0",
-          "publicPath": "/al-copilot-skills-site/assets/js/aba21aa0.c72e458e.js"
+          "publicPath": "/assets/js/aba21aa0.c72e458e.js"
         }
       ]
     },
     "5779": {
       "js": [
         {
-          "file": "assets/js/d85d9da7.789391ff.js",
-          "hash": "9a57863cec719b27",
-          "publicPath": "/al-copilot-skills-site/assets/js/d85d9da7.789391ff.js"
+          "file": "assets/js/d85d9da7.2da7aa57.js",
+          "hash": "92f13dad4d7e0ea2",
+          "publicPath": "/assets/js/d85d9da7.2da7aa57.js"
         }
       ]
     },
     "6480": {
       "js": [
         {
-          "file": "assets/js/35069877.4aaf5e7f.js",
-          "hash": "183cb9a85efd37dc",
-          "publicPath": "/al-copilot-skills-site/assets/js/35069877.4aaf5e7f.js"
+          "file": "assets/js/35069877.ab5563d8.js",
+          "hash": "500dcd4d0c976b6c",
+          "publicPath": "/assets/js/35069877.ab5563d8.js"
         }
       ]
     },
     "6486": {
       "js": [
         {
-          "file": "assets/js/19bf5949.df7e369d.js",
-          "hash": "0379ad645393073e",
-          "publicPath": "/al-copilot-skills-site/assets/js/19bf5949.df7e369d.js"
+          "file": "assets/js/19bf5949.ade9078b.js",
+          "hash": "69541e96c8befa1b",
+          "publicPath": "/assets/js/19bf5949.ade9078b.js"
         }
       ]
     },
     "6644": {
       "js": [
         {
-          "file": "assets/js/29070e5a.531fcfa1.js",
-          "hash": "ddd596ab5cd6e3b6",
-          "publicPath": "/al-copilot-skills-site/assets/js/29070e5a.531fcfa1.js"
+          "file": "assets/js/29070e5a.58c6ec7e.js",
+          "hash": "962780676a5a7877",
+          "publicPath": "/assets/js/29070e5a.58c6ec7e.js"
         }
       ]
     },
     "6802": {
       "js": [
         {
-          "file": "assets/js/c0b74f9d.144fef36.js",
-          "hash": "8e82e09033eb293b",
-          "publicPath": "/al-copilot-skills-site/assets/js/c0b74f9d.144fef36.js"
+          "file": "assets/js/c0b74f9d.ce6161e6.js",
+          "hash": "e75fe65759e555af",
+          "publicPath": "/assets/js/c0b74f9d.ce6161e6.js"
         }
       ]
     },
     "6820": {
       "js": [
         {
-          "file": "assets/js/bf05fdbb.c433a3d3.js",
-          "hash": "ccb5535f64ed3082",
-          "publicPath": "/al-copilot-skills-site/assets/js/bf05fdbb.c433a3d3.js"
+          "file": "assets/js/bf05fdbb.a90025b2.js",
+          "hash": "118cca3d2a5ff064",
+          "publicPath": "/assets/js/bf05fdbb.a90025b2.js"
         }
       ]
     },
     "6978": {
       "js": [
         {
-          "file": "assets/js/1363e289.c2c6ac9d.js",
-          "hash": "51c69d2d7d012b3d",
-          "publicPath": "/al-copilot-skills-site/assets/js/1363e289.c2c6ac9d.js"
+          "file": "assets/js/1363e289.bffc3a52.js",
+          "hash": "401f1ced50ea3b43",
+          "publicPath": "/assets/js/1363e289.bffc3a52.js"
         }
       ]
     },
     "7064": {
       "js": [
         {
-          "file": "assets/js/b81fa8f9.da5cc644.js",
-          "hash": "8c8efbb95394e953",
-          "publicPath": "/al-copilot-skills-site/assets/js/b81fa8f9.da5cc644.js"
+          "file": "assets/js/b81fa8f9.66349611.js",
+          "hash": "7754bcde6f183d10",
+          "publicPath": "/assets/js/b81fa8f9.66349611.js"
         }
       ]
     },
@@ -851,35 +860,35 @@
       "js": [
         {
           "file": "assets/js/a7bd4aaa.f7c8c8bb.js",
-          "hash": "e40fe77ab0b1dc2e",
-          "publicPath": "/al-copilot-skills-site/assets/js/a7bd4aaa.f7c8c8bb.js"
+          "hash": "96311dc0efc9f96f",
+          "publicPath": "/assets/js/a7bd4aaa.f7c8c8bb.js"
         }
       ]
     },
     "7099": {
       "js": [
         {
-          "file": "assets/js/7b16d69c.2b3b6f9a.js",
-          "hash": "0eb411f63f3c4e57",
-          "publicPath": "/al-copilot-skills-site/assets/js/7b16d69c.2b3b6f9a.js"
+          "file": "assets/js/7b16d69c.eda03ec8.js",
+          "hash": "a01cc86fc91ca005",
+          "publicPath": "/assets/js/7b16d69c.eda03ec8.js"
         }
       ]
     },
     "7108": {
       "js": [
         {
-          "file": "assets/js/183e7382.ffb5d39e.js",
-          "hash": "4da5091063abc711",
-          "publicPath": "/al-copilot-skills-site/assets/js/183e7382.ffb5d39e.js"
+          "file": "assets/js/183e7382.6f1c4bdb.js",
+          "hash": "b92ad4c2d6d4702f",
+          "publicPath": "/assets/js/183e7382.6f1c4bdb.js"
         }
       ]
     },
     "7443": {
       "js": [
         {
-          "file": "assets/js/803d0cf0.54f98b11.js",
-          "hash": "ca9a536746a39f95",
-          "publicPath": "/al-copilot-skills-site/assets/js/803d0cf0.54f98b11.js"
+          "file": "assets/js/803d0cf0.aecd617c.js",
+          "hash": "297a7f381f41a1d3",
+          "publicPath": "/assets/js/803d0cf0.aecd617c.js"
         }
       ]
     },
@@ -888,61 +897,52 @@
         {
           "file": "assets/js/93e47501.f6654595.js",
           "hash": "d16151b696c1eac6",
-          "publicPath": "/al-copilot-skills-site/assets/js/93e47501.f6654595.js"
+          "publicPath": "/assets/js/93e47501.f6654595.js"
         }
       ]
     },
     "7524": {
       "js": [
         {
-          "file": "assets/js/abc26f1b.442fd092.js",
-          "hash": "eca566310fb6c8cd",
-          "publicPath": "/al-copilot-skills-site/assets/js/abc26f1b.442fd092.js"
+          "file": "assets/js/abc26f1b.bc808a50.js",
+          "hash": "81586039959aba50",
+          "publicPath": "/assets/js/abc26f1b.bc808a50.js"
         }
       ]
     },
     "8077": {
       "js": [
         {
-          "file": "assets/js/c8afdcc0.94297188.js",
-          "hash": "014f50a5aa8d43f8",
-          "publicPath": "/al-copilot-skills-site/assets/js/c8afdcc0.94297188.js"
+          "file": "assets/js/c8afdcc0.029fc069.js",
+          "hash": "09a7ae90c8359120",
+          "publicPath": "/assets/js/c8afdcc0.029fc069.js"
         }
       ]
     },
     "8148": {
       "js": [
         {
-          "file": "assets/js/8ad68633.21bb6a94.js",
-          "hash": "585243b8fec61ef7",
-          "publicPath": "/al-copilot-skills-site/assets/js/8ad68633.21bb6a94.js"
+          "file": "assets/js/8ad68633.f303d877.js",
+          "hash": "abcc82a6023c4c54",
+          "publicPath": "/assets/js/8ad68633.f303d877.js"
         }
       ]
     },
     "8156": {
       "js": [
         {
-          "file": "assets/js/2a96b2b7.ebd26d59.js",
-          "hash": "93c97ca0aa894f9f",
-          "publicPath": "/al-copilot-skills-site/assets/js/2a96b2b7.ebd26d59.js"
-        }
-      ]
-    },
-    "8171": {
-      "js": [
-        {
-          "file": "assets/js/be6721bc.db802173.js",
-          "hash": "da0a0d726f48478e",
-          "publicPath": "/al-copilot-skills-site/assets/js/be6721bc.db802173.js"
+          "file": "assets/js/2a96b2b7.23b59fba.js",
+          "hash": "4e6b9ebbcc74a5f6",
+          "publicPath": "/assets/js/2a96b2b7.23b59fba.js"
         }
       ]
     },
     "8397": {
       "js": [
         {
-          "file": "assets/js/63ff19eb.6ed3aef5.js",
-          "hash": "edc96c242b4fd82b",
-          "publicPath": "/al-copilot-skills-site/assets/js/63ff19eb.6ed3aef5.js"
+          "file": "assets/js/63ff19eb.a6c9c52f.js",
+          "hash": "01b01db65c06bca6",
+          "publicPath": "/assets/js/63ff19eb.a6c9c52f.js"
         }
       ]
     },
@@ -950,62 +950,62 @@
       "js": [
         {
           "file": "assets/js/17896441.0503fad4.js",
-          "hash": "39acd4e873aad05b",
-          "publicPath": "/al-copilot-skills-site/assets/js/17896441.0503fad4.js"
+          "hash": "d823b8da764c3f0c",
+          "publicPath": "/assets/js/17896441.0503fad4.js"
         }
       ]
     },
     "8582": {
       "js": [
         {
-          "file": "assets/js/53caebca.757a60f6.js",
-          "hash": "385479fbdc21942a",
-          "publicPath": "/al-copilot-skills-site/assets/js/53caebca.757a60f6.js"
+          "file": "assets/js/53caebca.a7b4ba74.js",
+          "hash": "05369abfada76831",
+          "publicPath": "/assets/js/53caebca.a7b4ba74.js"
         }
       ]
     },
     "8719": {
       "js": [
         {
-          "file": "assets/js/ecae2cb5.a2fc4aa1.js",
-          "hash": "0660682de8c8d23e",
-          "publicPath": "/al-copilot-skills-site/assets/js/ecae2cb5.a2fc4aa1.js"
+          "file": "assets/js/ecae2cb5.ea5fa6eb.js",
+          "hash": "afc2a7142ed79868",
+          "publicPath": "/assets/js/ecae2cb5.ea5fa6eb.js"
         }
       ]
     },
     "8792": {
       "js": [
         {
-          "file": "assets/js/main.bdb468d3.js",
-          "hash": "303f4e57a15855f9",
-          "publicPath": "/al-copilot-skills-site/assets/js/main.bdb468d3.js"
+          "file": "assets/js/main.f0e51422.js",
+          "hash": "718550f75a172402",
+          "publicPath": "/assets/js/main.f0e51422.js"
         }
       ]
     },
     "8914": {
       "js": [
         {
-          "file": "assets/js/c3ec743c.25254aef.js",
-          "hash": "9f585f726c819dca",
-          "publicPath": "/al-copilot-skills-site/assets/js/c3ec743c.25254aef.js"
+          "file": "assets/js/c3ec743c.e228077c.js",
+          "hash": "ef98964ff126ccd7",
+          "publicPath": "/assets/js/c3ec743c.e228077c.js"
         }
       ]
     },
     "8955": {
       "js": [
         {
-          "file": "assets/js/138dc2e8.07a47cb7.js",
-          "hash": "a95b8c3a1992f3bc",
-          "publicPath": "/al-copilot-skills-site/assets/js/138dc2e8.07a47cb7.js"
+          "file": "assets/js/138dc2e8.a3a8d4cb.js",
+          "hash": "984632d83a0435a4",
+          "publicPath": "/assets/js/138dc2e8.a3a8d4cb.js"
         }
       ]
     },
     "8996": {
       "js": [
         {
-          "file": "assets/js/46b045f8.2b5ccfc3.js",
-          "hash": "e00373c0b332608a",
-          "publicPath": "/al-copilot-skills-site/assets/js/46b045f8.2b5ccfc3.js"
+          "file": "assets/js/46b045f8.fc9a2a86.js",
+          "hash": "2c970ae3fc4c3bfa",
+          "publicPath": "/assets/js/46b045f8.fc9a2a86.js"
         }
       ]
     },
@@ -1013,44 +1013,44 @@
       "js": [
         {
           "file": "assets/js/a94703ab.989e3c31.js",
-          "hash": "c2805ea136b8b5e3",
-          "publicPath": "/al-copilot-skills-site/assets/js/a94703ab.989e3c31.js"
+          "hash": "25ef6f56ecaca1bf",
+          "publicPath": "/assets/js/a94703ab.989e3c31.js"
         }
       ]
     },
     "9144": {
       "js": [
         {
-          "file": "assets/js/cda49345.e8ecb522.js",
-          "hash": "b6865f735c722757",
-          "publicPath": "/al-copilot-skills-site/assets/js/cda49345.e8ecb522.js"
+          "file": "assets/js/cda49345.3d3401e2.js",
+          "hash": "f65ace53a30089b9",
+          "publicPath": "/assets/js/cda49345.3d3401e2.js"
         }
       ]
     },
     "9181": {
       "js": [
         {
-          "file": "assets/js/b42344c4.9fe4c5aa.js",
-          "hash": "06e8f000a9bf3d66",
-          "publicPath": "/al-copilot-skills-site/assets/js/b42344c4.9fe4c5aa.js"
+          "file": "assets/js/b42344c4.05f35743.js",
+          "hash": "cafb3f7a26e236f8",
+          "publicPath": "/assets/js/b42344c4.05f35743.js"
         }
       ]
     },
     "9303": {
       "js": [
         {
-          "file": "assets/js/9811f0ed.b8db5204.js",
-          "hash": "39771ceeafb73e59",
-          "publicPath": "/al-copilot-skills-site/assets/js/9811f0ed.b8db5204.js"
+          "file": "assets/js/9811f0ed.8c9106a1.js",
+          "hash": "cd6aaef943c00206",
+          "publicPath": "/assets/js/9811f0ed.8c9106a1.js"
         }
       ]
     },
     "9646": {
       "js": [
         {
-          "file": "assets/js/b6f703a0.a1c9b27b.js",
-          "hash": "097ea482f36b7aaa",
-          "publicPath": "/al-copilot-skills-site/assets/js/b6f703a0.a1c9b27b.js"
+          "file": "assets/js/b6f703a0.0c3c925e.js",
+          "hash": "01a8d0de44bb8626",
+          "publicPath": "/assets/js/b6f703a0.0c3c925e.js"
         }
       ]
     },
@@ -1058,26 +1058,26 @@
       "js": [
         {
           "file": "assets/js/5e95c892.997091d9.js",
-          "hash": "1b144dbe39f11713",
-          "publicPath": "/al-copilot-skills-site/assets/js/5e95c892.997091d9.js"
+          "hash": "bb8008275c32efca",
+          "publicPath": "/assets/js/5e95c892.997091d9.js"
         }
       ]
     },
     "9730": {
       "js": [
         {
-          "file": "assets/js/32b840e3.8df20f78.js",
-          "hash": "aea0a712b286231c",
-          "publicPath": "/al-copilot-skills-site/assets/js/32b840e3.8df20f78.js"
+          "file": "assets/js/32b840e3.1f9882ff.js",
+          "hash": "fa6ab65d918fbe88",
+          "publicPath": "/assets/js/32b840e3.1f9882ff.js"
         }
       ]
     },
     "9859": {
       "js": [
         {
-          "file": "assets/js/6ce191d5.2c3cbadc.js",
-          "hash": "cf962711984f3361",
-          "publicPath": "/al-copilot-skills-site/assets/js/6ce191d5.2c3cbadc.js"
+          "file": "assets/js/6ce191d5.8e428abb.js",
+          "hash": "3ac7f11e0d23fdee",
+          "publicPath": "/assets/js/6ce191d5.8e428abb.js"
         }
       ]
     }

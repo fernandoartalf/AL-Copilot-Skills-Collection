@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-setup-wizard-generator/references/code-templates.md",
   "sourceDirName": "skills/bc-setup-wizard-generator/references",
   "slug": "/skills/bc-setup-wizard-generator/references/code-templates",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/references/code-templates",
+  "permalink": "/docs/skills/bc-setup-wizard-generator/references/code-templates",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "BC Setup Wizard Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/SKILL"
+    "permalink": "/docs/skills/bc-setup-wizard-generator/SKILL"
   },
   "next": {
     "title": "BC Telemetry Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/SKILL"
+    "permalink": "/docs/skills/bc-telemetry-generator/SKILL"
   }
 }

@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-telemetry-generator/SKILL.md",
   "sourceDirName": "skills/bc-telemetry-generator",
   "slug": "/skills/bc-telemetry-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/SKILL",
+  "permalink": "/docs/skills/bc-telemetry-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "BC Setup Wizard - Code Templates",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/references/code-templates"
+    "permalink": "/docs/skills/bc-setup-wizard-generator/references/code-templates"
   },
   "next": {
     "title": "KQL Queries for Application Insights",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/references/kql-queries"
+    "permalink": "/docs/skills/bc-telemetry-generator/references/kql-queries"
   }
 }

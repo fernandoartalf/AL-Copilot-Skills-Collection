@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-number-series-generator/references/number-series-troubleshooting.md",
   "sourceDirName": "skills/bc-number-series-generator/references",
   "slug": "/skills/bc-number-series-generator/references/number-series-troubleshooting",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/references/number-series-troubleshooting",
+  "permalink": "/docs/skills/bc-number-series-generator/references/number-series-troubleshooting",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Number Series Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-number-series-generator/references/number-series-examples"
+    "permalink": "/docs/skills/bc-number-series-generator/references/number-series-examples"
   },
   "next": {
     "title": "Business Central Setup Table Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/SKILL"
+    "permalink": "/docs/skills/bc-setup-table-generator/SKILL"
   }
 }

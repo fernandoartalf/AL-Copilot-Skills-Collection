@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-api-page-generator/SKILL.md",
   "sourceDirName": "skills/bc-api-page-generator",
   "slug": "/skills/bc-api-page-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/SKILL",
+  "permalink": "/docs/skills/bc-api-page-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Introduction",
-    "permalink": "/al-copilot-skills-site/docs/intro"
+    "permalink": "/docs/intro"
   },
   "next": {
     "title": "API Page Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/references/api-examples"
+    "permalink": "/docs/skills/bc-api-page-generator/references/api-examples"
   }
 }

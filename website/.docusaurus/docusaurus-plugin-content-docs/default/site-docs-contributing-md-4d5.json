@@ -5,7 +5,7 @@
   "source": "@site/docs/contributing.md",
   "sourceDirName": ".",
   "slug": "/contributing",
-  "permalink": "/al-copilot-skills-site/docs/contributing",
+  "permalink": "/docs/contributing",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -19,10 +19,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "April 2026",
-    "permalink": "/al-copilot-skills-site/docs/releasenotes/2026/april"
+    "permalink": "/docs/releasenotes/2026/april"
   },
   "next": {
     "title": "Security Policy",
-    "permalink": "/al-copilot-skills-site/docs/SECURITY"
+    "permalink": "/docs/SECURITY"
   }
 }

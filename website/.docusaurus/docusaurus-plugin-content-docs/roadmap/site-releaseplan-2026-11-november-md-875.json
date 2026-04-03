@@ -5,7 +5,7 @@
   "source": "@site/../releaseplan/2026/11-november.md",
   "sourceDirName": "2026",
   "slug": "/2026/november",
-  "permalink": "/al-copilot-skills-site/roadmap/2026/november",
+  "permalink": "/roadmap/2026/november",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "roadmapSidebar",
   "previous": {
     "title": "October",
-    "permalink": "/al-copilot-skills-site/roadmap/2026/october"
+    "permalink": "/roadmap/2026/october"
   },
   "next": {
     "title": "December",
-    "permalink": "/al-copilot-skills-site/roadmap/2026/december"
+    "permalink": "/roadmap/2026/december"
   }
 }

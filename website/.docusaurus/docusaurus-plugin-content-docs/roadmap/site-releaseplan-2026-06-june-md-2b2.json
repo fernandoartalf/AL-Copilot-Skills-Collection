@@ -5,7 +5,7 @@
   "source": "@site/../releaseplan/2026/06-june.md",
   "sourceDirName": "2026",
   "slug": "/2026/june",
-  "permalink": "/al-copilot-skills-site/roadmap/2026/june",
+  "permalink": "/roadmap/2026/june",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "roadmapSidebar",
   "previous": {
     "title": "May",
-    "permalink": "/al-copilot-skills-site/roadmap/2026/may"
+    "permalink": "/roadmap/2026/may"
   },
   "next": {
     "title": "July",
-    "permalink": "/al-copilot-skills-site/roadmap/2026/july"
+    "permalink": "/roadmap/2026/july"
   }
 }

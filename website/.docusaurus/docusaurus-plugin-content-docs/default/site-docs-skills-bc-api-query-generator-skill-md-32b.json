@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-api-query-generator/SKILL.md",
   "sourceDirName": "skills/bc-api-query-generator",
   "slug": "/skills/bc-api-query-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/SKILL",
+  "permalink": "/docs/skills/bc-api-query-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "API Patterns & Best Practices",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-page-generator/references/api-patterns"
+    "permalink": "/docs/skills/bc-api-page-generator/references/api-patterns"
   },
   "next": {
     "title": "API Query Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/references/query-examples"
+    "permalink": "/docs/skills/bc-api-query-generator/references/query-examples"
   }
 }

@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-test-codeunit-generator/SKILL.md",
   "sourceDirName": "skills/bc-test-codeunit-generator",
   "slug": "/skills/bc-test-codeunit-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-test-codeunit-generator/SKILL",
+  "permalink": "/docs/skills/bc-test-codeunit-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Telemetry Reference Patterns",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-telemetry-generator/references/telemetry-reference"
+    "permalink": "/docs/skills/bc-telemetry-generator/references/telemetry-reference"
   },
   "next": {
     "title": "Test Codeunit Examples",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-test-codeunit-generator/references/test-examples"
+    "permalink": "/docs/skills/bc-test-codeunit-generator/references/test-examples"
   }
 }

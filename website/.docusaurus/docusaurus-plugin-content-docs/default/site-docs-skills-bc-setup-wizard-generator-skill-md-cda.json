@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-setup-wizard-generator/SKILL.md",
   "sourceDirName": "skills/bc-setup-wizard-generator",
   "slug": "/skills/bc-setup-wizard-generator/SKILL",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/SKILL",
+  "permalink": "/docs/skills/bc-setup-wizard-generator/SKILL",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Advanced Setup Table Patterns",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-table-generator/references/patterns"
+    "permalink": "/docs/skills/bc-setup-table-generator/references/patterns"
   },
   "next": {
     "title": "BC Setup Wizard - Code Templates",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-setup-wizard-generator/references/code-templates"
+    "permalink": "/docs/skills/bc-setup-wizard-generator/references/code-templates"
   }
 }

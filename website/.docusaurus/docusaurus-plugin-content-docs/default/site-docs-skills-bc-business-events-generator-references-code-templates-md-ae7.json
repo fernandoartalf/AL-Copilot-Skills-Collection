@@ -5,7 +5,7 @@
   "source": "@site/docs/skills/bc-business-events-generator/references/code-templates.md",
   "sourceDirName": "skills/bc-business-events-generator/references",
   "slug": "/skills/bc-business-events-generator/references/code-templates",
-  "permalink": "/al-copilot-skills-site/docs/skills/bc-business-events-generator/references/code-templates",
+  "permalink": "/docs/skills/bc-business-events-generator/references/code-templates",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "BC Business Events Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-business-events-generator/SKILL"
+    "permalink": "/docs/skills/bc-business-events-generator/SKILL"
   },
   "next": {
     "title": "Business Central CDS Page Generator",
-    "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/SKILL"
+    "permalink": "/docs/skills/bc-cds-page-generator/SKILL"
   }
 }
