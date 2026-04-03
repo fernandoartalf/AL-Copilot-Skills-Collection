@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-cds-page-generator/references/examples",
+  "title": "CDS Page Generation Examples",
+  "description": "Complete working examples of CDS list pages for various entity types.",
+  "source": "@site/docs/skills/bc-cds-page-generator/references/examples.md",
+  "sourceDirName": "skills/bc-cds-page-generator/references",
+  "slug": "/skills/bc-cds-page-generator/references/examples",
+  "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/examples",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Business Central CDS Page Generator",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/SKILL"
+  },
+  "next": {
+    "title": "CDS Page Field Layout Patterns",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-cds-page-generator/references/field-layout"
+  }
+}

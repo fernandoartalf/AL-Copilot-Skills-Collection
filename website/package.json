@@ -1,0 +1,60 @@
+{
+  "name": "al-copilot-skills-site",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "sync": "node scripts/sync-skills.js",
+    "generate:contributors": "node scripts/generate-contributors.js",
+    "generate:sidebar": "node scripts/generate-docs-sidebar.js",
+    "generate": "npm run sync && npm run generate:contributors && npm run generate:sidebar",
+    "start": "npm run generate && docusaurus start",
+    "start:with-search": "npm run build && docusaurus serve",
+    "build": "npm run generate && docusaurus build",
+    "build:prod": "npm run generate && cross-env DOCUSAURUS_DEPLOY=true docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "cross-env DOCUSAURUS_DEPLOY=true docusaurus deploy",
+    "deploy:local": "npm run build:prod && git subtree push --prefix build origin gh-pages",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "serve:prod": "npm run build:prod && docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
+    "@mdx-js/react": "^3.1.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/tsconfig": "^3.9.2",
+    "@docusaurus/types": "^3.9.2",
+    "cross-env": "^7.0.3",
+    "typescript": "~5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0"
+  },
+  "overrides": {
+    "lodash": "^4.17.21"
+  }
+}

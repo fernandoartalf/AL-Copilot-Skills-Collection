@@ -1,0 +1,24 @@
+{
+  "id": "2027/february",
+  "title": "Release Plan — February 2027",
+  "description": "Business Central 2026 Wave 2 — CU4",
+  "source": "@site/../releaseplan/2027/02-february.md",
+  "sourceDirName": "2027",
+  "slug": "/2027/february",
+  "permalink": "/al-copilot-skills-site/roadmap/2027/february",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "previous": {
+    "title": "January",
+    "permalink": "/al-copilot-skills-site/roadmap/2027/january"
+  },
+  "next": {
+    "title": "March",
+    "permalink": "/al-copilot-skills-site/roadmap/2027/march"
+  }
+}

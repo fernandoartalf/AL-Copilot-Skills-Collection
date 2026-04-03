@@ -1,0 +1,14 @@
+{
+  "id": "TEMPLATE",
+  "title": "Release Plan — {Month}",
+  "description": "Business Central  Wave {1|2} — {CU label}",
+  "source": "@site/../releaseplan/TEMPLATE.md",
+  "sourceDirName": ".",
+  "slug": "/TEMPLATE",
+  "permalink": "/al-copilot-skills-site/roadmap/TEMPLATE",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

@@ -1,0 +1,19 @@
+{
+  "id": "RELEASE-PLAN-GUIDE",
+  "title": "Release Plan Guide",
+  "description": "This document explains the structure and purpose of the monthly plan.md files used to track proposed AL Copilot Skills for the AL-Copilot-Skills-Collection repository.",
+  "source": "@site/../releaseplan/RELEASE-PLAN-GUIDE.md",
+  "sourceDirName": ".",
+  "slug": "/RELEASE-PLAN-GUIDE",
+  "permalink": "/al-copilot-skills-site/roadmap/RELEASE-PLAN-GUIDE",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "next": {
+    "title": "April",
+    "permalink": "/al-copilot-skills-site/roadmap/2026/april"
+  }
+}

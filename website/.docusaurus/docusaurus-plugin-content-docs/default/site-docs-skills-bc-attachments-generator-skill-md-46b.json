@@ -1,0 +1,26 @@
+{
+  "id": "skills/bc-attachments-generator/SKILL",
+  "title": "BC Attachments, Links & Notes Generator",
+  "description": "Implements standard document attachments, links, and notes on custom Business Central tables. Creates setup fields for visibility control, extends Attachment Document Type enum, generates event subscribers (OnBeforeDrillDown, OnAfterOpenForRecRef, OnAfterInitFieldsFromRecRef) in attachment management codeunit, adds table lifecycle triggers for orphan prevention on delete/rename, and extends card and list pages with both legacy and modern factboxes. Handles SubPageLink configuration, control ID mapping for Links (Control1900383207) and Notes (Control1905767507) factboxes. Use when adding attachments to custom tables, implementing document management, enabling factboxes for documents, creating attachment integration on entities, adding links and notes to records, or preventing orphan attachment records on table operations.",
+  "source": "@site/docs/skills/bc-attachments-generator/SKILL.md",
+  "sourceDirName": "skills/bc-attachments-generator",
+  "slug": "/skills/bc-attachments-generator/SKILL",
+  "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-attachments-generator",
+    "description": "Implements standard document attachments, links, and notes on custom Business Central tables. Creates setup fields for visibility control, extends Attachment Document Type enum, generates event subscribers (OnBeforeDrillDown, OnAfterOpenForRecRef, OnAfterInitFieldsFromRecRef) in attachment management codeunit, adds table lifecycle triggers for orphan prevention on delete/rename, and extends card and list pages with both legacy and modern factboxes. Handles SubPageLink configuration, control ID mapping for Links (Control1900383207) and Notes (Control1905767507) factboxes. Use when adding attachments to custom tables, implementing document management, enabling factboxes for documents, creating attachment integration on entities, adding links and notes to records, or preventing orphan attachment records on table operations."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "API Query Examples",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-api-query-generator/references/query-examples"
+  },
+  "next": {
+    "title": "BC Attachments Generator - Code Templates",
+    "permalink": "/al-copilot-skills-site/docs/skills/bc-attachments-generator/references/code-templates"
+  }
+}
