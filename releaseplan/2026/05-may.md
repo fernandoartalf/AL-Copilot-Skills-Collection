@@ -24,7 +24,7 @@ Contributors: add your skill proposal below using the entry template. Once appro
 | **Skill Name** | `bc-isolated-storage-generator` |
 | **Short Description** | Generates secure isolated storage patterns for Business Central extensions, including encryption/decryption helpers, secret management, and credential storage implementations following Microsoft security best practices. |
 | **Target BC Version** _(optional)_ | 28.1 |
-| **Status** | 🟢 Approved |
+| **Status** | 🔵 In Development |
 
 #### Author
 
@@ -52,7 +52,7 @@ Many AL extensions require secure storage of sensitive data like API keys, authe
 | **Skill Name** | `bc-approval-workflow-generator` |
 | **Short Description** | Generates complete approval workflow implementation for custom tables in Business Central, including workflow templates, event subscriptions, approval entries integration, user setup validation, approval actions on pages, notification handling, and delegation logic following standard BC approval patterns. |
 | **Target BC Version** _(optional)_ | 28.1 |
-| **Status** | 🟢 Approved |
+| **Status** | 🔵 In Development |
 
 #### Author
 
@@ -121,5 +121,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
-| bc-isolated-storage-generator | @fernandoartalf | 🟢 Approved |
-| bc-approval-workflow-generator | @fernandoartalf | 🟢 Approved |
+| bc-isolated-storage-generator | @fernandoartalf | 🔵 In Development |
+| bc-approval-workflow-generator | @fernandoartalf | 🔵 In Development |
