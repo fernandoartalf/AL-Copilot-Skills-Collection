@@ -1,0 +1,24 @@
+{
+  "id": "bc-dataverse-entity-generator/references/workflow-examples",
+  "title": "Workflow Examples & Troubleshooting",
+  "description": "User Interaction Patterns",
+  "source": "@site/../skills/bc-dataverse-entity-generator/references/workflow-examples.md",
+  "sourceDirName": "bc-dataverse-entity-generator/references",
+  "slug": "/bc-dataverse-entity-generator/references/workflow-examples",
+  "permalink": "/skills/bc-dataverse-entity-generator/references/workflow-examples",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-dataverse-entity-generator/references/workflow-examples.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Generate-Entity.ps1 — Full Script Reference",
+    "permalink": "/skills/bc-dataverse-entity-generator/references/generate-entity-script"
+  },
+  "next": {
+    "title": "Business Central Dataverse Mapping Generator",
+    "permalink": "/skills/bc-dataverse-mapping-generator/SKILL"
+  }
+}
