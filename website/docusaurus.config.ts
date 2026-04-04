@@ -137,18 +137,30 @@ const config: Config = {
               label: 'Introduction',
               to: '/docs/intro',
             },
+            {
+              label: 'Contributing',
+              to: '/docs/contributing',
+            },
+            {
+              label: 'Security',
+              to: '/docs/SECURITY',
+            },
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/fernandoartalf/AL-Copilot-Skills-Collection',
+              label: 'Contributors',
+              to: '/contributors',
             },
             {
-              label: 'Open Issue',
-              href: 'https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues',
+              label: 'User Reviews',
+              href: 'https://marketplace.visualstudio.com/items?itemName=FernandoArtigasAlfonso.al-copilot-skills-collection&ssr=false#review-details',
+            },
+            {
+              label: 'Discussions',
+              href: 'https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/discussions',
             },
           ],
         },
@@ -156,12 +168,16 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Contributing',
-              to: '/docs/contributing',
-            },
-            {
               label: 'Roadmap',
               to: '/roadmap/RELEASE-PLAN-GUIDE',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/fernandoartalf/AL-Copilot-Skills-Collection',
+            },
+            {
+              label: 'Open Issue',
+              href: 'https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues',
             },
           ],
         },
