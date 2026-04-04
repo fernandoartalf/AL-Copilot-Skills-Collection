@@ -17,6 +17,62 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 <!-- Copy the block below for each new skill proposal -->
 
+### `bc-isolated-storage-generator`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-isolated-storage-generator` |
+| **Short Description** | Generates secure isolated storage patterns for Business Central extensions, including encryption/decryption helpers, secret management, and credential storage implementations following Microsoft security best practices. |
+| **Target BC Version** _(optional)_ | 28.1 |
+| **Status** | 🟡 Proposed |
+
+#### Author
+
+- **Full Name**: Fernando Artigas Alfonso
+- **GitHub User**: fernandoartalf
+- **GitHub Profile**: https://github.com/fernandoartalf
+- **LinkedIn Profile**: https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b
+
+#### Co-Authors _(optional)_
+
+<!-- Add co-authors using the format below -->
+
+#### Motivation
+
+Many AL extensions require secure storage of sensitive data like API keys, authentication tokens, connection strings, and user credentials. Business Central provides the Isolated Storage API for this purpose, but implementing it correctly with proper encryption, error handling, and secret rotation can be complex. This skill provides tested patterns and templates for secure credential management, helping developers implement security best practices without reinventing the wheel for each project.
+
+---
+
+<!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
+
+### `bc-approval-workflow-generator`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-approval-workflow-generator` |
+| **Short Description** | Generates complete approval workflow implementation for custom tables in Business Central, including workflow templates, event subscriptions, approval entries integration, user setup validation, approval actions on pages, notification handling, and delegation logic following standard BC approval patterns. |
+| **Target BC Version** _(optional)_ | 28.1 |
+| **Status** | 🟡 Proposed |
+
+#### Author
+
+- **Full Name**: Fernando Artigas Alfonso
+- **GitHub User**: fernandoartalf
+- **GitHub Profile**: https://github.com/fernandoartalf
+- **LinkedIn Profile**: https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b
+
+#### Co-Authors _(optional)_
+
+<!-- Add co-authors using the format below -->
+
+#### Motivation
+
+Custom document tables (like custom purchase requisitions, expense reports, or custom orders) often require multi-level approval workflows similar to standard BC documents. Implementing approval workflows from scratch involves complex integration with BC's Approval Management system, including workflow templates, event conditions, responses, approval user setup, delegation, notification handling, and record status management. This skill automates the generation of all necessary objects following Microsoft's approval workflow architecture, enabling developers to quickly add enterprise-grade approval capabilities to custom tables without deep expertise in the approval framework internals.
+
+---
+
+<!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
+
 ### `{skill-folder-name}`
 
 | Field | Details |
@@ -65,4 +121,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
-| _{skill-name}_ | _@author_ | 🟡 / 🟢 / 🔵 / ✅ |
+| bc-isolated-storage-generator | @fernandoartalf | 🟡 Proposed |
+| bc-approval-workflow-generator | @fernandoartalf | 🟡 Proposed |
