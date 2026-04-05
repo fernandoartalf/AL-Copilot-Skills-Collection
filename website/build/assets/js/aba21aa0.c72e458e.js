@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkal_copilot_skills_site=globalThis.webpackChunkal_copilot_skills_site||[]).push([[5742],{7093(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);
