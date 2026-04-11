@@ -1,0 +1,24 @@
+{
+  "id": "2026/october",
+  "title": "Release Plan — October 2026",
+  "description": "Business Central 2026 Wave 2 — CU0",
+  "source": "@site/../releaseplan/2026/10-october.md",
+  "sourceDirName": "2026",
+  "slug": "/2026/october",
+  "permalink": "/roadmap/2026/october",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "previous": {
+    "title": "September",
+    "permalink": "/roadmap/2026/september"
+  },
+  "next": {
+    "title": "November",
+    "permalink": "/roadmap/2026/november"
+  }
+}
