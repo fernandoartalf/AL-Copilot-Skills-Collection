@@ -340,7 +340,7 @@ Handles data migration between versions with precondition validation, upgrade ta
 | **Skill Name** | `bc-al-bug-fixer` |
 | **Short Description** | Diagnoses and fixes bugs in Business Central AL extensions following a structured triage workflow: symptom classification by layer, root cause mapping using a BC-specific failure catalogue, minimal targeted fix, and regression test definition. |
 | **Target BC Version** _(optional)_ | v28.0 |
-| **Status** | 🟡 Proposed |
+| **Status** | ✅ Merged |
 
 #### Author
 
@@ -362,7 +362,7 @@ The AL compiler catches syntax errors but not the runtime bugs that cost the mos
 | **Skill Name** | `bc-al-code-reviewer` |
 | **Short Description** | Reviews Business Central AL extension code against a prioritized convention stack: AppSource validation requirements, CodeCop/PerTenantExtensionCop analyzer rules, alguidelines.dev community standards, and al-copilot-skills catalogue patterns. Audits five categories the AL compiler does not catch: naming and structure, performance anti-patterns, extensibility contract, SaaS readiness, and AppSource blockers. |
 | **Target BC Version** _(optional)_ | v28.0 |
-| **Status** | 🟡 Proposed |
+| **Status** | ✅ Merged |
 
 #### Author
 
@@ -384,7 +384,7 @@ No existing skill in the collection covers pre-submission code review or AppSour
 | **Skill Name** | `bc-al-project-context` |
 | **Short Description** | Maintains persistent project context for Business Central AL extensions across sessions, developers, and AI agents using two complementary mechanisms: Architecture Decision Records (ADRs) that capture why technical decisions were made, and Session Handoff documents that capture the current project state with an immediate next action as the primary output. |
 | **Target BC Version** _(optional)_ | v28.0 |
-| **Status** | 🟡 Proposed |
+| **Status** | ✅ Merged |
 
 #### Author
 
@@ -396,6 +396,28 @@ No existing skill in the collection covers pre-submission code review or AppSour
 #### Motivation
 
 Context loss is one of the most expensive problems in AL development with AI agents. Decisions made in one session disappear by the next. New developers or agents onboarding to a project have no structured way to understand why things are designed the way they are. ADRs are a well-established practice in software engineering but almost nonexistent in BC projects. This skill brings both ADRs and structured session handoffs to the BC AL ecosystem, with file-based storage in `.github/decisions/` and `.github/context/` — version-controlled and readable by any developer or AI agent without special tooling.
+
+---
+
+### `bc-manifest-handoff-generator`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-manifest-handoff-generator` |
+| **Short Description** | Generates a handoff manifest at the end of the ALDC pipeline so that CIRCE and/or DELFOS can consume the extension's published surface without sharing a workspace. Creates a single markdown manifest containing MCP connection context for CIRCE, published API pages and queries for DELFOS, data structure details, and star schema hints. |
+| **Target BC Version** _(optional)_ | v28.0 |
+| **Status** | ✅ Merged |
+
+#### Author
+
+- **Full Name**: Javier Armesto
+- **GitHub User**: javiarmesto
+- **GitHub Profile**: https://github.com/javiarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/javierarmesto
+
+#### Motivation
+
+After the Conductor pipeline completes and all tests pass, there is no standardized way to hand off the extension's published surface to downstream frameworks like CIRCE (Copilot Studio agent builder) or DELFOS (Power BI dashboard builder). This skill generates a single manifest containing API pages, queries, data structures, and connection context so that consuming agents can work without sharing a workspace.
 
 ---
 ## Summary
@@ -416,6 +438,7 @@ Context loss is one of the most expensive problems in AL development with AI age
 | `bc-telemetry-generator` | @fernandoartalf | ✅ |
 | `bc-test-codeunit-generator` | @fernandoartalf | ✅ |
 | `bc-upgrade-codeunit-generator` | @fernandoartalf | ✅ |
-| `bc-al-bug-fixer` | @javiarmesto | 🟡 |
-| `bc-al-code-reviewer` | @javiarmesto | 🟡 |
-| `bc-al-project-context` | @javiarmesto | 🟡 |
+| `bc-al-bug-fixer` | @javiarmesto | ✅ |
+| `bc-al-code-reviewer` | @javiarmesto | ✅ |
+| `bc-al-project-context` | @javiarmesto | ✅ |
+| `bc-manifest-handoff-generator` | @javiarmesto | ✅ |
