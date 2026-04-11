@@ -225,7 +225,7 @@ This release includes **18 new skills** contributed by **2 authors** for the **A
 - **Full Name**: Javier Armesto
 - **GitHub User**: javiarmesto
 - **GitHub Profile**: https://github.com/javiarmesto
-- **LinkedIn Profile**: https://www.linkedin.com/in/javierarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
 
 #### Skills Contributed
 

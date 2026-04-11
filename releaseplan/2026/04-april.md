@@ -347,7 +347,7 @@ Handles data migration between versions with precondition validation, upgrade ta
 - **Full Name**: Javier Armesto
 - **GitHub User**: javiarmesto
 - **GitHub Profile**: https://github.com/javiarmesto
-- **LinkedIn Profile**: https://www.linkedin.com/in/javierarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
 
 #### Motivation
 
@@ -369,7 +369,7 @@ The AL compiler catches syntax errors but not the runtime bugs that cost the mos
 - **Full Name**: Javier Armesto
 - **GitHub User**: javiarmesto
 - **GitHub Profile**: https://github.com/javiarmesto
-- **LinkedIn Profile**: https://www.linkedin.com/in/javierarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
 
 #### Motivation
 
@@ -391,7 +391,7 @@ No existing skill in the collection covers pre-submission code review or AppSour
 - **Full Name**: Javier Armesto
 - **GitHub User**: javiarmesto
 - **GitHub Profile**: https://github.com/javiarmesto
-- **LinkedIn Profile**: https://www.linkedin.com/in/javierarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
 
 #### Motivation
 
@@ -413,7 +413,7 @@ Context loss is one of the most expensive problems in AL development with AI age
 - **Full Name**: Javier Armesto
 - **GitHub User**: javiarmesto
 - **GitHub Profile**: https://github.com/javiarmesto
-- **LinkedIn Profile**: https://www.linkedin.com/in/javierarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
 
 #### Motivation
 
