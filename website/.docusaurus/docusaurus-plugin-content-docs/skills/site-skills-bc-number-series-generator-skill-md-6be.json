@@ -1,0 +1,27 @@
+{
+  "id": "bc-number-series-generator/SKILL",
+  "title": "Business Central Number Series Generator",
+  "description": "Implements automatic number series assignment for custom tables in Business Central following BC standard patterns. Creates setup tables with number series fields, table extensions with AssistEdit procedures, OnBeforeInsert/OnBeforeRename triggers, and page extensions with AssistEdit integration. Handles both manual and automatic number assignment with support for related series. Use when asked to add number series, implement automatic numbering, add series to custom tables, create No. fields with series, or implement BC standard numbering patterns.",
+  "source": "@site/../skills/bc-number-series-generator/SKILL.md",
+  "sourceDirName": "bc-number-series-generator",
+  "slug": "/bc-number-series-generator/SKILL",
+  "permalink": "/skills/bc-number-series-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-number-series-generator/SKILL.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-number-series-generator",
+    "description": "Implements automatic number series assignment for custom tables in Business Central following BC standard patterns. Creates setup tables with number series fields, table extensions with AssistEdit procedures, OnBeforeInsert/OnBeforeRename triggers, and page extensions with AssistEdit integration. Handles both manual and automatic number assignment with support for related series. Use when asked to add number series, implement automatic numbering, add series to custom tables, create No. fields with series, or implement BC standard numbering patterns."
+  },
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Install Codeunit Examples",
+    "permalink": "/skills/bc-install-codeunit-generator/references/install-examples"
+  },
+  "next": {
+    "title": "Number Series Examples",
+    "permalink": "/skills/bc-number-series-generator/references/number-series-examples"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
+  "title": "OOB Entity Mapping — Extra Field Mappings Reference",
+  "description": "Reference for adding custom Dataverse fields to standard BC entities that already have built-in CRM synchronization. No new event subscribers are needed — only extra field mappings plus table/page extensions.",
+  "source": "@site/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping.md",
+  "sourceDirName": "skills/bc-dataverse-mapping-generator/references",
+  "slug": "/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
+  "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Custom Entity Mapping — Complete Code Reference",
+    "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping"
+  },
+  "next": {
+    "title": "Business Central Install Codeunit Generator",
+    "permalink": "/docs/skills/bc-install-codeunit-generator/SKILL"
+  }
+}

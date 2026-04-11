@@ -1,0 +1,316 @@
+{
+  "/contributors-fea": {
+    "__comp": "9f2a01e2",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/search-822": {
+    "__comp": "1a4e3797",
+    "__context": {
+      "plugin": "138e0e15"
+    }
+  },
+  "/docs-535": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/docs-d8f": {
+    "__comp": "a7bd4aaa",
+    "__props": "0058b4c6"
+  },
+  "/docs-4b0": {
+    "__comp": "a94703ab"
+  },
+  "/docs/contributing-069": {
+    "__comp": "17896441",
+    "content": "4d54d076"
+  },
+  "/docs/instructions/-756": {
+    "__comp": "17896441",
+    "content": "6ce191d5"
+  },
+  "/docs/instructions/skills-creation.instructions-edd": {
+    "__comp": "17896441",
+    "content": "d1dba34e"
+  },
+  "/docs/intro-61d": {
+    "__comp": "17896441",
+    "content": "0e384e19"
+  },
+  "/docs/LICENSE-f04": {
+    "__comp": "17896441",
+    "content": "8ad68633"
+  },
+  "/docs/releasenotes/2026/april-855": {
+    "__comp": "17896441",
+    "content": "ae9c3c78"
+  },
+  "/docs/SECURITY-050": {
+    "__comp": "17896441",
+    "content": "cdb8836b"
+  },
+  "/docs/skills/bc-api-page-generator/references/api-examples-363": {
+    "__comp": "17896441",
+    "content": "619a99b9"
+  },
+  "/docs/skills/bc-api-page-generator/references/api-patterns-757": {
+    "__comp": "17896441",
+    "content": "73308e39"
+  },
+  "/docs/skills/bc-api-page-generator/SKILL-c78": {
+    "__comp": "17896441",
+    "content": "723dc26c"
+  },
+  "/docs/skills/bc-api-query-generator/references/query-examples-bf4": {
+    "__comp": "17896441",
+    "content": "abc26f1b"
+  },
+  "/docs/skills/bc-api-query-generator/SKILL-b5d": {
+    "__comp": "17896441",
+    "content": "32b840e3"
+  },
+  "/docs/skills/bc-attachments-generator/references/code-templates-9f7": {
+    "__comp": "17896441",
+    "content": "bf05fdbb"
+  },
+  "/docs/skills/bc-attachments-generator/SKILL-038": {
+    "__comp": "17896441",
+    "content": "46b045f8"
+  },
+  "/docs/skills/bc-business-events-generator/references/code-templates-f2e": {
+    "__comp": "17896441",
+    "content": "ae7ab36a"
+  },
+  "/docs/skills/bc-business-events-generator/SKILL-b4a": {
+    "__comp": "17896441",
+    "content": "c3ec743c"
+  },
+  "/docs/skills/bc-cds-page-generator/references/examples-55f": {
+    "__comp": "17896441",
+    "content": "d3d29e0f"
+  },
+  "/docs/skills/bc-cds-page-generator/references/field-layout-852": {
+    "__comp": "17896441",
+    "content": "1a84475a"
+  },
+  "/docs/skills/bc-cds-page-generator/references/quick-start-c36": {
+    "__comp": "17896441",
+    "content": "08d818e9"
+  },
+  "/docs/skills/bc-cds-page-generator/references/standard-components-99f": {
+    "__comp": "17896441",
+    "content": "803d0cf0"
+  },
+  "/docs/skills/bc-cds-page-generator/SKILL-de9": {
+    "__comp": "17896441",
+    "content": "5b148b81"
+  },
+  "/docs/skills/bc-dataverse-entity-generator/references/generate-entity-list-script-064": {
+    "__comp": "17896441",
+    "content": "58e2e4ef"
+  },
+  "/docs/skills/bc-dataverse-entity-generator/references/generate-entity-script-983": {
+    "__comp": "17896441",
+    "content": "53538d95"
+  },
+  "/docs/skills/bc-dataverse-entity-generator/references/workflow-examples-56e": {
+    "__comp": "17896441",
+    "content": "9811f0ed"
+  },
+  "/docs/skills/bc-dataverse-entity-generator/SKILL-3aa": {
+    "__comp": "17896441",
+    "content": "1363e289"
+  },
+  "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping-d5f": {
+    "__comp": "17896441",
+    "content": "96136be3"
+  },
+  "/docs/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping-2fa": {
+    "__comp": "17896441",
+    "content": "b6f703a0"
+  },
+  "/docs/skills/bc-dataverse-mapping-generator/SKILL-d9a": {
+    "__comp": "17896441",
+    "content": "ecae2cb5"
+  },
+  "/docs/skills/bc-install-codeunit-generator/references/install-examples-536": {
+    "__comp": "17896441",
+    "content": "53caebca"
+  },
+  "/docs/skills/bc-install-codeunit-generator/SKILL-ee9": {
+    "__comp": "17896441",
+    "content": "7b16d69c"
+  },
+  "/docs/skills/bc-number-series-generator/references/number-series-examples-025": {
+    "__comp": "17896441",
+    "content": "48f245e2"
+  },
+  "/docs/skills/bc-number-series-generator/references/number-series-troubleshooting-ac0": {
+    "__comp": "17896441",
+    "content": "0c036612"
+  },
+  "/docs/skills/bc-number-series-generator/SKILL-11c": {
+    "__comp": "17896441",
+    "content": "b7150309"
+  },
+  "/docs/skills/bc-setup-table-generator/references/patterns-787": {
+    "__comp": "17896441",
+    "content": "c8afdcc0"
+  },
+  "/docs/skills/bc-setup-table-generator/SKILL-8e9": {
+    "__comp": "17896441",
+    "content": "1b845085"
+  },
+  "/docs/skills/bc-setup-wizard-generator/references/code-templates-e9a": {
+    "__comp": "17896441",
+    "content": "b42344c4"
+  },
+  "/docs/skills/bc-setup-wizard-generator/SKILL-43c": {
+    "__comp": "17896441",
+    "content": "cda49345"
+  },
+  "/docs/skills/bc-telemetry-generator/references/kql-queries-853": {
+    "__comp": "17896441",
+    "content": "16938e30"
+  },
+  "/docs/skills/bc-telemetry-generator/references/telemetry-reference-d25": {
+    "__comp": "17896441",
+    "content": "691fc487"
+  },
+  "/docs/skills/bc-telemetry-generator/SKILL-ffb": {
+    "__comp": "17896441",
+    "content": "f30905b0"
+  },
+  "/docs/skills/bc-test-codeunit-generator/references/test-examples-f48": {
+    "__comp": "17896441",
+    "content": "62df6dae"
+  },
+  "/docs/skills/bc-test-codeunit-generator/SKILL-c71": {
+    "__comp": "17896441",
+    "content": "9d20cd03"
+  },
+  "/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples-b46": {
+    "__comp": "17896441",
+    "content": "a864b042"
+  },
+  "/docs/skills/bc-upgrade-codeunit-generator/SKILL-aae": {
+    "__comp": "17896441",
+    "content": "0f993166"
+  },
+  "/roadmap-2ed": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "93e47501"
+    }
+  },
+  "/roadmap-455": {
+    "__comp": "a7bd4aaa",
+    "__props": "a3a957de"
+  },
+  "/roadmap-2c1": {
+    "__comp": "a94703ab"
+  },
+  "/roadmap/2026/april-0cf": {
+    "__comp": "17896441",
+    "content": "2a96b2b7"
+  },
+  "/roadmap/2026/august-f97": {
+    "__comp": "17896441",
+    "content": "0716680d"
+  },
+  "/roadmap/2026/december-7a9": {
+    "__comp": "17896441",
+    "content": "b81fa8f9"
+  },
+  "/roadmap/2026/july-fe4": {
+    "__comp": "17896441",
+    "content": "51e7ccce"
+  },
+  "/roadmap/2026/june-873": {
+    "__comp": "17896441",
+    "content": "2b2c0b8b"
+  },
+  "/roadmap/2026/may-08d": {
+    "__comp": "17896441",
+    "content": "c0b74f9d"
+  },
+  "/roadmap/2026/november-7d7": {
+    "__comp": "17896441",
+    "content": "8750357e"
+  },
+  "/roadmap/2026/october-e81": {
+    "__comp": "17896441",
+    "content": "ddc5c223"
+  },
+  "/roadmap/2026/september-9b9": {
+    "__comp": "17896441",
+    "content": "183e7382"
+  },
+  "/roadmap/2027/april-d23": {
+    "__comp": "17896441",
+    "content": "53e22c37"
+  },
+  "/roadmap/2027/august-126": {
+    "__comp": "17896441",
+    "content": "f8b562cf"
+  },
+  "/roadmap/2027/december-6d7": {
+    "__comp": "17896441",
+    "content": "35069877"
+  },
+  "/roadmap/2027/february-dab": {
+    "__comp": "17896441",
+    "content": "549fbf4e"
+  },
+  "/roadmap/2027/january-c6a": {
+    "__comp": "17896441",
+    "content": "29070e5a"
+  },
+  "/roadmap/2027/july-52d": {
+    "__comp": "17896441",
+    "content": "d85d9da7"
+  },
+  "/roadmap/2027/june-d98": {
+    "__comp": "17896441",
+    "content": "48d2f351"
+  },
+  "/roadmap/2027/march-ad3": {
+    "__comp": "17896441",
+    "content": "23353f59"
+  },
+  "/roadmap/2027/may-c34": {
+    "__comp": "17896441",
+    "content": "4baf9495"
+  },
+  "/roadmap/2027/november-258": {
+    "__comp": "17896441",
+    "content": "b8160e6a"
+  },
+  "/roadmap/2027/october-606": {
+    "__comp": "17896441",
+    "content": "19bf5949"
+  },
+  "/roadmap/2027/september-59c": {
+    "__comp": "17896441",
+    "content": "63ff19eb"
+  },
+  "/roadmap/RELEASE-PLAN-GUIDE-566": {
+    "__comp": "17896441",
+    "content": "f6532a3c"
+  },
+  "/roadmap/TEMPLATE-3a6": {
+    "__comp": "17896441",
+    "content": "138dc2e8"
+  },
+  "/-e5f": {
+    "__comp": "1df93b7f",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}
