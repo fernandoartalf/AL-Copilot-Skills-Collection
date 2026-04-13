@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-test-codeunit-generator/references/test-examples",
+  "title": "Test Codeunit Examples",
+  "description": "Example 1: Setup and Navigation Test Codeunit",
+  "source": "@site/docs/skills/bc-test-codeunit-generator/references/test-examples.md",
+  "sourceDirName": "skills/bc-test-codeunit-generator/references",
+  "slug": "/skills/bc-test-codeunit-generator/references/test-examples",
+  "permalink": "/docs/skills/bc-test-codeunit-generator/references/test-examples",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Business Central Test Codeunit Generator",
+    "permalink": "/docs/skills/bc-test-codeunit-generator/SKILL"
+  },
+  "next": {
+    "title": "Business Central Upgrade Codeunit Generator",
+    "permalink": "/docs/skills/bc-upgrade-codeunit-generator/SKILL"
+  }
+}
