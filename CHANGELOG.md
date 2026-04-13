@@ -14,6 +14,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Skills management view in Activity Bar
 - Community skill contributions
 
+## [1.1.1] - 2026-04-13
+
+### Added
+- **bc-agent-instructions-debugger** — Audits and diagnoses BC agent instruction files to fix misbehaving agents
+
+### Contributors
+- **Javier Armesto** ([@javiarmesto](https://github.com/javiarmesto))
+
+## [1.1.0] - 2026-04-11
+
+### Added
+- 4 new Business Central skills contributed by Javier Armesto:
+  - **bc-al-bug-fix** — Diagnoses and fixes bugs in AL extensions with structured investigation workflow
+  - **bc-al-code-reviewer** — Reviews AL code against AppSource, CodeCop, and community convention standards
+  - **bc-al-project-context** — Maintains persistent project context via ADRs and session handoff documents
+  - **bc-manifest-handoff-generator** — Generates handoff manifests for cross-framework consumption
+
+### Contributors
+- **Javier Armesto** ([@javiarmesto](https://github.com/javiarmesto))
+
 ## [0.1.0] - 2026-04-01
 
 ### Added

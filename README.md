@@ -2,7 +2,7 @@
 
 > Install a collection of purpose-built GitHub Copilot skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -40,6 +40,7 @@ Each skill is a self-contained package of instructions, references, and template
 
 | Skill | What It Does |
 |-------|-------------|
+| `bc-agent-instructions-debugger` | Audits and diagnoses BC agent instruction files to fix misbehaving agents |
 | `bc-al-bug-fix` | Diagnoses and fixes bugs in AL extensions with structured investigation workflow |
 | `bc-al-code-reviewer` | Reviews AL code against AppSource, CodeCop, and community convention standards |
 | `bc-al-project-context` | Maintains persistent project context via ADRs and session handoff documents |
