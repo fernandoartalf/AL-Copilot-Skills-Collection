@@ -420,6 +420,28 @@ Context loss is one of the most expensive problems in AL development with AI age
 After the Conductor pipeline completes and all tests pass, there is no standardized way to hand off the extension's published surface to downstream frameworks like CIRCE (Copilot Studio agent builder) or DELFOS (Power BI dashboard builder). This skill generates a single manifest containing API pages, queries, data structures, and connection context so that consuming agents can work without sharing a workspace.
 
 ---
+
+### `bc-agent-instructions-debugger`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-agent-instructions-debugger` |
+| **Short Description** | Audits and diagnoses Business Central agent instruction files (InstructionsV1.txt or InstructionsV2.txt) to identify why an agent is not behaving as expected, and produces a structured diagnosis report plus a corrected version of the instructions. Covers pre-publication review and post-deployment debugging. |
+| **Target BC Version** _(optional)_ | v28.0 |
+| **Status** | ✅ Merged |
+
+#### Author
+
+- **Full Name**: Javier Armesto
+- **GitHub User**: javiarmesto
+- **GitHub Profile**: https://github.com/javiarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
+
+#### Motivation
+
+BC agents built with Copilot Studio rely on instruction files that follow a specific runtime keyword contract and the Responsibilities-Guidelines-Instructions framework. When an agent misbehaves — loses context between pages, ignores guidelines, fails to invoke actions, or gets stuck in loops — there is no structured way to diagnose the root cause. This skill analyzes instruction files against known anti-patterns and the runtime model, producing severity-classified findings with minimal targeted fixes.
+
+---
 ## Summary
 
 | Skill | Author | Status |
@@ -442,3 +464,4 @@ After the Conductor pipeline completes and all tests pass, there is no standardi
 | `bc-al-code-reviewer` | @javiarmesto | ✅ |
 | `bc-al-project-context` | @javiarmesto | ✅ |
 | `bc-manifest-handoff-generator` | @javiarmesto | ✅ |
+| `bc-agent-instructions-debugger` | @javiarmesto | ✅ |
