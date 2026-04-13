@@ -7,7 +7,7 @@
 
 ## Overview
 
-This release includes **18 new skills** contributed by **2 authors** for the **April 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
+This release includes **19 new skills** contributed by **2 authors** for the **April 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
 
 ---
 
@@ -15,7 +15,7 @@ This release includes **18 new skills** contributed by **2 authors** for the **A
 
 | Metric | Count |
 |---|---|
-| **Total Skills Released** | 18 |
+| **Total Skills Released** | 19 |
 | **Contributors** | 2 |
 | **Target BC Version(s)** | v28.0 |
 
@@ -219,7 +219,7 @@ This release includes **18 new skills** contributed by **2 authors** for the **A
 
 ### Javier Armesto
 
-**Delivered**: 4 skills
+**Delivered**: 5 skills
 
 **Author Information**:
 - **Full Name**: Javier Armesto
@@ -281,6 +281,19 @@ This release includes **18 new skills** contributed by **2 authors** for the **A
 
 ---
 
+##### 5. `bc-agent-instructions-debugger`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-agent-instructions-debugger` |
+| **Description** | Audits and diagnoses Business Central agent instruction files (InstructionsV1.txt or InstructionsV2.txt) to identify why an agent is not behaving as expected, and produces a structured diagnosis report plus a corrected version of the instructions. |
+| **Target BC Version** | v28.0 |
+| **Folder** | [`skills/bc-agent-instructions-debugger/`](../../skills/bc-agent-instructions-debugger/) |
+
+**What it does**: Analyzes instruction files against the BC agent runtime keyword contract, the Responsibilities-Guidelines-Instructions framework, and known anti-patterns. Generates severity-classified findings with root cause explanation and minimal targeted fixes.
+
+---
+
 ## All Skills in This Release
 
 | # | Skill Name | Author | Target BC Version |
@@ -303,6 +316,7 @@ This release includes **18 new skills** contributed by **2 authors** for the **A
 | 16 | `bc-al-code-reviewer` | @javiarmesto | v28.0 |
 | 17 | `bc-al-project-context` | @javiarmesto | v28.0 |
 | 18 | `bc-manifest-handoff-generator` | @javiarmesto | v28.0 |
+| 19 | `bc-agent-instructions-debugger` | @javiarmesto | v28.0 |
 
 ---
 
@@ -330,7 +344,7 @@ This release corresponds to the [**April 2026** release plan](../../releaseplan/
 Special thanks to all contributors who helped make this release possible:
 
 - **Fernando Artigas Alfonso** ([@fernandoartalf](https://github.com/fernandoartalf)) — 14 skills
-- **Javier Armesto** ([@javiarmesto](https://github.com/javiarmesto)) — 4 skills
+- **Javier Armesto** ([@javiarmesto](https://github.com/javiarmesto)) — 5 skills
 
 ---
 
