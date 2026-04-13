@@ -7,7 +7,7 @@
 
 ## Overview
 
-This release includes **14 new skills** contributed by **1 author** for the **April 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
+This release includes **18 new skills** contributed by **2 authors** for the **April 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
 
 ---
 
@@ -15,8 +15,8 @@ This release includes **14 new skills** contributed by **1 author** for the **Ap
 
 | Metric | Count |
 |---|---|
-| **Total Skills Released** | 14 |
-| **Contributors** | 1 |
+| **Total Skills Released** | 18 |
+| **Contributors** | 2 |
 | **Target BC Version(s)** | v28.0 |
 
 ---
@@ -217,6 +217,70 @@ This release includes **14 new skills** contributed by **1 author** for the **Ap
 
 ---
 
+### Javier Armesto
+
+**Delivered**: 4 skills
+
+**Author Information**:
+- **Full Name**: Javier Armesto
+- **GitHub User**: javiarmesto
+- **GitHub Profile**: https://github.com/javiarmesto
+- **LinkedIn Profile**: https://www.linkedin.com/in/jarmesto
+
+#### Skills Contributed
+
+##### 1. `bc-al-bug-fix`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-al-bug-fix` |
+| **Description** | Diagnoses and fixes bugs in Business Central AL extensions following a structured triage workflow: symptom classification by layer, root cause mapping, minimal targeted fix, and regression test definition. |
+| **Target BC Version** | v28.0 |
+| **Folder** | [`skills/bc-al-bug-fix/`](../../skills/bc-al-bug-fix/) |
+
+**What it does**: Imposes a diagnosis-first discipline — symptom → layer → root cause → minimal fix — with a catalogue of 7 symptom categories and 28 known failure modes mapped to their most likely root causes.
+
+---
+
+##### 2. `bc-al-code-reviewer`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-al-code-reviewer` |
+| **Description** | Reviews Business Central AL extension code against a prioritized convention stack: AppSource validation requirements, CodeCop/PerTenantExtensionCop analyzer rules, alguidelines.dev community standards, and al-copilot-skills catalogue patterns. |
+| **Target BC Version** | v28.0 |
+| **Folder** | [`skills/bc-al-code-reviewer/`](../../skills/bc-al-code-reviewer/) |
+
+**What it does**: Audits five categories the AL compiler does not catch: naming and structure, performance anti-patterns, extensibility contract, SaaS readiness, and AppSource blockers. Produces severity-classified findings covering 27 rules across 5 categories.
+
+---
+
+##### 3. `bc-al-project-context`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-al-project-context` |
+| **Description** | Maintains persistent project context for Business Central AL extensions across sessions, developers, and AI agents using Architecture Decision Records (ADRs) and Session Handoff documents. |
+| **Target BC Version** | v28.0 |
+| **Folder** | [`skills/bc-al-project-context/`](../../skills/bc-al-project-context/) |
+
+**What it does**: Brings ADRs and structured session handoffs to the BC AL ecosystem, with file-based storage in `.github/decisions/` and `.github/context/` — version-controlled and readable by any developer or AI agent.
+
+---
+
+##### 4. `bc-manifest-handoff-generator`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-manifest-handoff-generator` |
+| **Description** | Generates a handoff manifest at the end of the ALDC pipeline so that CIRCE and/or DELFOS can consume the extension's published surface without sharing a workspace. |
+| **Target BC Version** | v28.0 |
+| **Folder** | [`skills/bc-manifest-handoff-generator/`](../../skills/bc-manifest-handoff-generator/) |
+
+**What it does**: Creates a single manifest containing MCP connection context for CIRCE, published API pages and queries for DELFOS, data structure details, and star schema hints.
+
+---
+
 ## All Skills in This Release
 
 | # | Skill Name | Author | Target BC Version |
@@ -235,6 +299,10 @@ This release includes **14 new skills** contributed by **1 author** for the **Ap
 | 12 | `bc-telemetry-generator` | @fernandoartalf | v28.0 |
 | 13 | `bc-test-codeunit-generator` | @fernandoartalf | v28.0 |
 | 14 | `bc-upgrade-codeunit-generator` | @fernandoartalf | v28.0 |
+| 15 | `bc-al-bug-fix` | @javiarmesto | v28.0 |
+| 16 | `bc-al-code-reviewer` | @javiarmesto | v28.0 |
+| 17 | `bc-al-project-context` | @javiarmesto | v28.0 |
+| 18 | `bc-manifest-handoff-generator` | @javiarmesto | v28.0 |
 
 ---
 
@@ -262,6 +330,7 @@ This release corresponds to the [**April 2026** release plan](../../releaseplan/
 Special thanks to all contributors who helped make this release possible:
 
 - **Fernando Artigas Alfonso** ([@fernandoartalf](https://github.com/fernandoartalf)) — 14 skills
+- **Javier Armesto** ([@javiarmesto](https://github.com/javiarmesto)) — 4 skills
 
 ---
 

@@ -2,7 +2,7 @@
 
 > Install a collection of purpose-built GitHub Copilot skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.0.3-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -40,6 +40,9 @@ Each skill is a self-contained package of instructions, references, and template
 
 | Skill | What It Does |
 |-------|-------------|
+| `bc-al-bug-fix` | Diagnoses and fixes bugs in AL extensions with structured investigation workflow |
+| `bc-al-code-reviewer` | Reviews AL code against AppSource, CodeCop, and community convention standards |
+| `bc-al-project-context` | Maintains persistent project context via ADRs and session handoff documents |
 | `bc-api-page-generator` | Generates AL API pages following OData/REST patterns |
 | `bc-api-query-generator` | Generates AL API query objects |
 | `bc-attachments-generator` | Generates attachment handling patterns |
@@ -48,6 +51,7 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-dataverse-entity-generator` | Generates Dataverse entity integration code and scripts |
 | `bc-dataverse-mapping-generator` | Generates Dataverse entity mapping configurations |
 | `bc-install-codeunit-generator` | Generates install codeunits for extensions |
+| `bc-manifest-handoff-generator` | Generates handoff manifests for cross-framework consumption |
 | `bc-number-series-generator` | Generates number series setup patterns |
 | `bc-setup-table-generator` | Generates setup table and page patterns |
 | `bc-setup-wizard-generator` | Generates setup wizard (assisted setup) pages |
