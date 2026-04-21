@@ -183,8 +183,8 @@ ssh "${User}@${ServerName}" "powershell -ExecutionPolicy Bypass -Command `"
 
 ```powershell
 # ON THE SERVER (as admin):
-New-Item -ItemType Directory -Path "D:\WAU" -Force
-New-SmbShare -Name "WAU_DEPLOY" -Path "D:\WAU" -ChangeAccess "Domain\DeveloperUser"
+New-Item -ItemType Directory -Path "D:\BCDeploy" -Force
+New-SmbShare -Name "BC_DEPLOY" -Path "D:\BCDeploy" -ChangeAccess "Domain\DeveloperUser"
 ```
 
 ### Deploy Pattern
@@ -258,10 +258,10 @@ Run this **once** on the server via RDP as Administrator. This creates the agent
 $ErrorActionPreference = "Stop"
 
 # --- Configuration (CUSTOMIZE THESE) ---
-$deployBasePath = "D:\WAU"                  # Where .app files are stored on server
-$environments   = @('REPLICA', 'SGA')       # Your BC environments/instances
+$deployBasePath = "D:\BCDeploy"             # Where .app files are stored on server
+$environments   = @('Entorno1', 'Entorno2') # Your BC environments/instances
 $taskUser       = "$env:USERDOMAIN\$env:USERNAME"  # User running the scheduled task
-$repoFolderName = "Al_TAKASAGO_Last"        # Name of the repo folder on client PC
+$repoFolderName = "Al_MyProject"            # Name of the repo folder on client PC
 
 # --- Create folders ---
 if (-not (Test-Path $deployBasePath)) { New-Item -ItemType Directory -Path $deployBasePath | Out-Null }
@@ -275,10 +275,10 @@ $agentScript = @'
 $ErrorActionPreference = 'SilentlyContinue'
 
 # CUSTOMIZE: Add your environments here
-$environments = @('REPLICA', 'SGA')
+$environments = @('Entorno1', 'Entorno2')
 
 # CUSTOMIZE: Add your repo folder name(s) here
-$repoNames = @('Al_TAKASAGO_Last')
+$repoNames = @('Al_MyProject')
 
 foreach ($entorno in $environments) {
     foreach ($drive in @('c','d','e','f')) {
@@ -391,18 +391,18 @@ The deploy script on the developer PC performs these steps:
 6. **Poll for result** — checks `_DEPLOY_RESULT.txt` every 5 seconds, up to 15 minutes
 
 **Key parameters:**
-- `-Entorno REPLICA|SGA` — target environment
+- `-Entorno Entorno1|Entorno2` — target environment
 - `-SoloAppBase` — deploy only base app, skip secondary apps
 - `-ForzarSync` — use `Sync-NAVApp -Mode ForceSync -Force` (DANGEROUS: can cause data loss)
 
 **Trigger file format (`_DEPLOY_TRIGGER.txt`):**
 ```
-Entorno=REPLICA
-Instancia=TICSA-REPLICA
-TsclientBase=\\tsclient\c\Repositorios\MyRepo\_deploy_output\REPLICA
-RutaRemota=D:\WAU\REPLICA
+Entorno=Entorno1
+Instancia=BC-Entorno1
+TsclientBase=\\tsclient\c\Repositorios\MyProject\_deploy_output\Entorno1
+RutaRemota=D:\BCDeploy\Entorno1
 NavAdminTool=c:\program files\microsoft dynamics 365 business central\220\service\navadmintool.ps1
-Apps=Ticsa|22.0.8.181|D:\WAU\REPLICA\WAU Technologies_Ticsa_22.0.8.181.app;Design Ticsa|22.0.0.19|D:\WAU\REPLICA\WAU Technologies_Design Ticsa_22.0.0.19.app
+Apps=MyApp|22.0.8.181|D:\BCDeploy\Entorno1\MyPublisher_MyApp_22.0.8.181.app;MyApp2|22.0.0.19|D:\BCDeploy\Entorno1\MyPublisher_MyApp2_22.0.0.19.app
 ```
 
 **Generated server script pattern (`_RunDeploy_<Entorno>.ps1`):**
@@ -536,14 +536,14 @@ When adapting these scripts for a new project, update:
 
 | Setting | Where | Example |
 |---|---|---|
-| `$ServerInstance` / `$Instancia` | Deploy script param | `TICSA-REPLICA` |
-| `$environments` | Setup agent script | `@('REPLICA', 'SGA', 'PROD')` |
-| `$deployBasePath` | Setup agent script | `D:\WAU` |
-| `$repoNames` | Agent script | `@('Al_TAKASAGO_Last', 'Al_OTHERPROJECT')` |
+| `$ServerInstance` / `$Instancia` | Deploy script param | `BC-Entorno1` |
+| `$environments` | Setup agent script | `@('Entorno1', 'Entorno2', 'PROD')` |
+| `$deployBasePath` | Setup agent script | `D:\BCDeploy` |
+| `$repoNames` | Agent script | `@('Al_MyProject', 'Al_OtherProject')` |
 | `$taskUser` | Setup agent script | `DOMAIN\Username` |
 | NavAdminTool path | Deploy script config | `C:\Program Files\Microsoft Dynamics 365 Business Central\220\Service\NavAdminTool.ps1` |
-| ValidateSet for `-Entorno` | Deploy script param | `'REPLICA', 'SGA', 'PROD'` |
-| App publisher name | Filename pattern | `WAU Technologies` |
+| ValidateSet for `-Entorno` | Deploy script param | `'Entorno1', 'Entorno2', 'PROD'` |
+| App publisher name | Filename pattern | `MyPublisher` |
 | `candidatos` paths in agent | Agent script | Add your common repo locations |
 
 ---
