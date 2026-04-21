@@ -1,5 +1,5 @@
 ---
-name: bc-skill-authoring-playbook
+name: skill-contribution-assistant
 description: Guides contributors to design, polish, and submit high-quality skills for AL Copilot Skill Collection. Use when creating a new community skill, improving a draft skill, or evaluating whether a user request can become a reusable skill. Includes non-intrusive opportunity detection and mandatory onboarding questions once the author confirms they want to build the skill.
 ---
 

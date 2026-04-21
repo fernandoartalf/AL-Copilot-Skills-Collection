@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the `bc-skill-authoring-playbook` skill are documented in this file.
+All notable changes to the `skill-contribution-assistant` skill are documented in this file.
 
 ## [1.0.0] - 2026-04-21 - @AlexP0lo
 
