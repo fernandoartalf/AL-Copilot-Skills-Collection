@@ -5,6 +5,20 @@ All notable changes to the `onprem-remote-deploy` skill will be documented in th
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-04-21 - @AlexP0lo
+
+### Added
+
+- `scripts/Setup-DeployAgent.Template.ps1` with generic environment names and English output messages
+- `references/onprem-remote-deploy-reference.md` with extended examples moved out of SKILL.md
+
+### Changed
+
+- Added `onprem-remote-deploy` entry to `releaseplan/2026/05-may.md` with status **In Development**
+- Replaced remaining project-specific SMB share example with generic `BC_DEPLOY`
+- Converted admin request templates to English for consistency
+- Reduced SKILL.md size by moving long examples to references/scripts
+
 ## [1.0.0] - 2026-04-20 - @AlexP0lo
 
 ### Added

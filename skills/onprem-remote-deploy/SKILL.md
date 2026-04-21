@@ -104,12 +104,12 @@ Remove-PSSession $session
 
 ### Admin Request Template
 
-> Necesitamos habilitar WinRM en el servidor `<SERVER>` para poder desplegar extensiones de Business Central remotamente desde VS Code.
-> Comandos a ejecutar como administrador en el servidor:
+> We need to enable WinRM on server `<SERVER>` to deploy Business Central extensions remotely from VS Code.
+> Please run these commands as administrator on the server:
 > ```
 > Enable-PSRemoting -Force
 > ```
-> Puerto requerido: **5985 TCP** (entrada) desde la IP del desarrollador.
+> Required inbound port: **5985/TCP** from the developer network.
 
 ---
 
@@ -155,14 +155,14 @@ ssh "${User}@${ServerName}" "powershell -ExecutionPolicy Bypass -Command `"
 
 ### Admin Request Template
 
-> Necesitamos habilitar SSH en el servidor `<SERVER>` para desplegar extensiones de BC.
-> Comandos a ejecutar como administrador:
+> We need to enable SSH on server `<SERVER>` to deploy Business Central extensions.
+> Please run these commands as administrator:
 > ```
 > Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 > Start-Service sshd
 > Set-Service -Name sshd -StartupType Automatic
 > ```
-> Puerto requerido: **22 TCP** (entrada) desde la IP del desarrollador.
+> Required inbound port: **22/TCP** from the developer network.
 
 ---
 
@@ -189,7 +189,7 @@ New-SmbShare -Name "BC_DEPLOY" -Path "D:\BCDeploy" -ChangeAccess "Domain\Develop
 
 ### Deploy Pattern
 
-1. Copy compiled `.app` to `\\SERVER\WAU_DEPLOY\<Entorno>\` via SMB
+1. Copy compiled `.app` to `\\SERVER\BC_DEPLOY\<Entorno>\` via SMB
 2. Copy a trigger script to the same share
 3. A scheduled task on the server detects the trigger and runs the deploy
 
@@ -249,135 +249,13 @@ Similar option under Local Resources → Drive Redirection.
 
 ### One-Time Setup: Server Agent
 
-Run this **once** on the server via RDP as Administrator. This creates the agent script and scheduled task.
+Use the reusable script template in `scripts/Setup-DeployAgent.Template.ps1`.
 
-```powershell
-# Setup-DeployAgent.ps1 — Run on server as admin via RDP
-#Requires -RunAsAdministrator
+- It uses generic paths and environment names (`Entorno1`, `Entorno2`).
+- All script output messages are in English.
+- It creates a scheduled task and an agent script without project-specific names.
 
-$ErrorActionPreference = "Stop"
-
-# --- Configuration (CUSTOMIZE THESE) ---
-$deployBasePath = "D:\BCDeploy"             # Where .app files are stored on server
-$environments   = @('Entorno1', 'Entorno2') # Your BC environments/instances
-$taskUser       = "$env:USERDOMAIN\$env:USERNAME"  # User running the scheduled task
-$repoFolderName = "Al_MyProject"            # Name of the repo folder on client PC
-
-# --- Create folders ---
-if (-not (Test-Path $deployBasePath)) { New-Item -ItemType Directory -Path $deployBasePath | Out-Null }
-foreach ($env in $environments) {
-    $dir = Join-Path $deployBasePath $env
-    if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir | Out-Null }
-}
-
-# --- Create agent script ---
-$agentScript = @'
-$ErrorActionPreference = 'SilentlyContinue'
-
-# CUSTOMIZE: Add your environments here
-$environments = @('Entorno1', 'Entorno2')
-
-# CUSTOMIZE: Add your repo folder name(s) here
-$repoNames = @('Al_MyProject')
-
-foreach ($entorno in $environments) {
-    foreach ($drive in @('c','d','e','f')) {
-        $root = "\\tsclient\$drive"
-        if (-not (Test-Path $root -ErrorAction SilentlyContinue)) { continue }
-
-        foreach ($repoName in $repoNames) {
-            $candidatos = @(
-                "$root\Repositorios\$repoName\_deploy_output\$entorno",
-                "$root\repos\$repoName\_deploy_output\$entorno",
-                "$root\dev\$repoName\_deploy_output\$entorno",
-                "$root\src\$repoName\_deploy_output\$entorno"
-            )
-
-            foreach ($deployDir in $candidatos) {
-                $triggerFile = "$deployDir\_DEPLOY_TRIGGER.txt"
-                if (-not (Test-Path $triggerFile -ErrorAction SilentlyContinue)) { continue }
-
-                $resultFile = "$deployDir\_DEPLOY_RESULT.txt"
-                $logFile    = "$deployDir\_DEPLOY_LOG.txt"
-
-                # Parse trigger metadata
-                $meta = @{}
-                Get-Content $triggerFile | ForEach-Object {
-                    $kv = $_ -split '=', 2
-                    if ($kv.Count -eq 2) { $meta[$kv[0].Trim()] = $kv[1].Trim() }
-                }
-
-                $instancia    = $meta['Instancia']
-                $rutaRemota   = $meta['RutaRemota']
-                $navAdminTool = $meta['NavAdminTool']
-                if (-not $instancia -or -not $rutaRemota -or -not $navAdminTool) { continue }
-
-                # Remove trigger immediately (prevent re-execution)
-                Remove-Item $triggerFile -Force -ErrorAction SilentlyContinue
-
-                # Start logging
-                "[$( Get-Date )] Deploy $entorno started from $deployDir" | Set-Content $logFile -Encoding UTF8
-
-                try {
-                    if (-not (Test-Path $rutaRemota)) { New-Item -ItemType Directory -Path $rutaRemota | Out-Null }
-
-                    # Copy .app files from tsclient to server
-                    "Copying .app files from $deployDir ..." | Add-Content $logFile -Encoding UTF8
-                    Get-ChildItem "$deployDir\*.app" -ErrorAction SilentlyContinue | ForEach-Object {
-                        Copy-Item $_.FullName -Destination $rutaRemota -Force
-                        "  Copied: $($_.Name)" | Add-Content $logFile -Encoding UTF8
-                    }
-
-                    # Copy deploy script
-                    $deployScript = "$deployDir\_RunDeploy_$entorno.ps1"
-                    if (Test-Path $deployScript) { Copy-Item $deployScript -Destination $rutaRemota -Force }
-
-                    # Execute deploy
-                    $runScript = Join-Path $rutaRemota "_RunDeploy_$entorno.ps1"
-                    if (Test-Path $runScript) {
-                        $out = & powershell.exe -ExecutionPolicy Bypass -NonInteractive -File $runScript 2>&1
-                        $out | Add-Content $logFile -Encoding UTF8
-                    } else {
-                        throw "Deploy script not found: $runScript"
-                    }
-
-                    "[$( Get-Date )] RESULT: OK" | Add-Content $logFile -Encoding UTF8
-                    "OK" | Set-Content $resultFile -Encoding UTF8
-                } catch {
-                    "ERROR: $_" | Add-Content $logFile -Encoding UTF8
-                    "ERROR: $_" | Set-Content $resultFile -Encoding UTF8
-                }
-            }
-        }
-    }
-}
-'@
-
-$agentPath = Join-Path $deployBasePath "_DeployAgent.ps1"
-[System.IO.File]::WriteAllText($agentPath, $agentScript, [System.Text.UTF8Encoding]::new($false))
-
-# --- Create scheduled task ---
-$taskName = "BC-DeployAgent"
-$existing = Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue
-if ($existing) { Unregister-ScheduledTask -TaskName $taskName -Confirm:$false }
-
-$action    = New-ScheduledTaskAction -Execute "powershell.exe" `
-    -Argument "-ExecutionPolicy Bypass -NonInteractive -WindowStyle Hidden -File `"$agentPath`""
-$trigLogon = New-ScheduledTaskTrigger -AtLogOn -User $taskUser
-$trigRepeat = New-ScheduledTaskTrigger -RepetitionInterval (New-TimeSpan -Minutes 1) -Once -At (Get-Date).Date
-$settings  = New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 30) -MultipleInstances IgnoreNew
-$principal = New-ScheduledTaskPrincipal -UserId $taskUser -RunLevel Highest -LogonType Interactive
-
-Register-ScheduledTask -TaskName $taskName -Action $action `
-    -Trigger @($trigLogon, $trigRepeat) -Settings $settings -Principal $principal -Force | Out-Null
-
-Write-Host "Setup complete. Agent: $agentPath | Task: $taskName" -ForegroundColor Green
-```
-
-**Run command (on server via RDP):**
-```
-powershell -ExecutionPolicy Bypass -File "\\tsclient\c\Repositorios\<RepoName>\Setup-DeployAgent.ps1"
-```
+For full examples and optional variants, read `references/onprem-remote-deploy-reference.md`.
 
 ### Deploy Script (runs on developer PC)
 
@@ -395,73 +273,23 @@ The deploy script on the developer PC performs these steps:
 - `-SoloAppBase` — deploy only base app, skip secondary apps
 - `-ForzarSync` — use `Sync-NAVApp -Mode ForceSync -Force` (DANGEROUS: can cause data loss)
 
-**Trigger file format (`_DEPLOY_TRIGGER.txt`):**
-```
-Entorno=Entorno1
-Instancia=BC-Entorno1
-TsclientBase=\\tsclient\c\Repositorios\MyProject\_deploy_output\Entorno1
-RutaRemota=D:\BCDeploy\Entorno1
-NavAdminTool=c:\program files\microsoft dynamics 365 business central\220\service\navadmintool.ps1
-Apps=MyApp|22.0.8.181|D:\BCDeploy\Entorno1\MyPublisher_MyApp_22.0.8.181.app;MyApp2|22.0.0.19|D:\BCDeploy\Entorno1\MyPublisher_MyApp2_22.0.0.19.app
-```
+**Trigger format and generated deploy script examples:**
 
-**Generated server script pattern (`_RunDeploy_<Entorno>.ps1`):**
-```powershell
-$ErrorActionPreference = 'Stop'
-. '<NavAdminToolPath>'
-
-# For each app:
-$appActual = Get-NAVAppInfo -ServerInstance '<Instance>' -Name '<AppName>' -ErrorAction SilentlyContinue |
-    Sort-Object Version -Descending | Select-Object -First 1
-if ($appActual) { $vOld = $appActual.Version.ToString() } else { $vOld = $null }
-
-Publish-NAVApp -SkipVerification -ServerInstance '<Instance>' -Path '<RemotePath>'
-
-# Normal sync (safe):
-Sync-NAVApp -ServerInstance '<Instance>' -Name '<AppName>' -Version '<Version>'
-# ForceSync (only when -ForzarSync is passed — use with caution):
-# Sync-NAVApp -ServerInstance '<Instance>' -Name '<AppName>' -Version '<Version>' -Mode ForceSync -Force
-
-if ($vOld -and ($vOld -ne '<Version>')) {
-    Start-NAVAppDataUpgrade -ServerInstance '<Instance>' -Name '<AppName>' -Version '<Version>'
-    Unpublish-NAVApp -ServerInstance '<Instance>' -Name '<AppName>' -Version $vOld
-} else {
-    Install-NAVApp -ServerInstance '<Instance>' -Name '<AppName>' -Version '<Version>'
-}
-```
+See `references/onprem-remote-deploy-reference.md` for:
+- Trigger file schema (`_DEPLOY_TRIGGER.txt`)
+- Generated server script pattern (`_RunDeploy_<Entorno>.ps1`)
+- Generic sample values without customer-specific naming
 
 ---
 
 ## Compilation: alc.exe Patterns
 
-### Finding alc.exe
+### Finding and running alc.exe
 
-```powershell
-$pattern = Join-Path $env:USERPROFILE ".vscode\extensions\ms-dynamics-smb.al-*\bin\alc.exe"
-$alc = Get-ChildItem $pattern -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-```
-
-### Compiling with Assembly Probing Paths
-
-```powershell
-$alcArgs = @(
-    "/project:`"$AppDir`"",
-    "/packagecachepath:`"$AppDir\.alpackages`"",
-    "/out:`"$OutputPath`""
-)
-
-# Each assembly probing path must be a SEPARATE argument
-foreach ($path in $assemblyPaths) {
-    $alcArgs += "/assemblyprobingpaths:`"$path`""
-}
-
-# For secondary apps that depend on a base app, add extra package cache
-if ($ExtraPackageCache) {
-    $alcArgs += "/packagecachepath:`"$ExtraPackageCache`""
-}
-
-& $alcExe @alcArgs 2>&1
-```
+Use the compact patterns in `references/onprem-remote-deploy-reference.md`:
+- Discover latest `alc.exe` from AL extension folder
+- Build argument arrays with multiple `/assemblyprobingpaths`
+- Add extra package cache for dependent apps
 
 ---
 
@@ -470,11 +298,11 @@ if ($ExtraPackageCache) {
 | Mode | Command | Use When | Risk |
 |---|---|---|---|
 | **Normal** (default) | `Sync-NAVApp -ServerInstance $inst -Name $name -Version $ver` | Routine deploys, no breaking schema changes | None — fails safely if incompatible |
-| **ForceSync** | `Sync-NAVApp ... -Mode ForceSync -Force` | Entorno roto, schema pending, destructive schema changes | **Can delete table data** if fields are removed |
+| **ForceSync** | `Sync-NAVApp ... -Mode ForceSync -Force` | Broken environment, schema pending, destructive schema changes | **Can delete table data** if fields are removed |
 
 ### When the Environment is Broken
 
-Error: `"No se puede tener acceso al sistema porque necesita una sincronización del esquema"`
+Error example (localized): environment requires schema synchronization.
 
 **Diagnosis:**
 ```powershell
@@ -555,3 +383,10 @@ When adapting these scripts for a new project, update:
 - Drive redirection (`tsclient`) is only available during an active RDP session — files are NOT accessible when disconnected
 - The agent does NOT store credentials — it runs in the context of the interactive logon session
 - `.app` files are copied to a local folder on the server before being published — clean up old `.app` files periodically
+
+---
+
+## References and Scripts
+
+- `references/onprem-remote-deploy-reference.md`: extended examples, trigger schema, and command snippets.
+- `scripts/Setup-DeployAgent.Template.ps1`: reusable setup script with generic names and English output messages.
