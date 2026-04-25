@@ -2,7 +2,7 @@
 
 > Install a collection of purpose-built GitHub Copilot skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.1.1-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.1-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -59,6 +59,8 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-telemetry-generator` | Generates custom telemetry instrumentation and KQL queries |
 | `bc-test-codeunit-generator` | Generates test codeunits with Given/When/Then structure |
 | `bc-upgrade-codeunit-generator` | Generates upgrade codeunits for extension versioning |
+| `onprem-remote-deploy` | Deploys AL `.app` files to remote BC OnPrem servers via WinRM, SSH, SMB, or RDP tsclient-pull when network access is restricted |
+| `skill-contribution-assistant` | Guides contributors to design, polish, and submit high-quality skills to the collection |
 
 ### Agent-Agnostic Skills
 
