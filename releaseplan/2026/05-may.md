@@ -73,8 +73,32 @@ Custom document tables (like custom purchase requisitions, expense reports, or c
 
 <!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
 
-### `onprem-remote-deploy`
+### `skill-contribution-assistant`
 
+| Field | Details |
+|---|---|
+| **Skill Name** | `skill-contribution-assistant` |
+| **Short Description** | Guides contributors to design, refine, and submit high-quality skills for AL Copilot Skill Collection, including onboarding questions, non-intrusive opportunity detection, quality gates, and PR-readiness checks. |
+| **Target BC Version** _(optional)_ | 28.1 |
+| **Status** | 🔵 In Development |
+
+#### Author
+
+- **Full Name**: Alex Polo
+- **GitHub User**: AlexP0lo
+- **GitHub Profile**: https://github.com/AlexP0lo
+- **LinkedIn Profile**: https://www.linkedin.com/in/alex-polo-garrido-49343b140
+
+#### Co-Authors _(optional)_
+
+<!-- Add co-authors using the format below -->
+
+#### Motivation
+
+The collection can scale faster if contributors receive a practical assistant that converts real user needs into reusable, review-ready skills. This skill reduces rework by standardizing onboarding, scope framing, anonymization, repository compliance, and release-plan integration.
+
+---
+### `onprem-remote-deploy`
 | Field | Details |
 |---|---|
 | **Skill Name** | `onprem-remote-deploy` |
@@ -93,13 +117,13 @@ Custom document tables (like custom purchase requisitions, expense reports, or c
 
 <!-- Add co-authors using the format below -->
 
-#### Motivation
 
 Many projects need repeatable AL deployment automation to on-premises Business Central servers where direct connectivity is partially or fully blocked. This skill provides a practical decision matrix and implementation patterns so teams can deploy reliably across different network/security constraints.
 
 ---
 
 <!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
+
 
 ### `{skill-folder-name}`
 
@@ -151,4 +175,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 |---|---|---|
 | bc-isolated-storage-generator | @fernandoartalf | 🔵 In Development |
 | bc-approval-workflow-generator | @fernandoartalf | 🔵 In Development |
+| skill-contribution-assistant | @AlexP0lo | 🔵 In Development |
 | onprem-remote-deploy | @AlexP0lo | 🔵 In Development |
