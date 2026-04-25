@@ -80,7 +80,7 @@ Custom document tables (like custom purchase requisitions, expense reports, or c
 | **Skill Name** | `skill-contribution-assistant` |
 | **Short Description** | Guides contributors to design, refine, and submit high-quality skills for AL Copilot Skill Collection, including onboarding questions, non-intrusive opportunity detection, quality gates, and PR-readiness checks. |
 | **Target BC Version** _(optional)_ | 28.1 |
-| **Status** | 🔵 In Development |
+| **Status** | ✅ Merged |
 
 #### Author
 
@@ -104,7 +104,7 @@ The collection can scale faster if contributors receive a practical assistant th
 | **Skill Name** | `onprem-remote-deploy` |
 | **Short Description** | Deploys AL apps to remote Business Central OnPrem servers from VS Code using WinRM, SSH, SMB, or RDP tsclient-pull strategies with fallback guidance for restricted networks. |
 | **Target BC Version** _(optional)_ | 28.1 |
-| **Status** | 🔵 In Development |
+| **Status** | ✅ Merged |
 
 #### Author
 
@@ -175,5 +175,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 |---|---|---|
 | bc-isolated-storage-generator | @fernandoartalf | 🔵 In Development |
 | bc-approval-workflow-generator | @fernandoartalf | 🔵 In Development |
-| skill-contribution-assistant | @AlexP0lo | 🔵 In Development |
-| onprem-remote-deploy | @AlexP0lo | 🔵 In Development |
+| skill-contribution-assistant | @AlexP0lo | ✅ Merged |
+| onprem-remote-deploy | @AlexP0lo | ✅ Merged |
