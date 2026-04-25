@@ -1,0 +1,24 @@
+{
+  "id": "bc-telemetry-generator/references/kql-queries",
+  "title": "KQL Queries for Application Insights",
+  "description": "Ready-to-use Kusto Query Language (KQL) queries for analyzing telemetry from Business Central extensions in Application Insights.",
+  "source": "@site/../skills/bc-telemetry-generator/references/kql-queries.md",
+  "sourceDirName": "bc-telemetry-generator/references",
+  "slug": "/bc-telemetry-generator/references/kql-queries",
+  "permalink": "/skills/bc-telemetry-generator/references/kql-queries",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-telemetry-generator/references/kql-queries.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "BC Telemetry Generator",
+    "permalink": "/skills/bc-telemetry-generator/SKILL"
+  },
+  "next": {
+    "title": "Telemetry Reference Patterns",
+    "permalink": "/skills/bc-telemetry-generator/references/telemetry-reference"
+  }
+}

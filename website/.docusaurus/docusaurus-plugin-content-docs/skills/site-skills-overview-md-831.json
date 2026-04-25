@@ -1,0 +1,25 @@
+{
+  "id": "overview",
+  "title": "Skills Overview",
+  "description": "Complete catalog of AL Copilot Skills Collection",
+  "source": "@site/../skills/overview.md",
+  "sourceDirName": ".",
+  "slug": "/overview",
+  "permalink": "/skills/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Skills Overview",
+    "description": "Complete catalog of AL Copilot Skills Collection",
+    "sidebar_position": 1
+  },
+  "sidebar": "skillsSidebar",
+  "next": {
+    "title": "Business Central API Page Generator",
+    "permalink": "/skills/bc-api-page-generator/SKILL"
+  }
+}
