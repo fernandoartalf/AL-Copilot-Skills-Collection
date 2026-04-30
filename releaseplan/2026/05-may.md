@@ -205,4 +205,4 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 | bc-approval-workflow-generator | @fernandoartalf | 🔵 In Development |
 | skill-contribution-assistant | @AlexP0lo | ✅ Merged |
 | onprem-remote-deploy | @AlexP0lo | ✅ Merged |
-| bc-reports | @cperezsx | 🟡 Proposed |
+| bc-reports | @cperezsx | 🟢 Approved |
