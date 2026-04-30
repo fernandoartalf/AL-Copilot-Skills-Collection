@@ -131,7 +131,7 @@ Many projects need repeatable AL deployment automation to on-premises Business C
 |---|---|
 | Short Description | Standards and guardrails for authoring Business Central reports in AL and RDLC. Covers report object structure, DataItem hierarchy, RDLC sizing, SetData/GetData index management, body width validation, and rendering best practices. |
 | Target BC Version (optional) | 28.1 |
-| Status | 🟡 Proposed |
+| Status | 🟢 Approved |
 
 #### Author
 
@@ -145,7 +145,7 @@ Many projects need repeatable AL deployment automation to on-premises Business C
 - Full Name: Jose Miguel Dura
 - GitHub User: JMDura
 - GitHub Profile: https://github.com/JMDura
-- LinkedIn Profile: https://www.linkedin.com/in/jose-miguel-dura-sirvent/
+- LinkedIn Profile: https://www.linkedin.com/in/jose-miguel-dur%C3%A1-sirvent/
 
 #### Motivation
 
