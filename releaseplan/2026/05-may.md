@@ -125,6 +125,34 @@ Many projects need repeatable AL deployment automation to on-premises Business C
 <!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
 
 
+### `bc-reports`
+
+| Skill Name | bc-reports |
+|---|---|
+| Short Description | Standards and guardrails for authoring Business Central reports in AL and RDLC. Covers report object structure, DataItem hierarchy, RDLC sizing, SetData/GetData index management, body width validation, and rendering best practices. |
+| Target BC Version (optional) | 28.1 |
+| Status | 🟡 Proposed |
+
+#### Author
+
+- Full Name: Carlos Perez
+- GitHub User: cperezsx
+- GitHub Profile: https://github.com/cperezsx
+- LinkedIn Profile: https://www.linkedin.com/in/cperezsx/
+
+#### Co-Authors (optional)
+
+- Full Name: Jose Miguel Dura
+- GitHub User: JMDura
+- GitHub Profile: https://github.com/JMDura
+- LinkedIn Profile: https://www.linkedin.com/in/jose-miguel-dura-sirvent/
+
+#### Motivation
+
+AL report objects and RDLC layouts have many subtle requirements (DataItemLink, SetData index order, body width constraints, PageHeader/Footer sizing) that are easy to get wrong and hard to debug. This skill enforces correct patterns before code reaches review, reducing rework and rendering failures.
+
+---
+
 ### `{skill-folder-name}`
 
 | Field | Details |
@@ -177,3 +205,4 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 | bc-approval-workflow-generator | @fernandoartalf | 🔵 In Development |
 | skill-contribution-assistant | @AlexP0lo | ✅ Merged |
 | onprem-remote-deploy | @AlexP0lo | ✅ Merged |
+| bc-reports | @cperezsx | 🟡 Proposed |
