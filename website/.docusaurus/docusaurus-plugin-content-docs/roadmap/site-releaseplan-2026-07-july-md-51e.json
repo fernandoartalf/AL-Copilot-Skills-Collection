@@ -1,0 +1,24 @@
+{
+  "id": "2026/july",
+  "title": "Release Plan — July 2026",
+  "description": "Business Central 2026 Wave 1 — CU3",
+  "source": "@site/../releaseplan/2026/07-july.md",
+  "sourceDirName": "2026",
+  "slug": "/2026/july",
+  "permalink": "/roadmap/2026/july",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "previous": {
+    "title": "June",
+    "permalink": "/roadmap/2026/june"
+  },
+  "next": {
+    "title": "August",
+    "permalink": "/roadmap/2026/august"
+  }
+}

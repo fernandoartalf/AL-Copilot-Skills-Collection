@@ -1,0 +1,24 @@
+{
+  "id": "bc-business-events-generator/references/code-templates",
+  "title": "Business Events Code Templates",
+  "description": "Complete AL code templates for implementing external business events in Business Central.",
+  "source": "@site/../skills/bc-business-events-generator/references/code-templates.md",
+  "sourceDirName": "bc-business-events-generator/references",
+  "slug": "/bc-business-events-generator/references/code-templates",
+  "permalink": "/skills/bc-business-events-generator/references/code-templates",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-business-events-generator/references/code-templates.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "BC Business Events Generator",
+    "permalink": "/skills/bc-business-events-generator/SKILL"
+  },
+  "next": {
+    "title": "Business Central CDS Page Generator",
+    "permalink": "/skills/bc-cds-page-generator/SKILL"
+  }
+}
