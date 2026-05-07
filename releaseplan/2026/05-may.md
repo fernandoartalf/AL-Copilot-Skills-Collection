@@ -153,6 +153,34 @@ AL report objects and RDLC layouts have many subtle requirements (DataItemLink, 
 
 ---
 
+
+### `bc-field-propagation`
+
+| Skill Name | bc-field-propagation |
+|---|---|
+| Short Description | Propagates custom fields from source documents and journal lines to posted documents, archived documents, and ledger entries. Selects Pattern A (TransferFields - zero code) or Pattern B (EventSubscriber with dedicated codeunit per module) based on whether the posting codeunit uses TransferFields. |
+| Target BC Version (optional) | 28.1 |
+| Status | Approved |
+
+#### Author
+
+- Full Name: Carlos Perez
+- GitHub User: cperezsx
+- GitHub Profile: https://github.com/cperezsx
+- LinkedIn Profile: https://www.linkedin.com/in/cperezsx/
+
+#### Co-Authors (optional)
+
+- Full Name: Jose Miguel Dura
+- GitHub User: JMDura
+- GitHub Profile: https://github.com/JMDura
+- LinkedIn Profile: https://www.linkedin.com/in/jose-miguel-dura-sirvent/
+
+#### Motivation
+
+Custom fields added to Sales, Purchase, Transfer, or journal source tables often need to propagate to all posted documents, archive copies, and ledger entries. Getting the pattern wrong - using a manual EventSubscriber when TransferFields already covers the field, or using different Field IDs on source and target - causes data inconsistency and maintenance debt. This skill enforces the correct pattern based on how the BC posting codeunit works, and provides a complete event catalog for all major posting chains.
+
+---
 ### `{skill-folder-name}`
 
 | Field | Details |
