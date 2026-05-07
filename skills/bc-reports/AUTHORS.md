@@ -12,4 +12,4 @@
 - Full Name: Jose Miguel Dura
 - GitHub User: JMDura
 - GitHub Profile: https://github.com/JMDura
-- LinkedIn Profile: https://www.linkedin.com/in/jose-miguel-dura-sirvent/
+- LinkedIn Profile: https://www.linkedin.com/in/jose-miguel-dur%C3%A1-sirvent/

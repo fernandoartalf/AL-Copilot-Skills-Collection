@@ -2,7 +2,7 @@
 
 > Install a collection of purpose-built GitHub Copilot skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.2.1-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.2-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -51,9 +51,11 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-cds-page-generator` | Generates CDS (Dataverse) integration pages |
 | `bc-dataverse-entity-generator` | Generates Dataverse entity integration code and scripts |
 | `bc-dataverse-mapping-generator` | Generates Dataverse entity mapping configurations |
+| `bc-field-propagation` | Propagates custom fields from source documents and journal lines to posted documents, archived documents, and ledger entries |
 | `bc-install-codeunit-generator` | Generates install codeunits for extensions |
 | `bc-manifest-handoff-generator` | Generates handoff manifests for cross-framework consumption |
 | `bc-number-series-generator` | Generates number series setup patterns |
+| `bc-reports` | Standards and guardrails for authoring Business Central reports in AL and RDLC |
 | `bc-setup-table-generator` | Generates setup table and page patterns |
 | `bc-setup-wizard-generator` | Generates setup wizard (assisted setup) pages |
 | `bc-telemetry-generator` | Generates custom telemetry instrumentation and KQL queries |
