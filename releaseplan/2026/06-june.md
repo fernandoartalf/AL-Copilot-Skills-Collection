@@ -17,6 +17,34 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 <!-- Copy the block below for each new skill proposal -->
 
+### `bc-batch-processing`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-batch-processing` |
+| **Short Description** | Implements batch processing patterns for Business Central to handle millions of records without timeouts. Includes batch-limited reports with auto-resume, progress tracking tables with time estimation, Job Queue integration, and monitoring pages. Production-validated on 2.5M records. |
+| **Target BC Version** _(optional)_ | BC 27.0+ |
+| **Status** | 🟡 Proposed |
+
+#### Author
+
+- **Full Name**: Alex Polo
+- **Company**: WAU Technologies
+- **GitHub User**: alexpolo
+- **LinkedIn Profile**: https://www.linkedin.com/in/alexpolo
+
+#### Co-Authors _(optional)_
+
+<!-- None -->
+
+#### Motivation
+
+Processing large datasets (100K+ records) in Business Central often results in timeout errors after 12+ hours of execution. Common scenarios include post-migration data synchronization, bulk field updates, mass data cleanup, and one-time transformation tasks. While Microsoft documents Job Queue configuration and retry logic, there is no public documentation for batch-limiting patterns, progress tracking with time estimation, or the integration pattern connecting reports → progress tables → Job Queue → monitoring UI. This skill provides a complete, production-tested solution for multi-million record processing with automatic resumption, real-time progress visibility, accurate completion time estimates, and zero manual intervention. Extracted from a real customer implementation processing 2.5M records across 10 tables over 3 nights with zero timeouts.
+
+---
+
+<!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
+
 ### `{skill-folder-name}`
 
 | Field | Details |
