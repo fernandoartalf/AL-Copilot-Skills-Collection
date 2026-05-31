@@ -1,0 +1,26 @@
+{
+  "id": "skills/bc-dataverse-mapping-generator/SKILL",
+  "title": "Business Central Dataverse Mapping Generator",
+  "description": "Generates AL event subscriber code for Dataverse/CDS integration table and field mappings in Business Central. Creates all required event subscribers in the BCS Dataverse Events codeunit and lookup procedures in BCS Dataverse Support Funct. codeunit. Handles TWO distinct scenarios — (1) NEW CUSTOM entities (bcs_ prefix, custom BC table paired with CDS table, requiring full mapping with OnGetCDSTableNo, OnLookupCRMTables, OnAddEntityTableMapping, OnAfterResetConfiguration, lookup procedures, and label declarations) and (2) OOB entities (standard BC tables like Customer, Item, Contact mapped to existing CRM tables like CRM Account, CRM Product, CRM Contact, only requiring extra field mappings via AddNewExtraFieldMappings plus table extensions and page extensions). Use when asked to create sync mappings, set up Dataverse synchronization, add integration table mappings, map BC fields to Dataverse fields, wire up CDS coupling, connect BC tables to Dataverse entities, or add extra field mappings for standard entities.",
+  "source": "@site/docs/skills/bc-dataverse-mapping-generator/SKILL.md",
+  "sourceDirName": "skills/bc-dataverse-mapping-generator",
+  "slug": "/skills/bc-dataverse-mapping-generator/SKILL",
+  "permalink": "/docs/skills/bc-dataverse-mapping-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-dataverse-mapping-generator",
+    "description": "Generates AL event subscriber code for Dataverse/CDS integration table and field mappings in Business Central. Creates all required event subscribers in the BCS Dataverse Events codeunit and lookup procedures in BCS Dataverse Support Funct. codeunit. Handles TWO distinct scenarios — (1) NEW CUSTOM entities (bcs_ prefix, custom BC table paired with CDS table, requiring full mapping with OnGetCDSTableNo, OnLookupCRMTables, OnAddEntityTableMapping, OnAfterResetConfiguration, lookup procedures, and label declarations) and (2) OOB entities (standard BC tables like Customer, Item, Contact mapped to existing CRM tables like CRM Account, CRM Product, CRM Contact, only requiring extra field mappings via AddNewExtraFieldMappings plus table extensions and page extensions). Use when asked to create sync mappings, set up Dataverse synchronization, add integration table mappings, map BC fields to Dataverse fields, wire up CDS coupling, connect BC tables to Dataverse entities, or add extra field mappings for standard entities."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Workflow Examples & Troubleshooting",
+    "permalink": "/docs/skills/bc-dataverse-entity-generator/references/workflow-examples"
+  },
+  "next": {
+    "title": "Custom Entity Mapping — Complete Code Reference",
+    "permalink": "/docs/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping"
+  }
+}

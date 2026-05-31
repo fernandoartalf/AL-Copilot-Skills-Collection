@@ -1,0 +1,24 @@
+{
+  "id": "bc-number-series-generator/references/number-series-troubleshooting",
+  "title": "Number Series Troubleshooting",
+  "description": "Common errors, debugging tips, and performance considerations for number series implementation.",
+  "source": "@site/../skills/bc-number-series-generator/references/number-series-troubleshooting.md",
+  "sourceDirName": "bc-number-series-generator/references",
+  "slug": "/bc-number-series-generator/references/number-series-troubleshooting",
+  "permalink": "/skills/bc-number-series-generator/references/number-series-troubleshooting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-number-series-generator/references/number-series-troubleshooting.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Number Series Examples",
+    "permalink": "/skills/bc-number-series-generator/references/number-series-examples"
+  },
+  "next": {
+    "title": "Business Central Setup Table Generator",
+    "permalink": "/skills/bc-setup-table-generator/SKILL"
+  }
+}

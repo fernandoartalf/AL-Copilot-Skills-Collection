@@ -1,0 +1,24 @@
+{
+  "id": "bc-setup-wizard-generator/references/code-templates",
+  "title": "BC Setup Wizard - Code Templates",
+  "description": "Complete AL code templates for implementing assisted setup wizards in Business Central.",
+  "source": "@site/../skills/bc-setup-wizard-generator/references/code-templates.md",
+  "sourceDirName": "bc-setup-wizard-generator/references",
+  "slug": "/bc-setup-wizard-generator/references/code-templates",
+  "permalink": "/skills/bc-setup-wizard-generator/references/code-templates",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-setup-wizard-generator/references/code-templates.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "BC Setup Wizard Generator",
+    "permalink": "/skills/bc-setup-wizard-generator/SKILL"
+  },
+  "next": {
+    "title": "BC Telemetry Generator",
+    "permalink": "/skills/bc-telemetry-generator/SKILL"
+  }
+}
