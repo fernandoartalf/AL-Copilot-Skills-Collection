@@ -65,9 +65,9 @@ enumextension [ID] "[Prefix] Attachment Doc Type" extends "Attachment Document T
 ```al
 codeunit [ID] "[Prefix] Attachment Management"
 {
-  // Event Subscriber: OnBeforeDrillDown (obsolete factbox BC 25.0)
-  [EventSubscriber(ObjectType::Page, Page::"Document Attachment Factbox", 'OnBeforeDrillDown', '', false, false)]
-  local procedure OnBeforeDrillDown(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
+  // Event Subscriber: OnAfterGetRecRefFail (modern factbox record resolution)
+  [EventSubscriber(ObjectType::Page, Page::"Doc. Attachment List Factbox", 'OnAfterGetRecRefFail', '', false, false)]
+  local procedure OnAfterGetRecRefFail(DocumentAttachment: Record "Document Attachment"; var RecRef: RecordRef)
   begin
     case DocumentAttachment."Table ID" of
       DATABASE::"[Base Table]":
@@ -228,22 +228,6 @@ pageextension [ID] "[Prefix] [Entity] Card" extends "[Base Entity Card]"
   {
     addfirst(factboxes)
     {
-      // Legacy factbox (obsolete BC 25.0)
-      part("Attached Documents"; "Document Attachment Factbox")
-      {
-        ApplicationArea = All;
-        Caption = 'Attachments';
-        ObsoleteTag = '25.0';
-        ObsoleteState = Pending;
-        ObsoleteReason = 'Replaced by Doc. Attachment List Factbox with multiple file upload support.';
-        SubPageLink = "Table ID" = const(Database::"[Base Table]"),
-                      "No." = field("No."),
-                      "Document Type" = const([Prefix][Entity]);
-        Visible = false;
-        Editable = EnabledAttachments;
-      }
-      
-      // Modern factbox (BC 25.0+)
       part("Attached Documents List"; "Doc. Attachment List Factbox")
       {
         ApplicationArea = All;
