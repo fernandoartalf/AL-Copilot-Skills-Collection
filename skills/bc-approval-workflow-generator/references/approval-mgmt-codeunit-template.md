@@ -133,8 +133,8 @@ codeunit {ID} "{Affix} {ShortName} Approval Mgmt."
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.",
         'OnPopulateApprovalEntryArgument', '', false, false)]
     local procedure OnPopulateApprovalEntryArgument(
-        var ApprovalEntryArgument: Record "Approval Entry";
         var RecRef: RecordRef;
+        var ApprovalEntryArgument: Record "Approval Entry";
         WorkflowStepInstance: Record "Workflow Step Instance")
     var
         {EntityVar}: Record "{EntityTable}";
@@ -178,16 +178,16 @@ codeunit {ID} "{Affix} {ShortName} Approval Mgmt."
         'OnApproveApprovalRequest', '', false, false)]
     local procedure OnApproveApprovalRequest(var ApprovalEntry: Record "Approval Entry")
     var
-        RecRef: RecordRef;
         {EntityVar}: Record "{EntityTable}";
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
+        RecRef: RecordRef;
     begin
         RecRef.Get(ApprovalEntry."Record ID to Approve");
         case RecRef.Number of
             Database::"{EntityTable}":
                 begin
                     RecRef.SetTable({EntityVar});
-                    if not ApprovalsMgmt.HasOpenPendingApprovalEntries(
+                    if not ApprovalsMgmt.HasOpenOrPendingApprovalEntries(
                         ApprovalEntry."Record ID to Approve")
                     then begin
                         {EntityVar}."{Affix} Approval Status" :=
@@ -202,8 +202,8 @@ codeunit {ID} "{Affix} {ShortName} Approval Mgmt."
         'OnRejectApprovalRequest', '', false, false)]
     local procedure OnRejectApprovalRequest(var ApprovalEntry: Record "Approval Entry")
     var
-        RecRef: RecordRef;
         {EntityVar}: Record "{EntityTable}";
+        RecRef: RecordRef;
     begin
         RecRef.Get(ApprovalEntry."Record ID to Approve");
         case RecRef.Number of
@@ -220,7 +220,7 @@ codeunit {ID} "{Affix} {ShortName} Approval Mgmt."
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approvals Mgmt.",
         'OnBeforeShowCommonApprovalStatus', '', false, false)]
     local procedure OnBeforeShowCommonApprovalStatus(
-        var RecRef: RecordRef; var IsHandled: Boolean)
+        var RecRef: RecordRef; var IsHandle: Boolean)
     var
         {EntityVar}: Record "{EntityTable}";
     begin
@@ -238,7 +238,7 @@ codeunit {ID} "{Affix} {ShortName} Approval Mgmt."
                         {EntityVar}."{Affix} Approval Status"::Rejected:
                             Message(RejectedMsg);
                     end;
-                    IsHandled := true;
+                    IsHandle := true;
                 end;
         end;
     end;
@@ -319,6 +319,16 @@ codeunit {ID} "{Affix} {ShortName} Approval Mgmt."
                     WorkflowResponseHandling.CreateApprovalRequestsCode(),
                     RunWorkflowOnSend{ShortName}ForApprovalCode());
         end;
+    end;
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SET STATUS TO OPEN (called from Cancel action on pages)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    procedure Set{EntityShortName}StatusToOpen(var {EntityVar}: Record "{EntityTable}")
+    begin
+        {EntityVar}.Validate("{Affix} Approval Status", {EntityVar}."{Affix} Approval Status"::Open);
+        {EntityVar}.Modify(true);
     end;
 
     // ═══════════════════════════════════════════════════════════════════════════

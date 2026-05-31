@@ -7,6 +7,12 @@ pageextension { ID} "{Affix} {EntityName} Card" extends "{CardPageName}"
 {
     layout
     {
+        // Lock the General group when approval is pending/approved
+        modify(General)
+        {
+            Editable = {Affix}PageEditable;
+        }
+
         // Add the Approval Status field after the primary key field
         addafter("{PrimaryKeyFieldOnPage}")
         {
@@ -32,12 +38,12 @@ pageextension { ID} "{Affix} {EntityName} Card" extends "{CardPageName}"
     {
         addlast(processing)
         {
-            group({Affix}Approval)
+            group("{Affix} {Affix}Approval")
             {
                 Caption = 'Approval';
                 Image = Approval;
 
-                action({Affix}_SendApprovalRequest)
+                action("{Affix} {Affix}_SendApprovalRequest")
                 {
                     ApplicationArea = All;
                     Caption = 'Send Approval Request';
@@ -58,7 +64,7 @@ pageextension { ID} "{Affix} {EntityName} Card" extends "{CardPageName}"
                     end;
                 }
 
-                action({Affix}_CancelApprovalRequest)
+                action("{Affix} {Affix}_CancelApprovalRequest")
                 {
                     ApplicationArea = All;
                     Caption = 'Cancel Approval Request';
@@ -70,10 +76,11 @@ pageextension { ID} "{Affix} {EntityName} Card" extends "{CardPageName}"
 
                     trigger OnAction()
                     var
-                        ApprovalMgmt: Codeunit "{ApprovalMgmtCU}";
+                        {Affix}ApprovalMgmt: Codeunit "{ApprovalMgmtCU}";
                         WorkflowWebhookMgt: Codeunit "Workflow Webhook Management";
                     begin
-                        ApprovalMgmt.OnCancel{ShortName}ApprovalRequest(Rec);
+                        {Affix}ApprovalMgmt.OnCancel{ShortName}ApprovalRequest(Rec);
+                        {Affix}ApprovalMgmt.Set{EntityShortName}StatusToOpen(Rec);
                         WorkflowWebhookMgt.FindAndCancel(Rec.RecordId);
                         CurrPage.Update(false);
                     end;
@@ -94,14 +101,7 @@ pageextension { ID} "{Affix} {EntityName} Card" extends "{CardPageName}"
             Rec.RecordId, CanRequestApprovalForFlow, CanCancelApprovalForFlow);
 
         {Affix}SetApprovalStatusStyle();
-        {Affix}PageEditable :=
-            Rec."{Affix} Approval Status" <> Rec."{Affix} Approval Status"::Approved;
-    end;
-
-    trigger OnOpenPage()
-    begin
-        {Affix}PageEditable :=
-            Rec."{Affix} Approval Status" <> Rec."{Affix} Approval Status"::Approved;
+        {Affix}PageEditable := Rec.{Affix}ApprovalStatusAllowModify();
     end;
 
     local procedure {Affix}SetApprovalStatusStyle()

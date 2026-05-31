@@ -10,7 +10,6 @@ page {ID} "{Affix} {EntityName} Card"
     PageType = Card;
     SourceTable = "{EntityTable}";
     Caption = '{EntityName} Card';
-    Editable = PageEditable;
 
     layout
     {
@@ -19,6 +18,7 @@ page {ID} "{Affix} {EntityName} Card"
             group(General)
             {
                 Caption = 'General';
+                Editable = PageEditable;
 
                 field("{PrimaryKeyField}"; Rec."{PrimaryKeyField}")
                 {
@@ -91,6 +91,7 @@ page {ID} "{Affix} {EntityName} Card"
                         WorkflowWebhookMgt: Codeunit "Workflow Webhook Management";
                     begin
                         ApprovalMgmt.OnCancel{ShortName}ApprovalRequest(Rec);
+                        ApprovalMgmt.Set{EntityShortName}StatusToOpen(Rec);
                         WorkflowWebhookMgt.FindAndCancel(Rec.RecordId);
                         CurrPage.Update(false);
                     end;
@@ -98,11 +99,6 @@ page {ID} "{Affix} {EntityName} Card"
             }
         }
     }
-
-    trigger OnOpenPage()
-    begin
-        PageEditable := Rec."Approval Status" <> Rec."Approval Status"::Approved;
-    end;
 
     trigger OnAfterGetRecord()
     begin
@@ -116,7 +112,7 @@ page {ID} "{Affix} {EntityName} Card"
             Rec.RecordId, CanRequestApprovalForFlow, CanCancelApprovalForFlow);
 
         SetApprovalStatusStyle();
-        PageEditable := Rec."Approval Status" <> Rec."Approval Status"::Approved;
+        PageEditable := Rec.ApprovalStatusAllowModify();
     end;
 
     local procedure SetApprovalStatusStyle()
