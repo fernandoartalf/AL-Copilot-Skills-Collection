@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkal_copilot_skills_site=globalThis.webpackChunkal_copilot_skills_site||[]).push([[9647],{7121(s,l,e){e.r(l),e.d(l,{default:()=>u});e(6540);var a=e(4164),i=e(7559),r=e(5500),t=e(2831),c=e(4060),o=e(4848);function u(s){return(0,o.jsx)(r.e3,{className:(0,a.A)(i.G.wrapper.docsPages),children:(0,o.jsx)(c.A,{children:(0,t.v)(s.route.routes)})})}}}]);

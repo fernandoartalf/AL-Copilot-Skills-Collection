@@ -1,0 +1,23 @@
+{
+  "id": "instructions/skills-creation.instructions",
+  "title": "Custom Skills Creation Guidelines",
+  "description": "Overview",
+  "source": "@site/docs/instructions/skills-creation.instructions.md",
+  "sourceDirName": "instructions",
+  "slug": "/instructions/skills-creation.instructions",
+  "permalink": "/docs/instructions/skills-creation.instructions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Upgrade Codeunit Examples",
+    "permalink": "/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples"
+  },
+  "next": {
+    "title": "April 2026",
+    "permalink": "/docs/releasenotes/2026/april"
+  }
+}
