@@ -1,6 +1,6 @@
 ---
 name: bc-attachments-generator
-description: Implements standard document attachments, links, and notes on custom Business Central tables. Creates setup fields for visibility control, extends Attachment Document Type enum, generates event subscribers (OnBeforeDrillDown, OnAfterOpenForRecRef, OnAfterInitFieldsFromRecRef) in attachment management codeunit, adds table lifecycle triggers for orphan prevention on delete/rename, and extends card and list pages with both legacy and modern factboxes. Handles SubPageLink configuration, control ID mapping for Links (Control1900383207) and Notes (Control1905767507) factboxes. Use when adding attachments to custom tables, implementing document management, enabling factboxes for documents, creating attachment integration on entities, adding links and notes to records, or preventing orphan attachment records on table operations.
+description: Implements standard document attachments, links, and notes on custom Business Central tables. Creates setup fields for visibility control, extends Attachment Document Type enum, generates event subscribers (OnAfterGetRecRefFail, OnAfterOpenForRecRef, OnAfterInitFieldsFromRecRef) in attachment management codeunit, adds table lifecycle triggers for orphan prevention on delete/rename, and extends card and list pages with the modern Doc. Attachment List Factbox. Handles SubPageLink configuration, control ID mapping for Links (Control1900383207) and Notes (Control1905767507) factboxes. Use when adding attachments to custom tables, implementing document management, enabling factboxes for documents, creating attachment integration on entities, adding links and notes to records, or preventing orphan attachment records on table operations.
 ---
 
 # BC Attachments, Links & Notes Generator
@@ -9,7 +9,7 @@ Automates BC standard document attachment functionality on custom tables.
 
 ## Overview
 
-Generates complete attachment, link, and notes implementation for custom BC tables following Microsoft patterns. Creates 3 event subscribers, lifecycle triggers, factbox configurations, and setup controls.
+Generates complete attachment, link, and notes implementation for custom BC tables following Microsoft patterns. Creates 3 event subscribers, lifecycle triggers, modern factbox configuration, and setup controls.
 
 **Complete code templates available in**: [references/code-templates.md](references/code-templates.md)
 
@@ -73,7 +73,7 @@ Create codeunit with 3 event subscribers + 5 procedures.
 Location: `src/Codeunit/[Prefix]AttachmentManagement.Codeunit.al`
 
 **Event Subscribers:**
-1. `OnBeforeDrillDown` - Handle obsolete factbox drill-down (Page::"Document Attachment Factbox")
+1. `OnAfterGetRecRefFail` - Handle record reference resolution for attachment factbox (Page::"Doc. Attachment List Factbox")
 2. `OnAfterOpenForRecRef` - Filter attachments when opening details (Page::"Document Attachment Details")
 3. `OnAfterInitFieldsFromRecRef` - Initialize attachment from record (Table::"Document Attachment")
 
@@ -99,10 +99,11 @@ See [code-templates.md](references/code-templates.md#table-extension-triggers) f
 ### Step 7: Extend Card Page
 
 Add factboxes section with:
-- Modern factbox: `"Doc. Attachment List Factbox"` (BC 25.0+, UpdatePropagation = Both)
-- Legacy factbox: `"Document Attachment Factbox"` (Obsolete, Visible = false)
+- Modern factbox: `"Doc. Attachment List Factbox"` (UpdatePropagation = Both)
 - Modify Links factbox: `Control1900383207`
 - Modify Notes factbox: `Control1905767507`
+
+> **Note**: The legacy `"Document Attachment Factbox"` is fully deprecated and must NOT be included.
 
 Add `OnOpenPage()` trigger to set visibility variables.
 
