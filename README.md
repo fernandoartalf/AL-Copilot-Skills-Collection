@@ -46,6 +46,7 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-al-project-context` | Maintains persistent project context via ADRs and session handoff documents |
 | `bc-api-page-generator` | Generates AL API pages following OData/REST patterns |
 | `bc-api-query-generator` | Generates AL API query objects |
+| `bc-approval-workflow-generator` | Generates complete approval workflow implementations for Business Central entities, including approval status enum, event subscribers, workflow templates, and page actions |
 | `bc-attachments-generator` | Generates attachment handling patterns |
 | `bc-business-events-generator` | Generates Business Event definitions for Power Automate |
 | `bc-cds-page-generator` | Generates CDS (Dataverse) integration pages |
@@ -53,6 +54,7 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-dataverse-mapping-generator` | Generates Dataverse entity mapping configurations |
 | `bc-field-propagation` | Propagates custom fields from source documents and journal lines to posted documents, archived documents, and ledger entries |
 | `bc-install-codeunit-generator` | Generates install codeunits for extensions |
+| `bc-isolated-storage-generator` | Generates secure isolated storage implementations for secrets (API keys, passwords, tokens) using `IsolatedStorage` with encryption support, DataScope selection, and masked setup pages |
 | `bc-manifest-handoff-generator` | Generates handoff manifests for cross-framework consumption |
 | `bc-number-series-generator` | Generates number series setup patterns |
 | `bc-reports` | Standards and guardrails for authoring Business Central reports in AL and RDLC |
