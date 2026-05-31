@@ -1,0 +1,27 @@
+{
+  "id": "bc-telemetry-generator/SKILL",
+  "title": "BC Telemetry Generator",
+  "description": "Instruments Business Central AL codeunits with Application Insights telemetry using the System Application Telemetry codeunit. Analyzes an existing codeunit supplied by the user, generates a dedicated Feature Usage Telemetry codeunit (or extends an existing one) with helper procedures for LogStart/LogEnd with automatic duration, LogError with call stack, LogFeatureUsage, and LogPerformanceWarning. Adds Telemetry.LogMessage calls with consistent event IDs (PREFIX-NNN), meaningful custom dimensions (Dictionary of [Text, Text]), proper Verbosity levels (Normal, Warning, Error, Critical), correct DataClassification (SystemMetadata, CustomerContent, EndUserIdentifiableInformation), and TelemetryScope::ExtensionPublisher. Covers five telemetry categories — lifecycle events (started/completed), error tracking (validation/posting failures), performance monitoring (slow operation warnings with threshold comparison), feature usage analytics (discount types, payment methods, order size distribution), and contextual telemetry (environment, version, anonymized user). Generates KQL queries for Application Insights analysis. Use when adding telemetry to codeunits, instrumenting AL code with Application Insights, tracking feature usage, monitoring performance, logging errors with custom dimensions, creating telemetry helper codeunits, or implementing observability for BC extensions.",
+  "source": "@site/../skills/bc-telemetry-generator/SKILL.md",
+  "sourceDirName": "bc-telemetry-generator",
+  "slug": "/bc-telemetry-generator/SKILL",
+  "permalink": "/skills/bc-telemetry-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-telemetry-generator/SKILL.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-telemetry-generator",
+    "description": "Instruments Business Central AL codeunits with Application Insights telemetry using the System Application Telemetry codeunit. Analyzes an existing codeunit supplied by the user, generates a dedicated Feature Usage Telemetry codeunit (or extends an existing one) with helper procedures for LogStart/LogEnd with automatic duration, LogError with call stack, LogFeatureUsage, and LogPerformanceWarning. Adds Telemetry.LogMessage calls with consistent event IDs (PREFIX-NNN), meaningful custom dimensions (Dictionary of [Text, Text]), proper Verbosity levels (Normal, Warning, Error, Critical), correct DataClassification (SystemMetadata, CustomerContent, EndUserIdentifiableInformation), and TelemetryScope::ExtensionPublisher. Covers five telemetry categories — lifecycle events (started/completed), error tracking (validation/posting failures), performance monitoring (slow operation warnings with threshold comparison), feature usage analytics (discount types, payment methods, order size distribution), and contextual telemetry (environment, version, anonymized user). Generates KQL queries for Application Insights analysis. Use when adding telemetry to codeunits, instrumenting AL code with Application Insights, tracking feature usage, monitoring performance, logging errors with custom dimensions, creating telemetry helper codeunits, or implementing observability for BC extensions."
+  },
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "BC Setup Wizard - Code Templates",
+    "permalink": "/skills/bc-setup-wizard-generator/references/code-templates"
+  },
+  "next": {
+    "title": "KQL Queries for Application Insights",
+    "permalink": "/skills/bc-telemetry-generator/references/kql-queries"
+  }
+}
