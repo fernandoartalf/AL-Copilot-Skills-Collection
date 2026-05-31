@@ -185,7 +185,7 @@ Editability helper:
 
 This is the **core** object. It contains:
 
-6. **Integration event publishers** — `OnSend…ForApproval`, `OnCancel…ApprovalRequest`
+1. **Integration event publishers** — `OnSend…ForApproval`, `OnCancel…ApprovalRequest`
 2. **Validation** — `Check…ApprovalPossible`, `Is…ApprovalWorkflowEnabled`
 3. **Event code identifiers** — `Run…Code(): Code[128]`
 4. **Event subscribers for workflow events** — handle `HandleEvent` calls
