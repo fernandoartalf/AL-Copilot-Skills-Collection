@@ -26,11 +26,17 @@ codeunit {ID} "{Affix} {ShortName} Workflow Setup"
     local procedure OnAfterInsertApprovalsTableRelations()
     var
         ApprovalEntry: Record "Approval Entry";
+        WorkflowWebhookEntry: Record "Workflow Webhook Entry";
     begin
         WorkflowSetup.InsertTableRelation(
             Database::"{EntityTable}", 0,
             Database::"Approval Entry",
             ApprovalEntry.FieldNo("Record ID to Approve"));
+
+        WorkflowSetup.InsertTableRelation(
+            Database::"{EntityTable}", {EntityVar}.FieldNo(SystemId),
+            Database::"Workflow Webhook Entry",
+            WorkflowWebhookEntry.FieldNo("Data ID"));
     end;
 
     // ─────────────────────────────────────────────
@@ -54,6 +60,7 @@ codeunit {ID} "{Affix} {ShortName} Workflow Setup"
             WorkflowDescLbl,
             CategoryCodeLbl);
 
+        UpdateMatrixData();
         InsertApprovalWorkflowDetails(Workflow);
         WorkflowSetup.MarkWorkflowAsTemplate(Workflow);
     end;
@@ -63,9 +70,8 @@ codeunit {ID} "{Affix} {ShortName} Workflow Setup"
         WorkflowStepArgument: Record "Workflow Step Argument";
         BlankDateFormula: DateFormula;
         EntityRec: Record "{EntityTable}";
-        ApprovalMgmt: Codeunit "{ApprovalMgmtCU}";
     begin
-        WorkflowSetup.PopulateWorkflowStepArgument(
+        WorkflowSetup.InitWorkflowStepArgument(
             WorkflowStepArgument,
             WorkflowStepArgument."Approver Type"::Approver,
             WorkflowStepArgument."Approver Limit Type"::"{ApproverLimitType}",
@@ -83,6 +89,37 @@ codeunit {ID} "{Affix} {ShortName} Workflow Setup"
             WorkflowStepArgument, false, false);
     end;
 
+    /// <summary>
+    /// Registers WF Event/Response Combination records so the workflow editor
+    /// shows all response options for the custom events. Without this, responses
+    /// like "Set Status to Pending Approval" are missing from the step config UI.
+    /// </summary>
+    local procedure UpdateMatrixData()
+    var
+        WFEventResponseCombination: Record "WF Event/Response Combination";
+        WorkflowResponse: Record "Workflow Response";
+    begin
+        // Send Approval Request For Approval
+        if WorkflowResponse.Get(SENDAPPROVALREQUESTFORAPPROVALLbl) then
+            WorkflowResponse.MakeIndependent(
+                ApprovalMgmt.RunWorkflowOnSend{ShortName}ForApprovalCode());
+
+        // Set Status to Pending Approval
+        if WorkflowResponse.Get(SETSTATUSTOPENDINGAPPROVALLbl) then
+            WorkflowResponse.MakeIndependent(
+                ApprovalMgmt.RunWorkflowOnSend{ShortName}ForApprovalCode());
+
+        // Send Notification to Webhook
+        if WorkflowResponse.Get(SENDNOTIFICATIONTOWEBHOOKLbl) then
+            WorkflowResponse.MakeIndependent(
+                ApprovalMgmt.RunWorkflowOnSend{ShortName}ForApprovalCode());
+
+        // Cancel All Approval Requests
+        if WorkflowResponse.Get(CANCELALLAPPROVALREQUESTSLbl) then
+            WorkflowResponse.MakeIndependent(
+                ApprovalMgmt.RunWorkflowOnCancel{ShortName}ApprovalRequestCode());
+    end;
+
     local procedure BuildConditions(var EntityRec: Record "{EntityTable}"): Text
     begin
         exit(StrSubstNo(
@@ -93,6 +130,11 @@ codeunit {ID} "{Affix} {ShortName} Workflow Setup"
     var
         WorkflowSetup: Codeunit "Workflow Setup";
         WorkflowResponseHandling: Codeunit "Workflow Response Handling";
+        ApprovalMgmt: Codeunit "{ApprovalMgmtCU}";
+        SENDAPPROVALREQUESTFORAPPROVALLbl: Label 'SENDAPPROVALREQUESTFORAPPROVAL', Locked = true;
+        SENDNOTIFICATIONTOWEBHOOKLbl: Label 'SENDNOTIFICATIONTOWEBHOOK', Locked = true;
+        SETSTATUSTOPENDINGAPPROVALLbl: Label 'SETSTATUSTOPENDINGAPPROVAL', Locked = true;
+        CANCELALLAPPROVALREQUESTSLbl: Label 'CANCELALLAPPROVALREQUESTS', Locked = true;
         CategoryCodeLbl: Label '{CategoryCode}', Locked = true;
         CategoryDescLbl: Label '{CategoryDesc}';
         WorkflowCodeLbl: Label '{WorkflowCode}', Locked = true;

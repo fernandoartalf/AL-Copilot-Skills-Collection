@@ -35,4 +35,11 @@ tableextension { ID} "{Affix} {EntityName}" extends "{EntityName}"
         then
             Error(StatusErr, Rec."{Affix} Approval Status");
     end;
+
+    procedure {Affix}ApprovalStatusAllowModify(): Boolean
+    begin
+        exit(not (Rec."{Affix} Approval Status" in
+            [Rec."{Affix} Approval Status"::Approved,
+             Rec."{Affix} Approval Status"::"Pending Approval"]));
+    end;
 }
