@@ -171,6 +171,11 @@ Deletion guard logic:
 1. Blocks deletion if status is Approved or Pending Approval.
 2. Calls `ApprovalsMgmt.DeleteApprovalEntries(Rec.RecordId)`.
 
+Editability helper:
+- Add an `ApprovalStatusAllowModify(): Boolean` procedure that returns
+  `false` when status is Approved or Pending Approval, `true` otherwise.
+  Pages use this to bind `Editable` on layout groups.
+
 | Table type | Trigger | Template |
 |---|---|---|
 | **Custom table** | `OnDelete` directly in the table | `references/custom-table-template.md` |
@@ -189,6 +194,8 @@ This is the **core** object. It contains:
 7. **Event subscribers for status updates** — pending, approve, reject
 8. **Event subscribers for response handling** — release, open, response predecessors
 9. **Card page mapping** — `OnConditionalCardPageIDNotFound`
+10. **Set status to Open helper** — `Set{Entity}StatusToOpen` procedure
+    called from the Cancel action on pages to revert status
 
 See: `references/approval-mgmt-codeunit-template.md`
 
@@ -197,8 +204,15 @@ See: `references/approval-mgmt-codeunit-template.md`
 Subscribes to `Workflow Setup` events to register:
 
 1. A **workflow category** (short code + description)
-2. **Table relations** linking the entity to `Approval Entry`
+2. **Table relations** linking the entity to `Approval Entry` AND
+   `Workflow Webhook Entry` (for Power Automate integration)
 3. A **workflow template** with pre-configured steps
+4. **UpdateMatrixData** — inserts `WF Event/Response Combination`
+   records so the workflow editor shows all response options
+   (Send Approval Request, Set Status to Pending Approval,
+   Send Notification to Webhook, Cancel All Approval Requests)
+   for the custom events. Without this, responses are missing
+   from the workflow step configuration UI.
 
 See: `references/workflow-setup-codeunit-template.md`
 
@@ -208,9 +222,16 @@ For each target page (Card / List), add:
 
 1. The `Approval Status` field in layout (with `StyleExpr`)
 2. An **Approval** action group with Send / Cancel actions
-3. `OnAfterGetRecord` trigger logic for button enablement
-4. If sub-tables are locked: `Editable` binding on subpage parts
-5. `OnOpenPage` to set initial page editability
+3. `OnAfterGetRecord` trigger logic for button enablement and page
+   editability via `Rec.ApprovalStatusAllowModify()` (custom table)
+   or `Rec.{Affix}ApprovalStatusAllowModify()` (table extension)
+4. `modify(General) { Editable = GPageEditable; }` to lock the
+   General group when status is not Open — do NOT use
+   `CurrPage.Editable` as it prevents approval action buttons
+   from being clickable
+5. Cancel action calls `ApprovalMgmt.Set{Entity}StatusToOpen(Rec)`
+   to explicitly revert status
+6. If sub-tables are locked: `Editable` binding on subpage parts
 
 | Page type | Template |
 |---|---|
@@ -253,6 +274,21 @@ The approval management codeunit must subscribe to these standard events:
 | `Approvals Mgmt.` | `OnApproveApprovalRequest` | Status → Approved |
 | `Approvals Mgmt.` | `OnRejectApprovalRequest` | Status → Rejected |
 | `Approvals Mgmt.` | `OnBeforeShowCommonApprovalStatus` | Display message |
+
+> **CRITICAL**: The `OnBeforeShowCommonApprovalStatus` event parameter
+> is named `IsHandle` (NOT `IsHandled`). Using the wrong name causes
+> the subscriber to silently fail to bind.
+
+> **CRITICAL**: Use `HasOpenOrPendingApprovalEntries` in
+> `OnApproveApprovalRequest` (NOT `HasOpenPendingApprovalEntries`
+> which does not exist).
+
+> **CRITICAL**: Variable declarations must be ordered by type:
+> Record, Report, Codeunit, XmlPort, Page, Query, then scalar types.
+> Place `RecordRef` after `Codeunit` variables.
+
+| Standard Codeunit | Event | Purpose |
+|---|---|---|
 | `Workflow Response Handling` | `OnReleaseDocument` | Status → Approved |
 | `Workflow Response Handling` | `OnOpenDocument` | Status → Open |
 | `Workflow Response Handling` | `OnAddWorkflowResponsePredecessorsToLibrary` | Link responses |
@@ -272,3 +308,21 @@ The approval management codeunit must subscribe to these standard events:
 7. If sub-tables need locking, bind `Editable` on the subpage part to the
    header's approval status = Open.
 8. Follow the instruction files for naming, code style, and performance.
+9. **Page editability**: Use `modify(General) { Editable = GPageEditable; }`
+   where `GPageEditable` is set from `Rec.ApprovalStatusAllowModify()` in
+   `OnAfterGetRecord`. Do NOT use `CurrPage.Editable` — it disables
+   approval action buttons when the page is non-editable.
+10. **Variable ordering**: Declare variables in AL-required order:
+    Record → Report → Codeunit → XmlPort → Page → Query → scalar types.
+    `RecordRef` goes after Codeunit.
+11. **OnBeforeShowCommonApprovalStatus**: The parameter is `IsHandle`
+    (NOT `IsHandled`). Using the wrong name silently breaks the binding.
+12. **OnApproveApprovalRequest**: Use `HasOpenOrPendingApprovalEntries`
+    (NOT `HasOpenPendingApprovalEntries` which does not exist).
+13. **UpdateMatrixData**: The Workflow Setup codeunit must insert
+    `WF Event/Response Combination` records so the workflow editor
+    shows all response options for the custom events.
+14. **Workflow Webhook Entry**: Register a table relation from the entity
+    `SystemId` to `Workflow Webhook Entry."Data ID"` for Power Automate.
+15. **Cancel action**: Must explicitly call a `Set{Entity}StatusToOpen`
+    procedure on the Approval Mgmt. codeunit to revert the status.

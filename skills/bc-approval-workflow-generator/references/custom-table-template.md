@@ -53,6 +53,13 @@ table {ID} "{Affix} {EntityName}"
             Error(StatusErr, TableCaption(), Rec."Approval Status");
     end;
 
+    procedure ApprovalStatusAllowModify(): Boolean
+    begin
+        exit(not (Rec."Approval Status" in
+            [Rec."Approval Status"::Approved,
+             Rec."Approval Status"::"Pending Approval"]));
+    end;
+
     procedure RecordExists(): Boolean
     begin
         // Replace with your own existence check (e.g. check for lines)
