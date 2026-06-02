@@ -17,6 +17,28 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 <!-- Copy the block below for each new skill proposal -->
 
+### `bc-pricing-refactor`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-pricing-refactor` |
+| **Short Description** | Guides AL developers through refactoring legacy sales pricing customizations from `Sales Price` and `Sales Line Discount` to the modern `Price List Header` and `Price List Line` architecture. Includes migration workflow, extensibility guidance, and validation scaffolds for the new pricing engine. |
+| **Target BC Version** _(optional)_ | 28.2 |
+| **Status** | 🔵 In Development |
+
+#### Author
+
+- **Full Name**: Carlos Pérez
+- **GitHub User**: cperezsx
+- **GitHub Profile**: https://github.com/cperezsx
+- **LinkedIn Profile**: https://www.linkedin.com/in/cperezsx/
+
+#### Motivation
+
+This skill addresses a repeatable migration problem for AL teams moving pricing customizations from the legacy pricing model to the current Price List architecture. It reduces re-discovery work around object mapping, feature enablement risks, migration extensibility points, and validation scenarios, while keeping the guidance runtime-agnostic.
+
+---
+
 ### `{skill-folder-name}`
 
 | Field | Details |
@@ -65,4 +87,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
+| `bc-pricing-refactor` | `@cperezsx` | 🔵 |
 | _{skill-name}_ | _@author_ | 🟡 / 🟢 / 🔵 / ✅ |
