@@ -1,21 +1,24 @@
 # AL Copilot Skills Collection
 
-> Install a collection of purpose-built GitHub Copilot skills for Business Central AL development — with a single command.
+> Install a collection of purpose-built AI coding assistant skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.3.2-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.4.1-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
 
+[![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Compatible-000000?style=for-the-badge&logo=githubcopilot&logoColor=white)](https://github.com/features/copilot)
+[![Claude](https://img.shields.io/badge/Claude-Compatible-D97757?style=for-the-badge&logo=claude&logoColor=white)](https://claude.ai/)
 ---
 
 ## Quick Start
 
 1. **Install** the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=FernandoArtigasAlfonso.al-copilot-skills-collection).
 2. **Open** any AL project in VS Code.
-3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) and run **"AL Copilot Skills Collection: Install Skills"**.
-4. Skills are deployed to `.github/skills/` and instructions to `.github/instructions/` in your workspace.
-5. **Start using Copilot** — skills are automatically picked up when the task matches.
+3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).
+4. Run **"AL Copilot Skills Collection: Install Skills (GitHub Copilot)"** or **"AL Copilot Skills Collection: Install Skills (Claude)"**.
+5. Skills and instructions are deployed to the selected assistant target in your workspace.
+6. **Start using your assistant** — skills are available from the target-specific project folders.
 
 ---
 
@@ -25,12 +28,15 @@
 
 Open the Command Palette (`Ctrl+Shift+P`) and run:
 
-- **AL Copilot Skills Collection: Install Skills** — Installs all bundled skills and instructions to your workspace.
-- **AL Copilot Skills Collection: Update Skills** — Updates existing skills to the latest version (with confirmation prompt).
+- **AL Copilot Skills Collection: Install Skills (GitHub Copilot)** — Installs all bundled skills and instructions to `.github/`.
+- **AL Copilot Skills Collection: Update Skills (GitHub Copilot)** — Updates existing GitHub Copilot skills and instructions to the latest version.
+- **AL Copilot Skills Collection: Install Skills (Claude)** — Installs all bundled skills and instructions to `.claude/`.
+- **AL Copilot Skills Collection: Update Skills (Claude)** — Updates existing Claude skills and instructions to the latest version.
 
 The extension automatically:
-- Creates the `.github/skills/` and `.github/instructions/` folder structure
+- Creates the selected target folder structure
 - Copies all skill packages with their references and examples
+- Copies bundled instruction files for the selected target
 - Shows progress notifications during installation
 - Reports exactly how many skills and instruction files were deployed
 
@@ -68,7 +74,7 @@ Each skill is a self-contained package of instructions, references, and template
 
 ### Agent-Agnostic Skills
 
-Skills follow the open [Agent Skills](https://agentskills.io/) standard — a portable format adopted by multiple agent products (GitHub Copilot, Claude Code, Cursor, Roo Code, and others). The extension deploys them to `.github/skills/` by default, but you can copy them to your agent's preferred location.
+Skills follow the open [Agent Skills](https://agentskills.io/) standard — a portable format adopted by multiple agent products (GitHub Copilot, Claude Code, Cursor, Roo Code, and others). The extension can deploy them to GitHub Copilot's `.github/skills/` structure or Claude Code's `.claude/skills/` structure.
 
 ---
 
@@ -76,25 +82,44 @@ Skills follow the open [Agent Skills](https://agentskills.io/) standard — a po
 
 - **Visual Studio Code** 1.85.0 or higher
 - **AL Language Extension** for Business Central development
-- **GitHub Copilot** (or any agent supporting the [Agent Skills](https://agentskills.io/) standard)
+- **GitHub Copilot** or **Claude Code** (or any agent supporting the [Agent Skills](https://agentskills.io/) standard)
 
 ---
 
 ## How It Works
 
-When you run **"AL Copilot Skills Collection: Install Skills"**, the extension:
+When you run a GitHub Copilot install command, the extension:
 
 1. Detects your workspace root folder.
 2. Creates `.github/skills/` and `.github/instructions/` if they don't exist.
 3. Copies all bundled skill packages (SKILL.md, references, examples) into your workspace.
 4. GitHub Copilot automatically discovers and loads skills when you ask it to perform a matching task.
 
-Each skill folder follows this structure:
+GitHub Copilot skill folders follow this structure:
 
 ```text
 .github/skills/
 └── bc-api-page-generator/
     ├── SKILL.md              ← Main instructions (loaded by the agent)
+    ├── AUTHORS.md            ← Author and co-author information
+    ├── CHANGELOG.md          ← Version history
+    └── references/           ← Supporting files, examples, templates
+```
+
+When you run a Claude install command, the extension:
+
+1. Detects your workspace root folder.
+2. Creates `.claude/skills/` and `.claude/instructions/` if they don't exist.
+3. Copies all bundled skill packages into `.claude/skills/`.
+4. Copies bundled instruction files into `.claude/instructions/`.
+5. Leaves existing `.claude/CLAUDE.md`, `.claude/settings.json`, and `.claude/agents/` files untouched.
+
+Claude skill folders follow this structure:
+
+```text
+.claude/skills/
+└── bc-api-page-generator/
+    ├── SKILL.md              ← Main skill instructions
     ├── AUTHORS.md            ← Author and co-author information
     ├── CHANGELOG.md          ← Version history
     └── references/           ← Supporting files, examples, templates
