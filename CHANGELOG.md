@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Claude Code deployment commands:
+  - `AL Copilot Skills Collection: Install Skills (Claude)` — Install bundled skills to `.claude/skills` and instructions to `.claude/instructions`
+  - `AL Copilot Skills Collection: Update Skills (Claude)` — Update existing Claude-targeted bundled skills and instructions
+
+### Changed
+- Renamed existing command titles to make the GitHub Copilot target explicit:
+  - `AL Copilot Skills Collection: Install Skills (GitHub Copilot)`
+  - `AL Copilot Skills Collection: Update Skills (GitHub Copilot)`
+
 ### Planned
 - Additional AL skills for specific scenarios
 - Skill selection UI during installation
