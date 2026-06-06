@@ -17,6 +17,28 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 <!-- Copy the block below for each new skill proposal -->
 
+### `bc-job-queue`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-job-queue` |
+| **Short Description** | Guides AL developers through creating, parameterizing, executing, retrying, and diagnosing Business Central Job Queue workloads. Includes decision rules for Job Queue versus other async primitives, parameter-contract guidance, recovery patterns, and telemetry-oriented troubleshooting. |
+| **Target BC Version** _(optional)_ | 28.2 |
+| **Status** | 🔵 In Development |
+
+#### Author
+
+- **Full Name**: Carlos Pérez
+- **GitHub User**: cperezsx
+- **GitHub Profile**: https://github.com/cperezsx
+- **LinkedIn Profile**: https://www.linkedin.com/in/cperezsx/
+
+#### Motivation
+
+Business Central teams repeatedly need to implement or stabilize background processes, but Job Queue guidance is often fragmented across platform docs, Base Application APIs, and community troubleshooting posts. This skill consolidates those sources into one reusable workflow so an agent can choose the right async primitive, scaffold safe Job Queue code, define deterministic parameter contracts, and produce supportable monitoring guidance.
+
+---
+
 ### `{skill-folder-name}`
 
 | Field | Details |
@@ -65,4 +87,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
+| `bc-job-queue` | `@cperezsx` | 🔵 |
 | _{skill-name}_ | _@author_ | 🟡 / 🟢 / 🔵 / ✅ |
