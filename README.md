@@ -2,7 +2,7 @@
 
 > Install a collection of purpose-built AI coding assistant skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.4.1-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.5.0-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -61,14 +61,24 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-field-propagation` | Propagates custom fields from source documents and journal lines to posted documents, archived documents, and ledger entries |
 | `bc-install-codeunit-generator` | Generates install codeunits for extensions |
 | `bc-isolated-storage-generator` | Generates secure isolated storage implementations for secrets (API keys, passwords, tokens) using `IsolatedStorage` with encryption support, DataScope selection, and masked setup pages |
+| `bc-job-queue` | Guides AL developers through creating, parameterizing, executing, retrying, and diagnosing Business Central Job Queue workloads, with decision rules for Job Queue versus other async primitives, parameter-contract guidance, recovery patterns, and telemetry-oriented troubleshooting |
 | `bc-manifest-handoff-generator` | Generates handoff manifests for cross-framework consumption |
 | `bc-number-series-generator` | Generates number series setup patterns |
+| `bc-pricing-refactor` | Guides AL developers through refactoring legacy sales pricing customizations from `Sales Price` and `Sales Line Discount` to the modern `Price List Header` and `Price List Line` architecture, including migration workflow, extensibility guidance, and validation scaffolds |
 | `bc-reports` | Standards and guardrails for authoring Business Central reports in AL and RDLC |
 | `bc-setup-table-generator` | Generates setup table and page patterns |
 | `bc-setup-wizard-generator` | Generates setup wizard (assisted setup) pages |
 | `bc-telemetry-generator` | Generates custom telemetry instrumentation and KQL queries |
 | `bc-test-codeunit-generator` | Generates test codeunits with Given/When/Then structure |
 | `bc-upgrade-codeunit-generator` | Generates upgrade codeunits for extension versioning |
+| `documentation-bc-analysis-generator` | Generates Business Central feasibility analysis documents with SWOT analysis, numbered risk register, Optimistic/Expected/Pessimistic time and cost estimates, and GO/NO-GO recommendation as the analyst's artefact backing a Change Control Note |
+| `documentation-bc-architecture-generator` | Generates Business Central architecture documents with numbered Architecture Decision Records (ADRs), logical component views, runtime flows, data architecture, and cross-cutting concerns as the long-lived companion to an approved technical spec |
+| `documentation-bc-ccn-generator` | Generates Business Central Change Control Notes in any BCP-47 language, consolidating user stories, technical specs, architecture documents, and feasibility analyses into a single stakeholder-facing document with Mermaid diagram markers for Word conversion |
+| `documentation-bc-md-to-docx-converter` | Converts Business Central documentation markdown files to professionally formatted Word (.docx) documents using Python and corporate Word templates, with Mermaid diagram rendering via the Mermaid CLI and multi-language placeholder substitution |
+| `documentation-bc-phase-plan-generator` | Generates the complete set of per-phase implementation plan files from an approved Business Central technical spec, translating the object inventory and acceptance criteria into actionable checkbox task lists with dependencies and exit criteria |
+| `documentation-bc-release-note-generator` | Generates Business Central release notes from an approved spec or CCN with release summary, scope of change, testing steps, known limitations, and approvals table, plus a sibling JSON file for Word template conversion |
+| `documentation-bc-technical-spec-generator` | Generates Business Central technical specifications from approved user stories with a full AL object inventory, workspace-derived IDs, field definitions, phased task breakdown, and technical acceptance criteria mapped to user-story ACs |
+| `documentation-bc-user-story-generator` | Generates Business Central user stories in the OpenSpec format through a structured interview, producing verifiable acceptance criteria, out-of-scope items, and Microsoft Learn–verified current-situation analysis |
 | `onprem-remote-deploy` | Deploys AL `.app` files to remote BC OnPrem servers via WinRM, SSH, SMB, or RDP tsclient-pull when network access is restricted |
 | `skill-contribution-assistant` | Guides contributors to design, polish, and submit high-quality skills to the collection |
 

@@ -1,0 +1,111 @@
+{
+  "$schema": "documentation-bc-release-note-field-map",
+  "description": "Canonical static field/section keys for the RN-NNN release-note artefact produced by documentation-bc-release-note-generator. The 'key' values are language-neutral PascalCase identifiers and MUST be kept byte-stable across runs and languages so they can be bound 1:1 to placeholder tokens (e.g. {{ClientName}}, {{TestingSteps}}) in any md-to-docx-converter template. Locale-specific labels and headings live under '*Locales' sub-objects. No company, client, or publisher names are encoded here — every identity field is sourced from the workspace app.json or supplied by the user at generation time.",
+  "artifactType": "RELEASENOTE",
+  "idPattern": "^RN-\\d{3}$",
+  "filePattern": "RN-NNN-<kebab-title>.releasenote.md",
+  "outputFolder": "docs/releasenotesmd/",
+  "outputJson": {
+    "required": true,
+    "filePattern": "RN-NNN-<kebab-title>.releasenote.json",
+    "rule": "Every run of the skill MUST emit this JSON file alongside the markdown. JSON keys come from this map; JSON values carry the translated content. Downstream consumer: md-to-docx-converter."
+  },
+  "sectionAnchorTemplate": "<!-- section-key: {{key}} -->",
+  "sectionAnchor": {
+    "pattern": "<!-- section-key: <CanonicalKey> -->",
+    "rule": "Each H2 in the release-note markdown MUST be immediately followed by this anchor on its own line so parsers map sections to their canonical key regardless of language or visible heading text.",
+    "example": "## 5. Pasos de prueba\n<!-- section-key: TestingSteps -->\n\n..."
+  },
+  "supportedLocales": ["en", "es", "fr", "de", "it", "pt", "nl"],
+  "numberingPolicy": "template",
+  "releaseNoteMetadataFields": [
+    { "key": "RnId",          "label": "Release note ID", "labelLocales": { "en": "Release note ID", "es": "ID nota de versión", "fr": "ID note de version","de": "Versionsnotiz-ID",  "it": "ID nota versione",  "pt": "ID nota de versão", "nl": "Versienota-ID" },      "required": true,  "format": "RN-NNN",     "translateValue": true },
+    { "key": "RnTitle",       "label": "Title",           "labelLocales": { "en": "Title",           "es": "Titulo",            "fr": "Titre",             "de": "Titel",             "it": "Titolo",            "pt": "Título",            "nl": "Titel" },             "required": true,  "format": "text",       "translateValue": true },
+    { "key": "Customer",     "label": "Customer",        "labelLocales": { "en": "Customer",        "es": "Cliente",           "fr": "Client",            "de": "Kunde",             "it": "Cliente",           "pt": "Cliente",           "nl": "Klant" },             "required": true,  "format": "text",       "translateValue": true },
+    { "key": "RnVersion",     "label": "Version",         "labelLocales": { "en": "Version",         "es": "Versión",           "fr": "Version",           "de": "Version",           "it": "Versione",          "pt": "Versão",            "nl": "Versie" },            "required": true,  "format": "semver",     "translateValue": true },
+    { "key": "RnStatus",      "label": "Status",          "labelLocales": { "en": "Status",          "es": "Estado",            "fr": "Statut",            "de": "Status",            "it": "Stato",             "pt": "Estado",            "nl": "Status" },            "required": true,  "format": "enum",       "translateValue": true },
+    { "key": "ClientName",    "label": "Client name",     "labelLocales": { "en": "Client name",     "es": "Nombre cliente",    "fr": "Nom du client",     "de": "Kundenname",        "it": "Nome cliente",      "pt": "Nome do cliente",   "nl": "Klantnaam" },         "required": true,  "format": "text",       "translateValue": true },
+    { "key": "CcnNumber",     "label": "CCN number",      "labelLocales": { "en": "CCN number",      "es": "Número CCN",        "fr": "Numéro CCN",        "de": "CCN-Nummer",        "it": "Numero CCN",        "pt": "Número CCN",        "nl": "CCN-nummer" },        "required": true,  "format": "CCN-NNN",    "translateValue": true },
+    { "key": "IssueNumber",   "label": "Issue number",    "labelLocales": { "en": "Issue number",    "es": "Número incidencia", "fr": "Numéro de ticket",  "de": "Ticketnummer",      "it": "Numero issue",      "pt": "Número da issue",   "nl": "Ticketnummer" },      "required": true,  "format": "text",       "translateValue": true },
+    { "key": "ReleaseDate",   "label": "Release date",    "labelLocales": { "en": "Release date",    "es": "Fecha publicación", "fr": "Date de publication","de": "Veröffentlichungsdatum","it": "Data rilascio",  "pt": "Data de lançamento","nl": "Publicatiedatum" },   "required": true,  "format": "DD-MM-YYYY", "translateValue": true },
+    { "key": "ReleasedBy",    "label": "Released by",     "labelLocales": { "en": "Released by",     "es": "Publicado por",     "fr": "Publié par",        "de": "Veröffentlicht von","it": "Pubblicato da",     "pt": "Publicado por",     "nl": "Gepubliceerd door" }, "required": true,  "format": "text",       "translateValue": true },
+    { "key": "PreparedBy",     "label": "Prepared by",     "labelLocales": { "en": "Prepared by",     "es": "Elaborado por",     "fr": "Préparé par",       "de": "Erstellt von",      "it": "Preparato da",      "pt": "Elaborado por",     "nl": "Opgesteld door" },    "required": true,  "format": "text",       "translateValue": true },
+    { "key": "RnModule",      "label": "Module",          "labelLocales": { "en": "Module",          "es": "Módulo",            "fr": "Module",            "de": "Modul",             "it": "Modulo",            "pt": "Módulo",            "nl": "Module" },            "required": true,  "format": "text",       "translateValue": true },
+    { "key": "CreatedDate",   "label": "Created date",    "labelLocales": { "en": "Created date",    "es": "Fecha creación",    "fr": "Date de création",  "de": "Erstelldatum",      "it": "Data creazione",    "pt": "Data criação",      "nl": "Aanmaakdatum" },      "required": true,  "format": "DD-MM-YYYY", "translateValue": true },
+    { "key": "ApprovedDate",  "label": "Approved date",   "labelLocales": { "en": "Approved date",   "es": "Fecha aprobación",  "fr": "Date d'approbation","de": "Genehmigungsdatum", "it": "Data approvazione", "pt": "Data aprovação",    "nl": "Goedkeuringsdatum" }, "required": false, "format": "DD-MM-YYYY", "translateValue": true }
+  ],
+  "frontmatterFields": [
+    { "key": "id",            "yamlKey": "id",            "required": true,  "format": "RN-NNN",     "translateValue": false, "source": "auto-allocated" },
+    { "key": "title",         "yamlKey": "title",         "required": true,  "format": "text",       "translateValue": true,  "source": "user|spec.title|ccn.title" },
+    { "key": "customer",      "yamlKey": "customer",      "required": true,  "format": "text",       "translateValue": false, "source": "user" },
+    { "key": "version",       "yamlKey": "version",       "required": true,  "format": "x.y.z[.w]",  "translateValue": false, "source": "app.json:version" },
+    { "key": "status",        "yamlKey": "status",        "required": true,  "format": "enum",       "translateValue": true,  "enum": ["draft", "approved", "released", "rejected"], "source": "always-draft-on-create" },
+    { "key": "clientName",    "yamlKey": "clientName",    "required": true,  "format": "text",       "translateValue": false, "source": "user" },
+    { "key": "ccnNumber",     "yamlKey": "ccnNumber",     "required": true,  "format": "text",       "translateValue": false, "source": "user|workspace-convention", "exampleFormat": "DSD-NNNN" },
+    { "key": "issueNumber",   "yamlKey": "issueNumber",   "required": true,  "format": "text",       "translateValue": false, "source": "user" },
+    { "key": "releaseDate",   "yamlKey": "releaseDate",   "required": true,  "format": "YYYY-MM-DD", "translateValue": false, "source": "user|today" },
+    { "key": "releasedBy",    "yamlKey": "releasedBy",    "required": true,  "format": "text",       "translateValue": false, "source": "app.json:publisher" },
+    { "key": "preparedBy",    "yamlKey": "prepared_by",   "required": true,  "format": "text",       "translateValue": true,  "source": "user" },
+    { "key": "module",        "yamlKey": "module",        "required": true,  "format": "text",       "translateValue": true,  "source": "spec.module|ccn.module|user" },
+    { "key": "createdDate",   "yamlKey": "createdDate",   "required": true,  "format": "YYYY-MM-DD", "translateValue": false, "source": "today" },
+    { "key": "approvedDate",  "yamlKey": "approvedDate",  "required": false, "format": "YYYY-MM-DD", "translateValue": false, "source": "human-gate" }
+  ],
+  "sections": [
+    {
+      "order": 1,
+      "key": "ReleaseSummary",
+      "displayHeading": "Release Summary",
+      "displayHeadingLocales": { "en": "Release Summary", "es": "Resumen del release", "fr": "Résumé de la mise en production", "de": "Release-Zusammenfassung", "it": "Riepilogo della release", "pt": "Resumo do release", "nl": "Samenvatting van de release" },
+      "description": "2–4 sentence overview of what this release delivers and who is affected.",
+      "contentType": "text"
+    },
+    {
+      "order": 2,
+      "key": "ScopeOfChange",
+      "displayHeading": "Scope of Change",
+      "displayHeadingLocales": { "en": "Scope of Change", "es": "Alcance del cambio", "fr": "Portée du changement", "de": "Umfang der Änderung", "it": "Ambito della modifica", "pt": "Escopo da mudança", "nl": "Omvang van de wijziging" },
+      "description": "Bullet list grouped by AL object type (Tables, Table Extensions, Pages, Page Extensions, Codeunits, Permission Sets, Reports, Enums, XMLPorts, Queries). Each entry uses the Caption as the functional description.",
+      "contentType": "list-group"
+    },
+    {
+      "order": 3,
+      "key": "ChangeRequestDetails",
+      "displayHeading": "Change Request Details",
+      "displayHeadingLocales": { "en": "Change Request Details", "es": "Detalles de la solicitud de cambio", "fr": "Détails de la demande de changement", "de": "Details der Änderungsanforderung", "it": "Dettagli della richiesta di modifica", "pt": "Detalhes da solicitação de mudança", "nl": "Details van het wijzigingsverzoek" },
+      "description": "Narrative of the change. References the source CCN / SPEC / Issue. Optional 'Recent commits' subsection if git history was used.",
+      "contentType": "text"
+    },
+    {
+      "order": 4,
+      "key": "TestingSetup",
+      "displayHeading": "Testing Setup",
+      "displayHeadingLocales": { "en": "Testing Setup", "es": "Configuración de pruebas", "fr": "Configuration des tests", "de": "Testumgebung", "it": "Configurazione del test", "pt": "Configuração de testes", "nl": "Testopstelling" },
+      "description": "Prerequisites table — BC runtime, application version, dependencies, permission sets, master data preconditions.",
+      "contentType": "table+text"
+    },
+    {
+      "order": 5,
+      "key": "TestingSteps",
+      "displayHeading": "Testing Steps",
+      "displayHeadingLocales": { "en": "Testing Steps", "es": "Pasos de prueba", "fr": "Étapes de test", "de": "Testschritte", "it": "Passi di test", "pt": "Passos de teste", "nl": "Teststappen" },
+      "description": "Numbered checklist, one subsection per area (Permissions, Pages, Page Extensions, Codeunits, Integrations). Uses Caption for object names and ToolTip text for field-level guidance.",
+      "contentType": "ordered-list-group"
+    },
+    {
+      "order": 6,
+      "key": "KnownLimitations",
+      "displayHeading": "Known Limitations",
+      "displayHeadingLocales": { "en": "Known Limitations", "es": "Limitaciones conocidas", "fr": "Limitations connues", "de": "Bekannte Einschränkungen", "it": "Limitazioni note", "pt": "Limitações conhecidas", "nl": "Bekende beperkingen" },
+      "description": "Bullet list of caveats, deferred items, or breaking changes the client should be aware of. Use the literal word 'None' if there are no limitations.",
+      "contentType": "list"
+    },
+    {
+      "order": 7,
+      "key": "Approvals",
+      "displayHeading": "Approvals",
+      "displayHeadingLocales": { "en": "Approvals", "es": "Aprobaciones", "fr": "Approbations", "de": "Genehmigungen", "it": "Approvazioni", "pt": "Aprovações", "nl": "Goedkeuringen" },
+      "description": "Table — Role | Name | Decision | Date | Signature. Empty rows; signatures collected after delivery.",
+      "contentType": "table"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "documentation-bc-analysis-field-map",
+  "description": "Canonical static field/section keys for the ANALYSIS-NNN feasibility-analysis artefact produced by documentation-bc-analysis-generator. The 'key' values are language-neutral PascalCase identifiers and MUST be kept byte-stable across runs and languages so they can be bound 1:1 to placeholder tokens (e.g. {{ChangeSummary}}, {{Swot}}, {{RiskAssessment}}) in any md-to-docx-converter template. Locale-specific labels and headings live under '*Locales' sub-objects.",
+  "artifactType": "ANALYSIS",
+  "idPattern": "^ANALYSIS-\\d{3}$",
+  "filePattern": "ANALYSIS-NNN-<kebab-title>.analysis.md",
+  "outputFolder": "openspec/analysis/",
+  "outputJson": {
+    "required": true,
+    "filePattern": "ANALYSIS-NNN-<kebab-title>.analysis.json",
+    "rule": "Every run of the skill MUST emit this JSON file alongside the markdown. JSON keys come from this map; JSON values carry the translated content. Downstream consumer: md-to-docx-converter."
+  },
+  "sectionAnchorTemplate": "<!-- section-key: {{key}} -->",
+  "sectionAnchor": {
+    "pattern": "<!-- section-key: <CanonicalKey> -->",
+    "rule": "Each H2 in the analysis markdown MUST be immediately followed by this anchor on its own line so parsers map sections to their canonical key regardless of language or visible heading text.",
+    "example": "## 4. Estimación de tiempo\n<!-- section-key: TimeEstimate -->\n\n..."
+  },
+  "supportedLocales": ["en", "es", "fr", "de", "it", "pt", "nl"],
+  "numberingPolicy": "template",
+  "analysisMetadataFields": [
+    { "key": "AnalysisId",             "label": "Analysis ID",     "labelLocales": { "en": "Analysis ID",     "es": "ID Análisis",       "fr": "ID Analyse",        "de": "Analyse-ID",        "it": "ID Analisi",        "pt": "ID Análise",        "nl": "Analyse-ID" },        "required": true,  "format": "ANALYSIS-NNN", "translateValue": true },
+    { "key": "AnalysisTitle",          "label": "Title",           "labelLocales": { "en": "Title",           "es": "Titulo",            "fr": "Titre",             "de": "Titel",             "it": "Titolo",            "pt": "Título",            "nl": "Titel" },             "required": true,  "format": "text",         "translateValue": true },
+    { "key": "Customer",               "label": "Customer",        "labelLocales": { "en": "Customer",        "es": "Cliente",           "fr": "Client",            "de": "Kunde",             "it": "Cliente",           "pt": "Cliente",           "nl": "Klant" },              "required": true,  "format": "text",         "translateValue": true },
+    { "key": "AnalysisStatus",         "label": "Status",          "labelLocales": { "en": "Status",          "es": "Estado",            "fr": "Statut",            "de": "Status",            "it": "Stato",             "pt": "Estado",            "nl": "Status" },            "required": true,  "format": "enum",         "translateValue": true },
+    { "key": "SourceSpec",             "label": "Source spec",     "labelLocales": { "en": "Source spec",     "es": "Especificación fuente","fr": "Spécification source","de": "Quellspezifikation","it": "Specifica sorgente","pt": "Especificação fonte","nl": "Bronspecificatie" },"required": true,  "format": "SPEC-NNN",     "translateValue": true },
+    { "key": "SourceUserStory",        "label": "Source user story","labelLocales": { "en": "Source user story","es": "Historia de usuario fuente","fr": "Histoire utilisateur source","de": "Quell-User-Story","it": "Storia utente sorgente","pt": "História de usuário fonte","nl": "Bron-user-story" },"required": true,"format": "US-NNN",       "translateValue": true },
+    { "key": "SourceCcn",              "label": "Source CCN",      "labelLocales": { "en": "Source CCN",      "es": "CCN fuente",        "fr": "CCN source",        "de": "Quell-CCN",         "it": "CCN sorgente",      "pt": "CCN fonte",         "nl": "Bron-CCN" },          "required": false, "format": "CCN-NNN",      "translateValue": true },
+    { "key": "PreparedBy",             "label": "Prepared by",     "labelLocales": { "en": "Prepared by",     "es": "Elaborado por",     "fr": "Préparé par",       "de": "Erstellt von",      "it": "Preparato da",      "pt": "Elaborado por",     "nl": "Opgesteld door" },    "required": true,  "format": "text",         "translateValue": true },
+    { "key": "Date",                   "label": "Date",            "labelLocales": { "en": "Date",            "es": "Fecha",             "fr": "Date",              "de": "Datum",             "it": "Data",              "pt": "Data",              "nl": "Datum" },             "required": true,  "format": "DD-MM-YYYY",   "translateValue": true },
+    { "key": "RecommendationVerdict",  "label": "Recommendation",  "labelLocales": { "en": "Recommendation",  "es": "Recomendación",     "fr": "Recommandation",    "de": "Empfehlung",        "it": "Raccomandazione",   "pt": "Recomendação",      "nl": "Aanbeveling" },       "required": true,  "format": "GO|CONDITIONAL-GO|NO-GO", "translateValue": true }
+  ],
+  "frontmatterFields": [
+    { "key": "id",             "yamlKey": "id",             "required": true,  "format": "ANALYSIS-NNN", "translateValue": true },
+    { "key": "title",          "yamlKey": "title",          "required": true,  "format": "text",         "translateValue": true  },
+    { "key": "customer",       "yamlKey": "customer",       "required": true,  "format": "text",         "translateValue": true },
+    { "key": "version",        "yamlKey": "version",        "required": true,  "format": "x.y.z",        "translateValue": true },
+    { "key": "status",         "yamlKey": "status",         "required": true,  "format": "enum",         "translateValue": true, "enum": ["draft", "approved", "superseded"] },
+    { "key": "spec",           "yamlKey": "spec",           "required": true,  "format": "SPEC-NNN",     "translateValue": true },
+    { "key": "userStory",      "yamlKey": "user_story",     "required": true,  "format": "US-NNN",       "translateValue": true },
+    { "key": "ccn",            "yamlKey": "ccn",            "required": false, "format": "CCN-NNN",      "translateValue": true },
+    { "key": "preparedBy",     "yamlKey": "prepared_by",    "required": true,  "format": "text",         "translateValue": true },
+    { "key": "date",           "yamlKey": "date",           "required": true,  "format": "DD-MM-YYYY",   "translateValue": true },
+    { "key": "recommendation", "yamlKey": "recommendation", "required": true,  "format": "enum",         "translateValue": true, "enum": ["GO", "CONDITIONAL-GO", "NO-GO"] }
+  ],
+  "sections": [
+    {
+      "order": 1,
+      "key": "References",
+      "displayHeading": "References",
+      "displayHeadingLocales": { "en": "References", "es": "Referencias", "fr": "Références", "de": "Referenzen", "it": "Riferimenti", "pt": "Referências", "nl": "Referenties" },
+      "description": "Table linking back to user story, spec and (optional) CCN with their current status.",
+      "contentType": "table"
+    },
+    {
+      "order": 2,
+      "key": "ChangeSummary",
+      "displayHeading": "Change summary",
+      "displayHeadingLocales": { "en": "Change summary", "es": "Resumen del cambio", "fr": "Résumé du changement", "de": "Änderungszusammenfassung", "it": "Riepilogo della modifica", "pt": "Resumo da mudança", "nl": "Wijzigingssamenvatting" },
+      "description": "Prose framing + bullet list of new tables, pages, codeunits, permission sets, modified objects.",
+      "contentType": "text+list"
+    },
+    {
+      "order": 3,
+      "key": "ScopeAndImpact",
+      "displayHeading": "Scope & impact",
+      "displayHeadingLocales": { "en": "Scope & impact", "es": "Alcance e impacto", "fr": "Portée et impact", "de": "Umfang und Auswirkung", "it": "Ambito e impatto", "pt": "Escopo e impacto", "nl": "Scope en impact" },
+      "description": "Quantified impact table (new objects, modified objects, modules, LoC, ID range usage) + open-question status.",
+      "contentType": "table+text"
+    },
+    {
+      "order": 4,
+      "key": "TimeEstimate",
+      "displayHeading": "Time estimate",
+      "displayHeadingLocales": { "en": "Time estimate", "es": "Estimación de tiempo", "fr": "Estimation du temps", "de": "Zeitschätzung", "it": "Stima dei tempi", "pt": "Estimativa de tempo", "nl": "Tijdschatting" },
+      "description": "Effort table (Optimistic / Expected / Pessimistic per phase + contingency + total) and calendar-duration table.",
+      "contentType": "table"
+    },
+    {
+      "order": 5,
+      "key": "CostEstimate",
+      "displayHeading": "Cost estimate",
+      "displayHeadingLocales": { "en": "Cost estimate", "es": "Estimación de coste", "fr": "Estimation du coût", "de": "Kostenschätzung", "it": "Stima dei costi", "pt": "Estimativa de custo", "nl": "Kostenraming" },
+      "description": "EUR/h rate + cost-per-scenario table + breakdown + assumptions.",
+      "contentType": "table+list"
+    },
+    {
+      "order": 6,
+      "key": "Swot",
+      "displayHeading": "SWOT analysis",
+      "displayHeadingLocales": { "en": "SWOT analysis", "es": "Análisis DAFO", "fr": "Analyse SWOT", "de": "SWOT-Analyse", "it": "Analisi SWOT", "pt": "Análise SWOT", "nl": "SWOT-analyse" },
+      "description": "Strengths / Weaknesses / Opportunities / Threats blocks with evidence bullets.",
+      "contentType": "swot"
+    },
+    {
+      "order": 7,
+      "key": "RiskAssessment",
+      "displayHeading": "Risk assessment",
+      "displayHeadingLocales": { "en": "Risk assessment", "es": "Evaluación de riesgos", "fr": "Évaluation des risques", "de": "Risikobewertung", "it": "Valutazione dei rischi", "pt": "Avaliação de riscos", "nl": "Risicobeoordeling" },
+      "description": "Numbered R-NN risk register with Likelihood / Impact / Mitigation columns and overall rating.",
+      "contentType": "risk-table"
+    },
+    {
+      "order": 8,
+      "key": "FeasibilityRecommendation",
+      "displayHeading": "Feasibility recommendation",
+      "displayHeadingLocales": { "en": "Feasibility recommendation", "es": "Recomendación de viabilidad", "fr": "Recommandation de faisabilité", "de": "Machbarkeitsempfehlung", "it": "Raccomandazione di fattibilità", "pt": "Recomendação de viabilidade", "nl": "Haalbaarheidsaanbeveling" },
+      "description": "GO / CONDITIONAL-GO / NO-GO verdict heading + justification + (optional) pre-conditions + non-blocking advisories.",
+      "contentType": "verdict"
+    },
+    {
+      "order": 9,
+      "key": "HandoffToArchitect",
+      "displayHeading": "Handoff back to the Architect",
+      "displayHeadingLocales": { "en": "Handoff back to the Architect", "es": "Devolución al arquitecto", "fr": "Remise à l'architecte", "de": "Übergabe an den Architekten", "it": "Consegna all'architetto", "pt": "Entrega ao arquiteto", "nl": "Overdracht aan de architect" },
+      "description": "Short closing paragraph describing the next ownership step.",
+      "contentType": "text"
+    }
+  ]
+}

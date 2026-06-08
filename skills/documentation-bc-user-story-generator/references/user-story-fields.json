@@ -1,0 +1,94 @@
+{
+  "$schema": "documentation-bc-user-story-field-map",
+  "description": "Canonical static field/section keys for the US-NNN user-story artefact produced by documentation-bc-user-story-generator. The 'key' values are language-neutral PascalCase identifiers and MUST be kept byte-stable across runs and languages so they can be bound 1:1 to placeholder tokens (e.g. {{UserStoryStatement}}) in any md-to-docx-converter template. Locale-specific labels and headings live under '*Locales' sub-objects.",
+  "artifactType": "USERSTORY",
+  "idPattern": "^US-\\d{3}$",
+  "filePattern": "US-NNN-<kebab-title>.userstory.md",
+  "outputFolder": "openspec/userstories/",
+  "outputJson": {
+    "required": true,
+    "filePattern": "US-NNN-<kebab-title>.userstory.json",
+    "rule": "Every run of the skill MUST emit this JSON file alongside the markdown. JSON keys come from this map ('frontmatterFields[].key' and 'sections[].key'); JSON values carry the translated content. Downstream consumer: md-to-docx-converter."
+  },
+  "sectionAnchor": {
+    "pattern": "<!-- section-key: <CanonicalKey> -->",
+    "rule": "Each H2 in the user-story markdown MUST be immediately followed by this anchor on its own line so parsers map sections to their canonical key regardless of the content language or visible heading text.",
+    "example": "## Contexto de negocio\n<!-- section-key: BusinessContext -->\n\n..."
+  },
+  "sectionAnchorTemplate": "<!-- section-key: {{key}} -->",
+  "supportedLocales": ["en", "es", "fr", "de", "it", "pt", "nl"],
+  "numberingPolicy": "template",
+  "usMetadataFields": [
+    { "key": "UsId",           "label": "US ID",          "labelLocales": { "en": "US ID",          "es": "ID US",           "fr": "ID US",           "de": "US-ID",           "it": "ID US",           "pt": "ID US",           "nl": "US-ID" },          "required": true,  "format": "US-NNN",     "translateValue": true },
+    { "key": "UsTitle",        "label": "Title",          "labelLocales": { "en": "Title",          "es": "Titulo",          "fr": "Titre",           "de": "Titel",           "it": "Titolo",          "pt": "Título",          "nl": "Titel" },          "required": true,  "format": "text",       "translateValue": true },
+    { "key": "Customer",       "label": "Customer",       "labelLocales": { "en": "Customer",       "es": "Cliente",         "fr": "Client",          "de": "Kunde",           "it": "Cliente",         "pt": "Cliente",         "nl": "Klant" },          "required": true,  "format": "text",       "translateValue": true },
+    { "key": "UsStatus",       "label": "Status",         "labelLocales": { "en": "Status",         "es": "Estado",          "fr": "Statut",          "de": "Status",          "it": "Stato",           "pt": "Estado",          "nl": "Status" },         "required": true,  "format": "enum",       "translateValue": true },
+    { "key": "Module",         "label": "Module",         "labelLocales": { "en": "Module",         "es": "Módulo",          "fr": "Module",          "de": "Modul",           "it": "Modulo",          "pt": "Módulo",          "nl": "Module" },         "required": true,  "format": "text",       "translateValue": true },
+    { "key": "ProductOwner",   "label": "Product owner",  "labelLocales": { "en": "Product owner",  "es": "Product owner",   "fr": "Product owner",   "de": "Product owner",   "it": "Product owner",   "pt": "Product owner",   "nl": "Product owner" },  "required": true,  "format": "text",       "translateValue": true },
+    { "key": "CreatedDate",    "label": "Created date",   "labelLocales": { "en": "Created date",   "es": "Fecha creación",  "fr": "Date de création","de": "Erstelldatum",    "it": "Data creazione",  "pt": "Data criação",    "nl": "Aanmaakdatum" },   "required": true,  "format": "DD-MM-YYYY", "translateValue": true },
+    { "key": "PreparedBy",     "label": "Prepared by",    "labelLocales": { "en": "Prepared by",    "es": "Elaborado por",    "fr": "Préparé par",      "de": "Erstellt von",     "it": "Preparato da",     "pt": "Elaborado por",    "nl": "Opgesteld door" },   "required": true,  "format": "text",       "translateValue": true },
+    { "key": "ApprovedDate",   "label": "Approved date",  "labelLocales": { "en": "Approved date",  "es": "Fecha aprobación","fr": "Date d'approbation","de": "Genehmigungsdatum","it": "Data approvazione","pt": "Data aprovação",  "nl": "Goedkeuringsdatum" },"required": false, "format": "DD-MM-YYYY", "translateValue": true }
+  ],
+  "frontmatterFields": [
+    { "key": "id",            "yamlKey": "id",            "required": true,  "format": "US-NNN",     "translateValue": true },
+    { "key": "title",         "yamlKey": "title",         "required": true,  "format": "text",       "translateValue": true  },
+    { "key": "customer",      "yamlKey": "customer",      "required": true,  "format": "text",       "translateValue": true },
+    { "key": "version",       "yamlKey": "version",       "required": true,  "format": "x.y.z",      "translateValue": true },
+    { "key": "status",        "yamlKey": "status",        "required": true,  "format": "enum",       "translateValue": true, "enum": ["draft", "approved", "rejected"] },
+    { "key": "module",        "yamlKey": "module",        "required": true,  "format": "text",       "translateValue": true  },
+    { "key": "productOwner",  "yamlKey": "productOwner",  "required": true,  "format": "text",       "translateValue": true },
+    { "key": "preparedBy",    "yamlKey": "prepared_by",   "required": true,  "format": "text",       "translateValue": true },
+    { "key": "createdDate",   "yamlKey": "created_date",  "required": true,  "format": "DD-MM-YYYY", "translateValue": true },
+    { "key": "approvedDate",  "yamlKey": "approved_date", "required": false, "format": "DD-MM-YYYY", "translateValue": true }
+  ],
+  "sections": [
+    {
+      "order": 1,
+      "key": "UserStoryStatement",
+      "displayHeading": "User Story",
+      "displayHeadingLocales": { "en": "User Story", "es": "Historia de usuario", "fr": "Histoire utilisateur", "de": "User Story", "it": "Storia utente", "pt": "História de usuário", "nl": "User story" },
+      "description": "As-a / I-want / so-that triplet that opens the story.",
+      "contentType": "text"
+    },
+    {
+      "order": 2,
+      "key": "BusinessContext",
+      "displayHeading": "Business Context",
+      "displayHeadingLocales": { "en": "Business Context", "es": "Contexto de negocio", "fr": "Contexte métier", "de": "Geschäftskontext", "it": "Contesto di business", "pt": "Contexto de negócio", "nl": "Bedrijfscontext" },
+      "description": "Current situation, who is affected, operational pain points.",
+      "contentType": "text+list"
+    },
+    {
+      "order": 3,
+      "key": "CurrentSituation",
+      "displayHeading": "Current Situation (Standard Business Central)",
+      "displayHeadingLocales": { "en": "Current Situation (Standard Business Central)", "es": "Situación actual (Business Central estándar)", "fr": "Situation actuelle (Business Central standard)", "de": "Aktuelle Situation (Standard Business Central)", "it": "Situazione attuale (Business Central standard)", "pt": "Situação atual (Business Central padrão)", "nl": "Huidige situatie (standaard Business Central)" },
+      "description": "Microsoft Learn-verified facts about what standard BC already supports and the gap the story closes.",
+      "contentType": "text+list"
+    },
+    {
+      "order": 4,
+      "key": "AcceptanceCriteria",
+      "displayHeading": "Acceptance Criteria",
+      "displayHeadingLocales": { "en": "Acceptance Criteria", "es": "Criterios de aceptación", "fr": "Critères d'acceptation", "de": "Akzeptanzkriterien", "it": "Criteri di accettazione", "pt": "Critérios de aceitação", "nl": "Acceptatiecriteria" },
+      "description": "Numbered AC1, AC2, … each with bullet behaviors. Minimum 3.",
+      "contentType": "ac-list"
+    },
+    {
+      "order": 5,
+      "key": "OutOfScope",
+      "displayHeading": "Out of Scope",
+      "displayHeadingLocales": { "en": "Out of Scope", "es": "Fuera de alcance", "fr": "Hors périmètre", "de": "Nicht im Umfang", "it": "Fuori ambito", "pt": "Fora do escopo", "nl": "Buiten scope" },
+      "description": "Explicitly excluded items.",
+      "contentType": "list"
+    },
+    {
+      "order": 6,
+      "key": "OpenQuestions",
+      "displayHeading": "Open Questions",
+      "displayHeadingLocales": { "en": "Open Questions", "es": "Preguntas abiertas", "fr": "Questions ouvertes", "de": "Offene Fragen", "it": "Domande aperte", "pt": "Questões em aberto", "nl": "Open vragen" },
+      "description": "Numbered open questions that need Product Owner / customer decisions.",
+      "contentType": "ordered-list"
+    }
+  ]
+}
