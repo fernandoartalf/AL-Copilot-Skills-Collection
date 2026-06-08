@@ -1,0 +1,154 @@
+{
+  "$schema": "documentation-bc-technical-spec-field-map",
+  "description": "Canonical static field/section keys for the SPEC-NNN technical specification artefact produced by documentation-bc-technical-spec-generator. The 'key' values are language-neutral PascalCase identifiers and MUST be kept byte-stable across runs and languages so they can be bound 1:1 to placeholder tokens (e.g. {{AlObjectInventory}}, {{PhaseOverview}}) in any md-to-docx-converter template. Locale-specific labels and headings live under '*Locales' sub-objects.",
+  "artifactType": "SPEC",
+  "idPattern": "^SPEC-\\d{3}$",
+  "filePattern": "SPEC-NNN-<kebab-title>.spec.md",
+  "outputFolder": "openspec/specs/",
+  "outputJson": {
+    "required": true,
+    "filePattern": "SPEC-NNN-<kebab-title>.spec.json",
+    "rule": "Every run of the skill MUST emit this JSON file alongside the markdown. JSON keys come from this map; JSON values carry the translated content. Downstream consumer: md-to-docx-converter."
+  },
+  "sectionAnchorTemplate": "<!-- section-key: {{key}} -->",
+  "sectionAnchor": {
+    "pattern": "<!-- section-key: <CanonicalKey> -->",
+    "rule": "Each H2 in the spec markdown MUST be immediately followed by this anchor on its own line so parsers map sections to their canonical key regardless of language or visible heading text.",
+    "example": "## 3. Inventario de objetos AL\n<!-- section-key: AlObjectInventory -->\n\n..."
+  },
+  "supportedLocales": ["en", "es", "fr", "de", "it", "pt", "nl"],
+  "numberingPolicy": "template",
+  "specMetadataFields": [
+    { "key": "SpecId",          "label": "SPEC ID",         "labelLocales": { "en": "SPEC ID",         "es": "ID SPEC",          "fr": "ID SPEC",           "de": "SPEC-ID",          "it": "ID SPEC",          "pt": "ID SPEC",          "nl": "SPEC-ID" },         "required": true,  "format": "SPEC-NNN",   "translateValue": true },
+    { "key": "SpecTitle",       "label": "Title",           "labelLocales": { "en": "Title",           "es": "Titulo",           "fr": "Titre",             "de": "Titel",            "it": "Titolo",           "pt": "Título",           "nl": "Titel" },           "required": true,  "format": "text",       "translateValue": true },
+    { "key": "Customer",       "label": "Customer",        "labelLocales": { "en": "Customer",        "es": "Cliente",          "fr": "Client",            "de": "Kunde",            "it": "Cliente",          "pt": "Cliente",          "nl": "Klant" },           "required": true,  "format": "text",       "translateValue": true },
+    { "key": "SpecStatus",      "label": "Status",          "labelLocales": { "en": "Status",          "es": "Estado",           "fr": "Statut",            "de": "Status",           "it": "Stato",            "pt": "Estado",           "nl": "Status" },          "required": true,  "format": "enum",       "translateValue": true },
+    { "key": "SpecType",        "label": "Type",            "labelLocales": { "en": "Type",            "es": "Tipo",             "fr": "Type",              "de": "Typ",              "it": "Tipo",             "pt": "Tipo",             "nl": "Type" },            "required": true,  "format": "enum",       "translateValue": true },
+    { "key": "SourceUserStory", "label": "Source user story","labelLocales": { "en": "Source user story","es": "Historia de usuario fuente","fr": "Histoire utilisateur source","de": "Quell-User-Story","it": "Storia utente sorgente","pt": "História de usuário fonte","nl": "Bron-user-story" },"required": true,  "format": "US-NNN",     "translateValue": true },
+    { "key": "Priority",        "label": "Priority",        "labelLocales": { "en": "Priority",        "es": "Prioridad",        "fr": "Priorité",          "de": "Priorität",        "it": "Priorità",         "pt": "Prioridade",       "nl": "Prioriteit" },      "required": true,  "format": "enum",       "translateValue": true },
+    { "key": "Complexity",      "label": "Complexity",      "labelLocales": { "en": "Complexity",      "es": "Complejidad",      "fr": "Complexité",        "de": "Komplexität",      "it": "Complessità",      "pt": "Complexidade",     "nl": "Complexiteit" },    "required": true,  "format": "enum",       "translateValue": true },
+    { "key": "EstimatedEffort", "label": "Estimated effort","labelLocales": { "en": "Estimated effort","es": "Esfuerzo estimado", "fr": "Effort estimé",     "de": "Geschätzter Aufwand","it": "Sforzo stimato", "pt": "Esforço estimado", "nl": "Geschatte inspanning" },"required": true,"format": "text",       "translateValue": true },
+    { "key": "SpecModule",      "label": "Module",          "labelLocales": { "en": "Module",          "es": "Módulo",           "fr": "Module",            "de": "Modul",            "it": "Modulo",           "pt": "Módulo",           "nl": "Module" },          "required": true,  "format": "text",       "translateValue": true },
+    { "key": "Prefix",          "label": "Prefix",          "labelLocales": { "en": "Prefix",          "es": "Prefijo",          "fr": "Préfixe",           "de": "Präfix",           "it": "Prefisso",         "pt": "Prefixo",          "nl": "Voorvoegsel" },     "required": true,  "format": "text",       "translateValue": true },
+    { "key": "IdRange",         "label": "ID range",        "labelLocales": { "en": "ID range",        "es": "Rango de IDs",     "fr": "Plage d'identifiants","de": "ID-Bereich",     "it": "Intervallo ID",    "pt": "Intervalo de IDs", "nl": "ID-bereik" },       "required": true,  "format": "from-to",    "translateValue": true },
+    { "key": "CreatedDate",     "label": "Created date",    "labelLocales": { "en": "Created date",    "es": "Fecha creación",   "fr": "Date de création",  "de": "Erstelldatum",     "it": "Data creazione",   "pt": "Data criação",     "nl": "Aanmaakdatum" },    "required": true,  "format": "DD-MM-YYYY", "translateValue": true },
+    { "key": "PreparedBy",      "label": "Prepared by",     "labelLocales": { "en": "Prepared by",     "es": "Elaborado por",     "fr": "Préparé par",       "de": "Erstellt von",      "it": "Preparato da",      "pt": "Elaborado por",     "nl": "Opgesteld door" },    "required": true,  "format": "text",       "translateValue": true },
+    { "key": "ApprovedDate",    "label": "Approved date",   "labelLocales": { "en": "Approved date",   "es": "Fecha aprobación", "fr": "Date d'approbation","de": "Genehmigungsdatum","it": "Data approvazione","pt": "Data aprovação",    "nl": "Goedkeuringsdatum" },"required": false,"format": "DD-MM-YYYY", "translateValue": true }
+  ],
+  "frontmatterFields": [
+    { "key": "id",              "yamlKey": "id",               "required": true,  "format": "SPEC-NNN",   "translateValue": true },
+    { "key": "title",           "yamlKey": "title",            "required": true,  "format": "text",       "translateValue": true  },
+    { "key": "customer",        "yamlKey": "customer",         "required": true,  "format": "text",       "translateValue": true },
+    { "key": "version",         "yamlKey": "version",          "required": true,  "format": "x.y.z",      "translateValue": true },
+    { "key": "type",            "yamlKey": "type",             "required": true,  "format": "enum",       "translateValue": true, "enum": ["features", "bugfix", "infrastructure", "migration"] },
+    { "key": "status",          "yamlKey": "status",           "required": true,  "format": "enum",       "translateValue": true, "enum": ["draft", "approved", "in-progress", "completed", "rejected"] },
+    { "key": "userStory",       "yamlKey": "user_story",       "required": true,  "format": "US-NNN",     "translateValue": true },
+    { "key": "priority",        "yamlKey": "priority",         "required": true,  "format": "enum",       "translateValue": true, "enum": ["High", "Medium", "Low"] },
+    { "key": "complexity",      "yamlKey": "complexity",       "required": true,  "format": "enum",       "translateValue": true, "enum": ["Low", "Medium", "Medium-High", "High"] },
+    { "key": "estimatedEffort", "yamlKey": "estimated_effort", "required": true,  "format": "text",       "translateValue": true },
+    { "key": "module",          "yamlKey": "module",           "required": true,  "format": "text",       "translateValue": true  },
+    { "key": "prefix",          "yamlKey": "prefix",           "required": true,  "format": "text",       "translateValue": true },
+    { "key": "idRange",         "yamlKey": "id_range",         "required": true,  "format": "from-to",    "translateValue": true },
+    { "key": "preparedBy",      "yamlKey": "prepared_by",      "required": true,  "format": "text",       "translateValue": true },
+    { "key": "createdDate",     "yamlKey": "created_date",     "required": true,  "format": "DD-MM-YYYY", "translateValue": true },
+    { "key": "approvedDate",    "yamlKey": "approved_date",    "required": false, "format": "DD-MM-YYYY", "translateValue": true }
+  ],
+  "sections": [
+    {
+      "order": 1,
+      "key": "UserStoryReference",
+      "displayHeading": "User Story Reference",
+      "displayHeadingLocales": { "en": "User Story Reference", "es": "Referencia a la historia de usuario", "fr": "Référence à l'histoire utilisateur", "de": "Referenz auf User Story", "it": "Riferimento alla storia utente", "pt": "Referência à história de usuário", "nl": "Verwijzing naar user story" },
+      "description": "Source US, Product Owner, status, and the As-a / I-want / so-that quote.",
+      "contentType": "text"
+    },
+    {
+      "order": 2,
+      "key": "TechnicalDesignOverview",
+      "displayHeading": "Technical Design Overview",
+      "displayHeadingLocales": { "en": "Technical Design Overview", "es": "Visión técnica del diseño", "fr": "Vue d'ensemble de la conception technique", "de": "Technische Designübersicht", "it": "Panoramica del design tecnico", "pt": "Visão geral do design técnico", "nl": "Technisch ontwerpoverzicht" },
+      "description": "Design principles, architecture (mermaid ER), out-of-scope confirmation.",
+      "contentType": "table+diagram"
+    },
+    {
+      "order": 3,
+      "key": "AlObjectInventory",
+      "displayHeading": "AL Object Inventory",
+      "displayHeadingLocales": { "en": "AL Object Inventory", "es": "Inventario de objetos AL", "fr": "Inventaire des objets AL", "de": "AL-Objektinventar", "it": "Inventario degli oggetti AL", "pt": "Inventário de objetos AL", "nl": "AL-objectinventaris" },
+      "description": "Tables / Enums / Pages / Page extensions / Codeunits / Permission sets / Number series + ID allocation summary.",
+      "contentType": "table-group"
+    },
+    {
+      "order": 4,
+      "key": "TableFieldDefinitions",
+      "displayHeading": "Table Field Definitions",
+      "displayHeadingLocales": { "en": "Table Field Definitions", "es": "Definiciones de campos de tablas", "fr": "Définitions des champs de tables", "de": "Tabellenfeld-Definitionen", "it": "Definizioni dei campi delle tabelle", "pt": "Definições de campos de tabelas", "nl": "Tabelvelddefinities" },
+      "description": "Per-table field tables (No., Name, Data Type, Length/Properties, Notes) + Keys + Triggers.",
+      "contentType": "table-group"
+    },
+    {
+      "order": 5,
+      "key": "PageDesignNotes",
+      "displayHeading": "Page Design Notes",
+      "displayHeadingLocales": { "en": "Page Design Notes", "es": "Notas de diseño de páginas", "fr": "Notes de conception des pages", "de": "Seitendesign-Notizen", "it": "Note di progettazione delle pagine", "pt": "Notas de design de páginas", "nl": "Notities over pagina-ontwerp" },
+      "description": "Per-page layout, actions, visibility/promotion notes.",
+      "contentType": "text+list"
+    },
+    {
+      "order": 6,
+      "key": "IntegrationWithStandardBC",
+      "displayHeading": "Integration with Standard BC Objects",
+      "displayHeadingLocales": { "en": "Integration with Standard BC Objects", "es": "Integración con objetos estándar de BC", "fr": "Intégration avec les objets BC standard", "de": "Integration mit Standard-BC-Objekten", "it": "Integrazione con oggetti BC standard", "pt": "Integração com objetos BC padrão", "nl": "Integratie met standaard BC-objecten" },
+      "description": "Table of standard BC objects touched and the nature of the interaction.",
+      "contentType": "table"
+    },
+    {
+      "order": 7,
+      "key": "TechnicalAcceptanceCriteria",
+      "displayHeading": "Technical Acceptance Criteria",
+      "displayHeadingLocales": { "en": "Technical Acceptance Criteria", "es": "Criterios técnicos de aceptación", "fr": "Critères techniques d'acceptation", "de": "Technische Akzeptanzkriterien", "it": "Criteri tecnici di accettazione", "pt": "Critérios técnicos de aceitação", "nl": "Technische acceptatiecriteria" },
+      "description": "ID / Description / Maps-to-US-AC table.",
+      "contentType": "table"
+    },
+    {
+      "order": 8,
+      "key": "PhaseOverview",
+      "displayHeading": "Phase Overview",
+      "displayHeadingLocales": { "en": "Phase Overview", "es": "Visión general de fases", "fr": "Vue d'ensemble des phases", "de": "Phasenübersicht", "it": "Panoramica delle fasi", "pt": "Visão geral das fases", "nl": "Faseoverzicht" },
+      "description": "Phase / Slug / Name / Effort (dev days) / Description table + total estimated effort line.",
+      "contentType": "table"
+    },
+    {
+      "order": 9,
+      "key": "TestingStrategy",
+      "displayHeading": "Testing Strategy",
+      "displayHeadingLocales": { "en": "Testing Strategy", "es": "Estrategia de pruebas", "fr": "Stratégie de tests", "de": "Teststrategie", "it": "Strategia di test", "pt": "Estratégia de testes", "nl": "Teststrategie" },
+      "description": "Per-phase test codeunit list plus smoke / translation sanity-check note.",
+      "contentType": "list"
+    },
+    {
+      "order": 10,
+      "key": "Dependencies",
+      "displayHeading": "Dependencies",
+      "displayHeadingLocales": { "en": "Dependencies", "es": "Dependencias", "fr": "Dépendances", "de": "Abhängigkeiten", "it": "Dipendenze", "pt": "Dependências", "nl": "Afhankelijkheden" },
+      "description": "Dependency / Source / Resolution table.",
+      "contentType": "table"
+    },
+    {
+      "order": 11,
+      "key": "OpenQuestionsTracking",
+      "displayHeading": "Open Questions Tracking",
+      "displayHeadingLocales": { "en": "Open Questions Tracking", "es": "Seguimiento de preguntas abiertas", "fr": "Suivi des questions ouvertes", "de": "Verfolgung offener Fragen", "it": "Tracciamento delle domande aperte", "pt": "Acompanhamento de questões em aberto", "nl": "Opvolging open vragen" },
+      "description": "OQ-NN / From / Status / Resolution table.",
+      "contentType": "table"
+    },
+    {
+      "order": 12,
+      "key": "PhasePlans",
+      "displayHeading": "Phase Plans",
+      "displayHeadingLocales": { "en": "Phase Plans", "es": "Planes de fase", "fr": "Plans de phase", "de": "Phasenpläne", "it": "Piani di fase", "pt": "Planos de fase", "nl": "Faseplannen" },
+      "description": "Ordered list linking each phase plan file.",
+      "contentType": "ordered-list"
+    }
+  ]
+}
