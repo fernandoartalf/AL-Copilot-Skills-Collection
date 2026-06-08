@@ -1,0 +1,113 @@
+{
+  "$schema": "documentation-bc-phase-plan-field-map",
+  "description": "Canonical static field/section keys for the SPEC-NNN-phase-N PLAN artefact produced by documentation-bc-phase-plan-generator. The 'key' values are language-neutral PascalCase identifiers and MUST be kept byte-stable across runs and languages so they can be bound 1:1 to placeholder tokens (e.g. {{Tasks}}, {{ExitCriteria}}) in any md-to-docx-converter template. Locale-specific labels and headings live under '*Locales' sub-objects.",
+  "artifactType": "PLAN",
+  "idPattern": "^PLAN-\\d{3}-P\\d+$",
+  "filePattern": "SPEC-NNN-phase-N-<slug>.plan.md",
+  "outputFolder": "openspec/plans/",
+  "outputJson": {
+    "required": true,
+    "filePattern": "SPEC-NNN-phase-N-<slug>.plan.json",
+    "rule": "Every phase-plan run of the skill MUST emit one JSON file per phase alongside the markdown. JSON keys come from this map; JSON values carry the translated content. Downstream consumer: md-to-docx-converter."
+  },
+  "sectionAnchorTemplate": "<!-- section-key: {{key}} -->",
+  "sectionAnchor": {
+    "pattern": "<!-- section-key: <CanonicalKey> -->",
+    "rule": "Each H2 in the plan markdown MUST be immediately followed by this anchor on its own line so parsers map sections to their canonical key regardless of language or visible heading text.",
+    "example": "## Tareas\n<!-- section-key: Tasks -->\n\n..."
+  },
+  "supportedLocales": ["en", "es", "fr", "de", "it", "pt", "nl"],
+  "numberingPolicy": "template",
+  "frontmatterFields": [
+    { "key": "id",              "yamlKey": "id",               "required": true,  "format": "PLAN-NNN-P<N>",         "translateValue": true },
+    { "key": "title",           "yamlKey": "title",            "required": true,  "format": "text",                   "translateValue": true  },
+    { "key": "customer",        "yamlKey": "customer",         "required": true,  "format": "text",                   "translateValue": true },
+    { "key": "version",         "yamlKey": "version",          "required": true,  "format": "x.y.z",                  "translateValue": true },
+    { "key": "spec",            "yamlKey": "spec",             "required": true,  "format": "SPEC-NNN",               "translateValue": true },
+    { "key": "userStory",       "yamlKey": "user_story",       "required": true,  "format": "US-NNN",                 "translateValue": true },
+    { "key": "ccn",             "yamlKey": "ccn",              "required": false, "format": "CCN-NNN",                "translateValue": true },
+    { "key": "phase",           "yamlKey": "phase",            "required": true,  "format": "integer",                "translateValue": true },
+    { "key": "status",          "yamlKey": "status",           "required": true,  "format": "enum",                   "translateValue": true, "enum": ["not-started", "approved", "in-progress", "completed", "blocked"] },
+    { "key": "estimatedHours",  "yamlKey": "estimated_hours",  "required": true,  "format": "number",                 "translateValue": true },
+    { "key": "branch",          "yamlKey": "branch",           "required": true,  "format": "feature/spec-NNN-<kebab>","translateValue": true },
+    { "key": "dependsOn",       "yamlKey": "depends_on",       "required": false, "format": "list<PLAN-NNN-P<N>>",    "translateValue": true },
+    { "key": "assignee",        "yamlKey": "assignee",         "required": false, "format": "text",                   "translateValue": true },
+    { "key": "preparedBy",      "yamlKey": "prepared_by",      "required": true,  "format": "text",                   "translateValue": true },
+    { "key": "createdDate",     "yamlKey": "created_date",     "required": true,  "format": "DD-MM-YYYY",             "translateValue": true },
+    { "key": "approvedDate",    "yamlKey": "approved_date",    "required": false, "format": "DD-MM-YYYY",             "translateValue": true }
+  ],
+  "sections": [
+    {
+      "order": 1,
+      "key": "References",
+      "displayHeading": "References",
+      "displayHeadingLocales": { "en": "References", "es": "Referencias", "fr": "Références", "de": "Referenzen", "it": "Riferimenti", "pt": "Referências", "nl": "Referenties" },
+      "description": "User story, spec, CCN links + list of US-AC numbers satisfied by this phase.",
+      "contentType": "list"
+    },
+    {
+      "order": 2,
+      "key": "Goal",
+      "displayHeading": "Goal",
+      "displayHeadingLocales": { "en": "Goal", "es": "Objetivo", "fr": "Objectif", "de": "Ziel", "it": "Obiettivo", "pt": "Objetivo", "nl": "Doel" },
+      "description": "Concrete demoable outcome at the end of this phase.",
+      "contentType": "text"
+    },
+    {
+      "order": 3,
+      "key": "Branch",
+      "displayHeading": "Branch",
+      "displayHeadingLocales": { "en": "Branch", "es": "Rama", "fr": "Branche", "de": "Branch", "it": "Branch", "pt": "Branch", "nl": "Branch" },
+      "description": "Cut-from-main (Phase 1) or continue-on (Phase > 1) statement.",
+      "contentType": "text"
+    },
+    {
+      "order": 4,
+      "key": "Tasks",
+      "displayHeading": "Tasks",
+      "displayHeadingLocales": { "en": "Tasks", "es": "Tareas", "fr": "Tâches", "de": "Aufgaben", "it": "Attività", "pt": "Tarefas", "nl": "Taken" },
+      "description": "Numbered checkbox list, each task citing the AC it satisfies.",
+      "contentType": "task-list"
+    },
+    {
+      "order": 5,
+      "key": "ExitCriteria",
+      "displayHeading": "Exit criteria",
+      "displayHeadingLocales": { "en": "Exit criteria", "es": "Criterios de salida", "fr": "Critères de sortie", "de": "Abschlusskriterien", "it": "Criteri di uscita", "pt": "Critérios de saída", "nl": "Exit-criteria" },
+      "description": "Bullet list — all tasks ticked, AC met, build green, tests green, version bump.",
+      "contentType": "list"
+    },
+    {
+      "order": 6,
+      "key": "OutOfScope",
+      "displayHeading": "Out of scope for this phase",
+      "displayHeadingLocales": { "en": "Out of scope for this phase", "es": "Fuera de alcance para esta fase", "fr": "Hors périmètre pour cette phase", "de": "Nicht im Umfang dieser Phase", "it": "Fuori ambito per questa fase", "pt": "Fora do escopo desta fase", "nl": "Buiten scope voor deze fase" },
+      "description": "Bullets identifying deferrals to later phases or to US-NNN Out-of-Scope.",
+      "contentType": "list"
+    },
+    {
+      "order": 7,
+      "key": "Dependencies",
+      "displayHeading": "Dependencies",
+      "displayHeadingLocales": { "en": "Dependencies", "es": "Dependencias", "fr": "Dépendances", "de": "Abhängigkeiten", "it": "Dipendenze", "pt": "Dependências", "nl": "Afhankelijkheden" },
+      "description": "Prerequisites (upstream PLAN-NNN-P<N-1>) and downstream consumers (PLAN-NNN-P<N+1>).",
+      "contentType": "list"
+    },
+    {
+      "order": 8,
+      "key": "TestingNotes",
+      "displayHeading": "Testing notes",
+      "displayHeadingLocales": { "en": "Testing notes", "es": "Notas de pruebas", "fr": "Notes sur les tests", "de": "Testhinweise", "it": "Note sui test", "pt": "Notas de testes", "nl": "Testnotities" },
+      "description": "Test codeunits added/extended, mock-vs-live strategy, deferred live tests, manual smoke scripts.",
+      "contentType": "list"
+    },
+    {
+      "order": 9,
+      "key": "NotesForAlDeveloper",
+      "displayHeading": "Notes for the AL Developer",
+      "displayHeadingLocales": { "en": "Notes for the AL Developer", "es": "Notas para el desarrollador AL", "fr": "Notes pour le développeur AL", "de": "Hinweise für den AL-Entwickler", "it": "Note per lo sviluppatore AL", "pt": "Notas para o desenvolvedor AL", "nl": "Opmerkingen voor de AL-ontwikkelaar" },
+      "description": "Caption/tooltip rules, lookup filters, defaults, translation deferrals, Microsoft Learn verification gaps relevant to this phase only.",
+      "contentType": "list"
+    }
+  ]
+}
