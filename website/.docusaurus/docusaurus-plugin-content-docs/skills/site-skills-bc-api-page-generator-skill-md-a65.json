@@ -1,0 +1,27 @@
+{
+  "id": "bc-api-page-generator/SKILL",
+  "title": "Business Central API Page Generator",
+  "description": "Generates RESTful API page objects for Business Central following API v2.0 and OData best practices. Creates API pages with proper field mappings, navigation properties, custom actions, validation, and permission sets. Generates both simple single-table pages and header-lines patterns. Use when asked to create an API page, generate an API endpoint, build a REST API, expose a table via API, or implement web service integrations.",
+  "source": "@site/../skills/bc-api-page-generator/SKILL.md",
+  "sourceDirName": "bc-api-page-generator",
+  "slug": "/bc-api-page-generator/SKILL",
+  "permalink": "/skills/bc-api-page-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-api-page-generator/SKILL.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-api-page-generator",
+    "description": "Generates RESTful API page objects for Business Central following API v2.0 and OData best practices. Creates API pages with proper field mappings, navigation properties, custom actions, validation, and permission sets. Generates both simple single-table pages and header-lines patterns. Use when asked to create an API page, generate an API endpoint, build a REST API, expose a table via API, or implement web service integrations."
+  },
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Skills Overview",
+    "permalink": "/skills/overview"
+  },
+  "next": {
+    "title": "API Page Examples",
+    "permalink": "/skills/bc-api-page-generator/references/api-examples"
+  }
+}
