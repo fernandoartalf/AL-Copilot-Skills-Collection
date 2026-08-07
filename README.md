@@ -2,7 +2,7 @@
 
 > Install a collection of purpose-built AI coding assistant skills for Business Central AL development — with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.5.1-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.6.1-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -65,6 +65,7 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-manifest-handoff-generator` | Generates handoff manifests for cross-framework consumption |
 | `bc-number-series-generator` | Generates number series setup patterns |
 | `bc-pricing-refactor` | Guides AL developers through refactoring legacy sales pricing customizations from `Sales Price` and `Sales Line Discount` to the modern `Price List Header` and `Price List Line` architecture, including migration workflow, extensibility guidance, and validation scaffolds |
+| `bc-report-selection-generator` | Extends the Business Central Report Selection framework with new custom Usage values and wires them into the standard printing workflow, covering enum extensions, setup pages, seeding codeunits, management codeunits, and page actions — never hardcoding Report IDs in business logic |
 | `bc-reports` | Standards and guardrails for authoring Business Central reports in AL and RDLC |
 | `bc-setup-table-generator` | Generates setup table and page patterns |
 | `bc-setup-wizard-generator` | Generates setup wizard (assisted setup) pages |
