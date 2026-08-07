@@ -17,6 +17,28 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 <!-- Copy the block below for each new skill proposal -->
 
+### `bc-report-selection-generator`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-report-selection-generator` |
+| **Short Description** | Extends the Business Central Report Selection framework with new custom Usage values and wires them into the standard printing workflow. Creates enum extensions, a dedicated setup page, an initialisation/install/upgrade codeunit that seeds a default Report ID without overwriting customer configuration, a Report Selection Management codeunit, and page or page-extension actions that trigger the configured report. |
+| **Target BC Version** _(optional)_ | 28.4 |
+| **Status** | ✅ Merged |
+
+#### Author
+
+- **Full Name**: Fernando Artigas Alfonso
+- **GitHub User**: fernandoartalf
+- **GitHub Profile**: https://github.com/fernandoartalf
+- **LinkedIn Profile**: https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b
+
+#### Motivation
+
+AL teams extending BC with custom document types repeatedly need to integrate their reports into the standard Report Selection framework — but the required pattern spans multiple objects (enum extension, Report Selections page, seeding codeunit, management codeunit, and page actions) and the correct runtime approach is non-obvious. This skill consolidates the full pattern, ensures Report IDs are never hardcoded, and covers the global and area-specific enum variants so developers can deliver a complete, upgrade-safe printing integration in a single agent invocation.
+
+---
+
 ### `{skill-folder-name}`
 
 | Field | Details |
@@ -65,4 +87,5 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
+| `bc-report-selection-generator` | `@fernandoartalf` | ✅ |
 | _{skill-name}_ | _@author_ | 🟡 / 🟢 / 🔵 / ✅ |
