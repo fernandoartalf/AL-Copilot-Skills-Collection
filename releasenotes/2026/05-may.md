@@ -7,7 +7,7 @@
 
 ## Overview
 
-This release includes **6 new skills** contributed by **3 authors** for the **May 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
+This release includes **6 new skills** contributed by **3 author** for the **May 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
 
 ---
 
