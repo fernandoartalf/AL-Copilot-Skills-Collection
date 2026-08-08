@@ -293,3 +293,12 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 | `documentation-bc-release-note-generator` | `@fernandoartalf` | ✅ |
 | `documentation-bc-md-to-docx-converter` | `@fernandoartalf` | ✅ |
 | _{skill-name}_ | _@author_ | 🟡 / 🟢 / 🔵 / ✅ |
+
+### bc-matrix-page-generator
+
+Status: Proposed
+Author: Alejandro Polo Garrido (@alejandro-polo-garrido)
+Type: New
+
+Summary:
+Generates matrix pages for Business Central with periodicities, pagination, orientation inversion, and Excel export.
