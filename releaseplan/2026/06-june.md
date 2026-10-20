@@ -17,13 +17,62 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 <!-- Copy the block below for each new skill proposal -->
 
+### `bc-batch-processing`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-batch-processing` |
+| **Short Description** | Implements batch processing patterns for Business Central to handle millions of records without timeouts. Includes batch-limited reports with auto-resume, progress tracking tables with time estimation, Job Queue integration, and monitoring pages. Production-validated on 2.5M records. |
+| **Target BC Version** _(optional)_ | 28.2 |
+| **Status** | ✅ Merged |
+
+#### Author
+
+- **Full Name**: Alex Polo
+- **Company**: WAU Technologies
+- **GitHub User**: alexpolo
+- **LinkedIn Profile**: https://www.linkedin.com/in/alexpolo
+
+#### Co-Authors _(optional)_
+
+<!-- None -->
+
+#### Motivation
+
+Processing large datasets (100K+ records) in Business Central often results in timeout errors after 12+ hours of execution. Common scenarios include post-migration data synchronization, bulk field updates, mass data cleanup, and one-time transformation tasks. While Microsoft documents Job Queue configuration and retry logic, there is no public documentation for batch-limiting patterns, progress tracking with time estimation, or the integration pattern connecting reports → progress tables → Job Queue → monitoring UI. This skill provides a complete, production-tested solution for multi-million record processing with automatic resumption, real-time progress visibility, accurate completion time estimates, and zero manual intervention. Extracted from a real customer implementation processing 2.5M records across 10 tables over 3 nights with zero timeouts.
+
+---
+
+### `bc-matrix-page-generator`
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-matrix-page-generator` |
+| **Short Description** | Generates interactive matrix pages for Business Central with configurable periodicity (day, week, month, quarter, year, custom), flexible orientation, pagination for dynamic columns, and Excel export in visual matrix format. |
+| **Target BC Version** _(optional)_ | 28.2 |
+| **Status** | ✅ Merged |
+
+#### Author
+
+- **Full Name**: Alejandro Polo Garrido
+- **GitHub User**: alejandro-polo-garrido
+- **GitHub Profile**: https://github.com/alejandro-polo-garrido
+- **LinkedIn Profile**: _Not provided_
+
+#### Motivation
+
+Matrix pages (periods versus customers, items, or other dimensions) are a recurring requirement in Business Central projects, but the pattern spans several objects and requires careful handling of periodicity, dynamic columns, pagination, and orientation inversion. This skill drives a guided interview and generates the complete matrix solution, including a visual Excel export and optional ranking Query, so teams avoid re-implementing the same pattern on every project.
+
+---
+
 ### `bc-pricing-refactor`
 
 | Field | Details |
 |---|---|
 | **Skill Name** | `bc-pricing-refactor` |
 | **Short Description** | Guides AL developers through refactoring legacy sales pricing customizations from `Sales Price` and `Sales Line Discount` to the modern `Price List Header` and `Price List Line` architecture. Includes migration workflow, extensibility guidance, and validation scaffolds for the new pricing engine. |
-### `bc-job-queue`
+| **Target BC Version** _(optional)_ | 28.2 |
+| **Status** | ✅ Merged |
 
 #### Author
 
@@ -34,9 +83,11 @@ Contributors: add your skill proposal below using the entry template. Once appro
 
 #### Motivation
 
-This skill addresses a repeatable migration problem for AL teams moving pricing customizations from the legacy pricing model to the current Price List architecture. It reduces re-discovery work around object mapping, feature enablement risks, migration extensibility points, and validation scenarios, while keeping the guidance runtime-agnostic.
+This skill addresses a repeatable migration problem for AL teams moving pricing customizations from the legacy pricing model to the current Price List architecture. It reduces re-discovery work around object mapping, feature enablement risks, migration extensibility points, and validation scaffolds for the new pricing engine, while keeping the guidance runtime-agnostic.
 
 ---
+
+### `bc-job-queue`
 
 | Field | Details |
 |---|---|
@@ -232,7 +283,6 @@ Client-facing release notes must summarise deployed AL changes, testing steps, a
 
 Documentation artefacts produced by the `documentation-bc-*` skill family are markdown files that need professional Word formatting for client delivery. Manual conversion is time-consuming and loses formatting consistency across documents and languages. This skill provides a Python-based pipeline with a unified field map registry, corporate Word templates with `{{Placeholder}}` tokens, Mermaid diagram rendering, and markdown-aware section body rendering — completing the automation chain from requirements discovery to client-deliverable Word document.
 
----
 
 ### `{skill-folder-name}`
 
@@ -282,6 +332,8 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
+| `bc-batch-processing` | `@alexpolo` | ✅ |
+| `bc-matrix-page-generator` | `@alejandro-polo-garrido` | ✅ |
 | `bc-pricing-refactor` | `@cperezsx` | ✅ |
 | `bc-job-queue` | `@cperezsx` | ✅ |
 | `documentation-bc-user-story-generator` | `@fernandoartalf` | ✅ |
