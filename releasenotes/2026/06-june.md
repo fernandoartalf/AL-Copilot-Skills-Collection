@@ -7,7 +7,7 @@
 
 ## Overview
 
-This release includes **10 new skills** contributed by **2 authors** for the **June 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
+This release includes **12 new skills** contributed by **4 authors** for the **June 2026** cycle. All skills follow the [Agent Skills](https://agentskills.io/) standard and are compatible with GitHub Copilot, Claude Code, and other agent platforms.
 
 ---
 
@@ -15,8 +15,8 @@ This release includes **10 new skills** contributed by **2 authors** for the **J
 
 | Metric | Count |
 |---|---|
-| **Total Skills Released** | 10 |
-| **Contributors** | 2 |
+| **Total Skills Released** | 12 |
+| **Contributors** | 4 |
 | **Target BC Version(s)** | v28.2 |
 
 ---
@@ -177,6 +177,56 @@ This release includes **10 new skills** contributed by **2 authors** for the **J
 
 ---
 
+### Alex Polo
+
+**Delivered**: 1 skill
+
+**Author Information**:
+- **Full Name**: Alex Polo
+- **GitHub User**: alexpolo
+- **GitHub Profile**: https://github.com/alexpolo
+- **LinkedIn Profile**: https://www.linkedin.com/in/alexpolo
+
+#### Skills Contributed
+
+##### 11. `bc-batch-processing`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-batch-processing` |
+| **Description** | Implements batch processing patterns for Business Central to handle millions of records without timeouts. Includes batch-limited reports with auto-resume, progress tracking tables with time estimation, Job Queue integration, and monitoring pages. |
+| **Target BC Version** | v28.2 |
+| **Folder** | [`skills/bc-batch-processing/`](../../skills/bc-batch-processing/) |
+
+**What it does**: Processing large datasets (100K+ records) often ends in timeouts, and there is no public guidance on batch-limiting, progress tracking with time estimation, or connecting reports, progress tables, Job Queue, and monitoring UI. This skill provides a production-validated solution (2.5M records across 10 tables over 3 nights, zero timeouts) with automatic resumption, real-time progress visibility, and accurate completion estimates.
+
+---
+
+### Alejandro Polo Garrido
+
+**Delivered**: 1 skill
+
+**Author Information**:
+- **Full Name**: Alejandro Polo Garrido
+- **GitHub User**: alejandro-polo-garrido
+- **GitHub Profile**: https://github.com/alejandro-polo-garrido
+- **LinkedIn Profile**: _Not provided_
+
+#### Skills Contributed
+
+##### 12. `bc-matrix-page-generator`
+
+| Field | Value |
+|---|---|
+| **Skill Name** | `bc-matrix-page-generator` |
+| **Description** | Generates interactive matrix pages for Business Central with configurable periodicity (day, week, month, quarter, year, custom), flexible orientation, pagination for dynamic columns, and Excel export in visual matrix format. |
+| **Target BC Version** | v28.2 |
+| **Folder** | [`skills/bc-matrix-page-generator/`](../../skills/bc-matrix-page-generator/) |
+
+**What it does**: Matrix pages (periods versus customers, items, or other dimensions) are a recurring requirement, but the pattern spans several objects and needs careful handling of periodicity, dynamic columns, pagination, and orientation inversion. This skill drives a guided interview and generates the complete matrix solution, including a visual Excel export and optional ranking Query.
+
+---
+
 ## All Skills in This Release
 
 | # | Skill Name | Author | Target BC Version |
@@ -191,3 +241,48 @@ This release includes **10 new skills** contributed by **2 authors** for the **J
 | 8 | `documentation-bc-md-to-docx-converter` | @fernandoartalf | v28.2 |
 | 9 | `bc-pricing-refactor` | @cperezsx | v28.2 |
 | 10 | `bc-job-queue` | @cperezsx | v28.2 |
+| 11 | `bc-batch-processing` | @alexpolo | v28.2 |
+| 12 | `bc-matrix-page-generator` | @alejandro-polo-garrido | v28.2 |
+
+---
+
+## How to Use These Skills
+
+1. **Copy the skill folder** from [`skills/`](../../skills/) to your project's skill directory:
+   - GitHub Copilot: `.github/skills/`
+   - Claude Code: `.claude/skills/`
+   - Other agents: Check your agent's documentation
+
+2. **Invoke your agent** — the skill will be loaded automatically when the task matches the skill's domain.
+
+See the [main README](../../README.md) for detailed installation instructions.
+
+---
+
+## Related Release Plan
+
+This release corresponds to the [**June 2026** release plan](../../releaseplan/2026/06-june.md).
+
+---
+
+## Contributors
+
+Special thanks to all contributors who helped make this release possible:
+
+- **Fernando Artigas Alfonso** ([@fernandoartalf](https://github.com/fernandoartalf)) — 8 skills
+- **Carlos Pérez** ([@cperezsx](https://github.com/cperezsx)) — 2 skills
+- **Alex Polo** ([@alexpolo](https://github.com/alexpolo)) — 1 skill
+- **Alejandro Polo Garrido** ([@alejandro-polo-garrido](https://github.com/alejandro-polo-garrido)) — 1 skill
+
+---
+
+## Feedback & Support
+
+- Report issues: [GitHub Issues](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
+- Ask questions: [GitHub Discussions](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/discussions)
+- Contribute: See [CONTRIBUTING.md](../../CONTRIBUTING.md)
+
+---
+
+**Release Date**: 2026-06-01  
+**Status**: Released ✅

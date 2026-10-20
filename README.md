@@ -1,8 +1,8 @@
 # AL Copilot Skills Collection
 
-> Install a collection of purpose-built AI coding assistant skills for Business Central AL development — with a single command.
+> Install a collection of purpose-built AI coding assistant skills for Business Central AL development with a single command.
 
-[![Version](https://img.shields.io/badge/version-1.6.1-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.6.2-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/fernandoartalf/AL-Copilot-Skills-Collection)](https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/stargazers)
@@ -54,6 +54,7 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-api-query-generator` | Generates AL API query objects |
 | `bc-approval-workflow-generator` | Generates complete approval workflow implementations for Business Central entities, including approval status enum, event subscribers, workflow templates, and page actions |
 | `bc-attachments-generator` | Generates attachment handling patterns |
+| `bc-batch-processing` | Implements batch processing patterns to handle millions of records without timeouts, with batch-limited reports with auto-resume, progress tracking tables with time estimation, Job Queue integration, and monitoring pages |
 | `bc-business-events-generator` | Generates Business Event definitions for Power Automate |
 | `bc-cds-page-generator` | Generates CDS (Dataverse) integration pages |
 | `bc-dataverse-entity-generator` | Generates Dataverse entity integration code and scripts |
@@ -63,12 +64,14 @@ Each skill is a self-contained package of instructions, references, and template
 | `bc-isolated-storage-generator` | Generates secure isolated storage implementations for secrets (API keys, passwords, tokens) using `IsolatedStorage` with encryption support, DataScope selection, and masked setup pages |
 | `bc-job-queue` | Guides AL developers through creating, parameterizing, executing, retrying, and diagnosing Business Central Job Queue workloads, with decision rules for Job Queue versus other async primitives, parameter-contract guidance, recovery patterns, and telemetry-oriented troubleshooting |
 | `bc-manifest-handoff-generator` | Generates handoff manifests for cross-framework consumption |
+| `bc-matrix-page-generator` | Generates interactive matrix pages with configurable periodicity, flexible orientation, pagination for dynamic columns, and visual Excel export |
 | `bc-number-series-generator` | Generates number series setup patterns |
 | `bc-pricing-refactor` | Guides AL developers through refactoring legacy sales pricing customizations from `Sales Price` and `Sales Line Discount` to the modern `Price List Header` and `Price List Line` architecture, including migration workflow, extensibility guidance, and validation scaffolds |
 | `bc-report-selection-generator` | Extends the Business Central Report Selection framework with new custom Usage values and wires them into the standard printing workflow, covering enum extensions, setup pages, seeding codeunits, management codeunits, and page actions — never hardcoding Report IDs in business logic |
 | `bc-reports` | Standards and guardrails for authoring Business Central reports in AL and RDLC |
 | `bc-setup-table-generator` | Generates setup table and page patterns |
 | `bc-setup-wizard-generator` | Generates setup wizard (assisted setup) pages |
+| `bc-table-dimensions-generator` | Adds standard dimension support to custom tables and pages, including Shortcut Dimension and Dimension Set ID fields, a card-page Dimensions group, and default-dimension inheritance from master data with header-to-line cascading |
 | `bc-telemetry-generator` | Generates custom telemetry instrumentation and KQL queries |
 | `bc-test-codeunit-generator` | Generates test codeunits with Given/When/Then structure |
 | `bc-upgrade-codeunit-generator` | Generates upgrade codeunits for extension versioning |
