@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-api-page-generator/references/api-examples",
+  "title": "API Page Examples",
+  "description": "Actions Pattern for API Operations",
+  "source": "@site/docs/skills/bc-api-page-generator/references/api-examples.md",
+  "sourceDirName": "skills/bc-api-page-generator/references",
+  "slug": "/skills/bc-api-page-generator/references/api-examples",
+  "permalink": "/docs/skills/bc-api-page-generator/references/api-examples",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Business Central API Page Generator",
+    "permalink": "/docs/skills/bc-api-page-generator/SKILL"
+  },
+  "next": {
+    "title": "API Patterns & Best Practices",
+    "permalink": "/docs/skills/bc-api-page-generator/references/api-patterns"
+  }
+}

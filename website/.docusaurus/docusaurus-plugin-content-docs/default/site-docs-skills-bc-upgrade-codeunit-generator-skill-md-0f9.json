@@ -1,0 +1,26 @@
+{
+  "id": "skills/bc-upgrade-codeunit-generator/SKILL",
+  "title": "Business Central Upgrade Codeunit Generator",
+  "description": "Generates upgrade codeunits (Subtype = Upgrade) for Business Central extensions that run data migration code when upgrading to a new version. Creates codeunits with OnUpgradePerCompany and OnUpgradePerDatabase triggers, precondition checks via OnCheckPreconditionsPerCompany and OnCheckPreconditionsPerDatabase, post-upgrade validation via OnValidateUpgradePerCompany and OnValidateUpgradePerDatabase, upgrade tag management using the System Application Upgrade Tag module (HasUpgradeTag, SetUpgradeTag, OnGetPerCompanyUpgradeTags, OnGetPerDatabaseUpgradeTags), companion upgrade tag definitions codeunit, install codeunit integration for setting tags on fresh install, version-based upgrade control using ModuleInfo.DataVersion, ExecutionContext guards for protecting sensitive code during upgrades, and NavApp.RestoreArchiveData for archived data restoration. Handles field migration, new table population, enum conversion, data patching, and broken upgrade fixes. Use when asked to create upgrade code, add data migration between versions, implement upgrade logic, create upgrade codeunit, migrate fields to new tables, handle schema changes on upgrade, add upgrade tags, or implement version upgrade handling for a Business Central extension.",
+  "source": "@site/docs/skills/bc-upgrade-codeunit-generator/SKILL.md",
+  "sourceDirName": "skills/bc-upgrade-codeunit-generator",
+  "slug": "/skills/bc-upgrade-codeunit-generator/SKILL",
+  "permalink": "/docs/skills/bc-upgrade-codeunit-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-upgrade-codeunit-generator",
+    "description": "Generates upgrade codeunits (Subtype = Upgrade) for Business Central extensions that run data migration code when upgrading to a new version. Creates codeunits with OnUpgradePerCompany and OnUpgradePerDatabase triggers, precondition checks via OnCheckPreconditionsPerCompany and OnCheckPreconditionsPerDatabase, post-upgrade validation via OnValidateUpgradePerCompany and OnValidateUpgradePerDatabase, upgrade tag management using the System Application Upgrade Tag module (HasUpgradeTag, SetUpgradeTag, OnGetPerCompanyUpgradeTags, OnGetPerDatabaseUpgradeTags), companion upgrade tag definitions codeunit, install codeunit integration for setting tags on fresh install, version-based upgrade control using ModuleInfo.DataVersion, ExecutionContext guards for protecting sensitive code during upgrades, and NavApp.RestoreArchiveData for archived data restoration. Handles field migration, new table population, enum conversion, data patching, and broken upgrade fixes. Use when asked to create upgrade code, add data migration between versions, implement upgrade logic, create upgrade codeunit, migrate fields to new tables, handle schema changes on upgrade, add upgrade tags, or implement version upgrade handling for a Business Central extension."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Test Codeunit Examples",
+    "permalink": "/docs/skills/bc-test-codeunit-generator/references/test-examples"
+  },
+  "next": {
+    "title": "Upgrade Codeunit Examples",
+    "permalink": "/docs/skills/bc-upgrade-codeunit-generator/references/upgrade-examples"
+  }
+}

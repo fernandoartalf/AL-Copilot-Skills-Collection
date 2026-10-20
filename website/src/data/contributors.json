@@ -1,0 +1,68 @@
+{
+  "contributors": [
+    {
+      "fullName": "Fernando Artigas",
+      "githubUser": "fernandoartalf",
+      "githubProfile": "https://github.com/fernandoartalf",
+      "linkedinProfile": "https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b",
+      "skills": [
+        {
+          "folder": "bc-api-page-generator",
+          "name": "Business Central API Page Generator"
+        },
+        {
+          "folder": "bc-api-query-generator",
+          "name": "Business Central API Query Generator"
+        },
+        {
+          "folder": "bc-attachments-generator",
+          "name": "BC Attachments, Links & Notes Generator"
+        },
+        {
+          "folder": "bc-business-events-generator",
+          "name": "BC Business Events Generator"
+        },
+        {
+          "folder": "bc-cds-page-generator",
+          "name": "Business Central CDS Page Generator"
+        },
+        {
+          "folder": "bc-dataverse-entity-generator",
+          "name": "Business Central Dataverse Entity Generator"
+        },
+        {
+          "folder": "bc-dataverse-mapping-generator",
+          "name": "Business Central Dataverse Mapping Generator"
+        },
+        {
+          "folder": "bc-install-codeunit-generator",
+          "name": "Business Central Install Codeunit Generator"
+        },
+        {
+          "folder": "bc-number-series-generator",
+          "name": "Business Central Number Series Generator"
+        },
+        {
+          "folder": "bc-setup-table-generator",
+          "name": "Business Central Setup Table Generator"
+        },
+        {
+          "folder": "bc-setup-wizard-generator",
+          "name": "BC Setup Wizard Generator"
+        },
+        {
+          "folder": "bc-telemetry-generator",
+          "name": "BC Telemetry Generator"
+        },
+        {
+          "folder": "bc-test-codeunit-generator",
+          "name": "Business Central Test Codeunit Generator"
+        },
+        {
+          "folder": "bc-upgrade-codeunit-generator",
+          "name": "Business Central Upgrade Codeunit Generator"
+        }
+      ]
+    }
+  ]
+}

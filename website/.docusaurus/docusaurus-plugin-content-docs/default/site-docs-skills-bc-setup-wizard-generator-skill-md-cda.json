@@ -1,0 +1,26 @@
+{
+  "id": "skills/bc-setup-wizard-generator/SKILL",
+  "title": "BC Setup Wizard Generator",
+  "description": "Generates assisted setup wizard pages for Business Central setup tables following Guided Experience patterns. Creates NavigatePage with step-based navigation using visibility controls, banner images (WIP/Finished from Media Repository), temporary source table, footer actions (Back/Next/Finish with InFooterBar), OnOpenPage trigger (InitRecord, EnableControls, LoadSetupBanner), OnQueryClosePage trigger with unsaved changes confirmation, navigation procedures (NextStep with Step Option variable, EnableControls with Case statement, SetControlsStepXX boolean updates), commit procedure using TransferFields pattern, and registration codeunit with OnRegisterAssistedSetup event subscriber for Guided Experience. Integrates with Assisted Setup page and Extension Management. Supports multi-step workflows with welcome step, configuration step(s), and review/finish step. Uses InstructionalText for user guidance. Completes setup via GuidedExperience.CompleteAssistedSetup. Use when creating setup wizards, implementing assisted setup for extensions, adding guided configuration to modules, creating multi-step setup pages, registering with Guided Experience framework, or building NavigatePage wizards with step navigation.",
+  "source": "@site/docs/skills/bc-setup-wizard-generator/SKILL.md",
+  "sourceDirName": "skills/bc-setup-wizard-generator",
+  "slug": "/skills/bc-setup-wizard-generator/SKILL",
+  "permalink": "/docs/skills/bc-setup-wizard-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-setup-wizard-generator",
+    "description": "Generates assisted setup wizard pages for Business Central setup tables following Guided Experience patterns. Creates NavigatePage with step-based navigation using visibility controls, banner images (WIP/Finished from Media Repository), temporary source table, footer actions (Back/Next/Finish with InFooterBar), OnOpenPage trigger (InitRecord, EnableControls, LoadSetupBanner), OnQueryClosePage trigger with unsaved changes confirmation, navigation procedures (NextStep with Step Option variable, EnableControls with Case statement, SetControlsStepXX boolean updates), commit procedure using TransferFields pattern, and registration codeunit with OnRegisterAssistedSetup event subscriber for Guided Experience. Integrates with Assisted Setup page and Extension Management. Supports multi-step workflows with welcome step, configuration step(s), and review/finish step. Uses InstructionalText for user guidance. Completes setup via GuidedExperience.CompleteAssistedSetup. Use when creating setup wizards, implementing assisted setup for extensions, adding guided configuration to modules, creating multi-step setup pages, registering with Guided Experience framework, or building NavigatePage wizards with step navigation."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Advanced Setup Table Patterns",
+    "permalink": "/docs/skills/bc-setup-table-generator/references/patterns"
+  },
+  "next": {
+    "title": "BC Setup Wizard - Code Templates",
+    "permalink": "/docs/skills/bc-setup-wizard-generator/references/code-templates"
+  }
+}

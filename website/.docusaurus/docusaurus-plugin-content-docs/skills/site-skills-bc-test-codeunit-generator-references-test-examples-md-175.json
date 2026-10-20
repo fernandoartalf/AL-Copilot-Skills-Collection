@@ -1,0 +1,24 @@
+{
+  "id": "bc-test-codeunit-generator/references/test-examples",
+  "title": "Test Codeunit Examples",
+  "description": "Example 1: Setup and Navigation Test Codeunit",
+  "source": "@site/../skills/bc-test-codeunit-generator/references/test-examples.md",
+  "sourceDirName": "bc-test-codeunit-generator/references",
+  "slug": "/bc-test-codeunit-generator/references/test-examples",
+  "permalink": "/skills/bc-test-codeunit-generator/references/test-examples",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-test-codeunit-generator/references/test-examples.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Business Central Test Codeunit Generator",
+    "permalink": "/skills/bc-test-codeunit-generator/SKILL"
+  },
+  "next": {
+    "title": "Business Central Upgrade Codeunit Generator",
+    "permalink": "/skills/bc-upgrade-codeunit-generator/SKILL"
+  }
+}

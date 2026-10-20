@@ -1,0 +1,23 @@
+{
+  "id": "skills/bc-api-query-generator/references/query-examples",
+  "title": "API Query Examples",
+  "description": "Example 1: Single Table — Ledger Entry Query",
+  "source": "@site/docs/skills/bc-api-query-generator/references/query-examples.md",
+  "sourceDirName": "skills/bc-api-query-generator/references",
+  "slug": "/skills/bc-api-query-generator/references/query-examples",
+  "permalink": "/docs/skills/bc-api-query-generator/references/query-examples",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Business Central API Query Generator",
+    "permalink": "/docs/skills/bc-api-query-generator/SKILL"
+  },
+  "next": {
+    "title": "BC Attachments, Links & Notes Generator",
+    "permalink": "/docs/skills/bc-attachments-generator/SKILL"
+  }
+}

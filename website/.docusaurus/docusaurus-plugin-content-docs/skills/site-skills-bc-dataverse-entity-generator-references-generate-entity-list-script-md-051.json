@@ -1,0 +1,24 @@
+{
+  "id": "bc-dataverse-entity-generator/references/generate-entity-list-script",
+  "title": "Generate-Entity-List.ps1 — Full Script Reference",
+  "description": "The batch entity generation script. Located at .github/skills/bc-dataverse-entity-generator/scripts/Generate-Entity-List.ps1. Calls Generate-Entity.ps1 for each entity in the list, then automatically moves files to src/Table/ and applies CDS prefix.",
+  "source": "@site/../skills/bc-dataverse-entity-generator/references/generate-entity-list-script.md",
+  "sourceDirName": "bc-dataverse-entity-generator/references",
+  "slug": "/bc-dataverse-entity-generator/references/generate-entity-list-script",
+  "permalink": "/skills/bc-dataverse-entity-generator/references/generate-entity-list-script",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-dataverse-entity-generator/references/generate-entity-list-script.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Business Central Dataverse Entity Generator",
+    "permalink": "/skills/bc-dataverse-entity-generator/SKILL"
+  },
+  "next": {
+    "title": "Generate-Entity.ps1 — Full Script Reference",
+    "permalink": "/skills/bc-dataverse-entity-generator/references/generate-entity-script"
+  }
+}

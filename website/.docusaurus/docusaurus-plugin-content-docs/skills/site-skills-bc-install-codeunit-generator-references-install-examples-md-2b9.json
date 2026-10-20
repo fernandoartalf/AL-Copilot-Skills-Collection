@@ -1,0 +1,24 @@
+{
+  "id": "bc-install-codeunit-generator/references/install-examples",
+  "title": "Install Codeunit Examples",
+  "description": "Example 1: Basic Install Codeunit — Fresh Install and Reinstall Detection",
+  "source": "@site/../skills/bc-install-codeunit-generator/references/install-examples.md",
+  "sourceDirName": "bc-install-codeunit-generator/references",
+  "slug": "/bc-install-codeunit-generator/references/install-examples",
+  "permalink": "/skills/bc-install-codeunit-generator/references/install-examples",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-install-codeunit-generator/references/install-examples.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Business Central Install Codeunit Generator",
+    "permalink": "/skills/bc-install-codeunit-generator/SKILL"
+  },
+  "next": {
+    "title": "Business Central Number Series Generator",
+    "permalink": "/skills/bc-number-series-generator/SKILL"
+  }
+}
