@@ -50,6 +50,28 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 <!-- END OF SKILL ENTRY — copy from ### to --- for additional entries -->
 
+### `bc-dataverse-entity-generator` (update)
+
+| Field | Details |
+|---|---|
+| **Skill Name** | `bc-dataverse-entity-generator` |
+| **Short Description** | Updates Dataverse entity generation to install altpgen from NuGet, select a supported .NET runtime, persist configuration outside the repository, allocate table IDs from `app.json`, and generate one or multiple entities. Adds guidance for merging existing tables, permissions, and troubleshooting. |
+| **Target BC Version** _(optional)_ | v29.1 |
+| **Status** | 🔵 In Development |
+
+#### Author
+
+- **Full Name**: Fernando Artigas Alfonso
+- **GitHub User**: fernandoartalf
+- **GitHub Profile**: https://github.com/fernandoartalf
+- **LinkedIn Profile**: https://www.linkedin.com/in/fernando-artigas-alfonso-4ab62510b
+
+#### Motivation
+
+The update replaces reliance on the AL extension's bundled altpgen with a maintained NuGet installation workflow and makes generation safer to repeat through persisted settings, `app.json`-based ID allocation, and explicit merge and permission-set guidance.
+
+---
+
 ## Contribution Workflow
 
 1. **Fork** the repository and create a branch from `main`.
@@ -65,4 +87,4 @@ _{Brief explanation of why this skill is needed and what problem it solves}_
 
 | Skill | Author | Status |
 |---|---|---|
-| _{skill-name}_ | _@author_ | 🟡 / 🟢 / 🔵 / ✅ |
+| `bc-dataverse-entity-generator` (update) | @fernandoartalf | 🔵 |
