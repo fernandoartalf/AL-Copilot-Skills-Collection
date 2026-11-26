@@ -1,0 +1,27 @@
+{
+  "id": "bc-business-events-generator/SKILL",
+  "title": "BC Business Events Generator",
+  "description": "Implements external business events for Business Central enabling Power Automate and external system integrations. Creates EventCategory enum extensions with custom categories, business events codeunit with ExternalBusinessEvent attribute procedures (eventName, displayName, description, category parameters), event subscriber procedures listening to IntegrationEvent publishers, and IntegrationEvent publishers in table extensions or codeunits for lifecycle triggers (OnAfterInsert, OnAfterModify, OnBeforePost). Follows event-driven architecture separating technical events from business semantics. Integrates with Business Event Subscriptions, Business Event Activity Log, Business Event Notifications for debugging and monitoring. Supports GUID-based entity tracking, meaningful parameter passing (SystemId, key fields, business relevant data), and proper transaction handling. Use when creating business events for Power Automate triggers, implementing external integrations, exposing BC events to Dataverse, building event-driven workflows, adding webhook capabilities, enabling low-code automation triggers, or connecting BC to Power Platform cloud flows with automated triggers.",
+  "source": "@site/../skills/bc-business-events-generator/SKILL.md",
+  "sourceDirName": "bc-business-events-generator",
+  "slug": "/bc-business-events-generator/SKILL",
+  "permalink": "/skills/bc-business-events-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-business-events-generator/SKILL.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-business-events-generator",
+    "description": "Implements external business events for Business Central enabling Power Automate and external system integrations. Creates EventCategory enum extensions with custom categories, business events codeunit with ExternalBusinessEvent attribute procedures (eventName, displayName, description, category parameters), event subscriber procedures listening to IntegrationEvent publishers, and IntegrationEvent publishers in table extensions or codeunits for lifecycle triggers (OnAfterInsert, OnAfterModify, OnBeforePost). Follows event-driven architecture separating technical events from business semantics. Integrates with Business Event Subscriptions, Business Event Activity Log, Business Event Notifications for debugging and monitoring. Supports GUID-based entity tracking, meaningful parameter passing (SystemId, key fields, business relevant data), and proper transaction handling. Use when creating business events for Power Automate triggers, implementing external integrations, exposing BC events to Dataverse, building event-driven workflows, adding webhook capabilities, enabling low-code automation triggers, or connecting BC to Power Platform cloud flows with automated triggers."
+  },
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "BC Attachments Generator - Code Templates",
+    "permalink": "/skills/bc-attachments-generator/references/code-templates"
+  },
+  "next": {
+    "title": "Business Events Code Templates",
+    "permalink": "/skills/bc-business-events-generator/references/code-templates"
+  }
+}

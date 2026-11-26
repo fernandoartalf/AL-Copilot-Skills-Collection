@@ -1,0 +1,24 @@
+{
+  "id": "bc-dataverse-mapping-generator/references/custom-entity-mapping",
+  "title": "Custom Entity Mapping — Complete Code Reference",
+  "description": "Reference for mapping new custom Dataverse entities (bcs_ prefix) to new custom BC tables. This is the full mapping path requiring 5 event subscriber modifications and a lookup procedure.",
+  "source": "@site/../skills/bc-dataverse-mapping-generator/references/custom-entity-mapping.md",
+  "sourceDirName": "bc-dataverse-mapping-generator/references",
+  "slug": "/bc-dataverse-mapping-generator/references/custom-entity-mapping",
+  "permalink": "/skills/bc-dataverse-mapping-generator/references/custom-entity-mapping",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-dataverse-mapping-generator/references/custom-entity-mapping.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Business Central Dataverse Mapping Generator",
+    "permalink": "/skills/bc-dataverse-mapping-generator/SKILL"
+  },
+  "next": {
+    "title": "OOB Entity Mapping — Extra Field Mappings Reference",
+    "permalink": "/skills/bc-dataverse-mapping-generator/references/oob-entity-mapping"
+  }
+}

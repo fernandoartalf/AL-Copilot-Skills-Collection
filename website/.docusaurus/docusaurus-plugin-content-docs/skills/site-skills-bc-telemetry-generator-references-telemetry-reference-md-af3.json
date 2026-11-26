@@ -1,0 +1,24 @@
+{
+  "id": "bc-telemetry-generator/references/telemetry-reference",
+  "title": "Telemetry Reference Patterns",
+  "description": "Advanced patterns for Application Insights telemetry in Business Central extensions.",
+  "source": "@site/../skills/bc-telemetry-generator/references/telemetry-reference.md",
+  "sourceDirName": "bc-telemetry-generator/references",
+  "slug": "/bc-telemetry-generator/references/telemetry-reference",
+  "permalink": "/skills/bc-telemetry-generator/references/telemetry-reference",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-telemetry-generator/references/telemetry-reference.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "KQL Queries for Application Insights",
+    "permalink": "/skills/bc-telemetry-generator/references/kql-queries"
+  },
+  "next": {
+    "title": "Business Central Test Codeunit Generator",
+    "permalink": "/skills/bc-test-codeunit-generator/SKILL"
+  }
+}

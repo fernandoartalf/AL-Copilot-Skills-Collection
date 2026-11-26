@@ -1,0 +1,26 @@
+{
+  "id": "skills/bc-cds-page-generator/SKILL",
+  "title": "Business Central CDS Page Generator",
+  "description": "Automatically generate AL list page objects for CDS (Dataverse) tables with standard CRM integration patterns. Creates list pages with proper field layouts, CRM integration actions, coupling procedures, and initialization triggers. Use when user requests to create, generate, or build a list page for a CDS/Dataverse table, or mentions creating UI for Dataverse entities. Trigger phrases include \"create page for CDS table\", \"generate list page for [entity]\", \"build Dataverse page\", or when working with CDS integration tables that need user interfaces.",
+  "source": "@site/docs/skills/bc-cds-page-generator/SKILL.md",
+  "sourceDirName": "skills/bc-cds-page-generator",
+  "slug": "/skills/bc-cds-page-generator/SKILL",
+  "permalink": "/docs/skills/bc-cds-page-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-cds-page-generator",
+    "description": "Automatically generate AL list page objects for CDS (Dataverse) tables with standard CRM integration patterns. Creates list pages with proper field layouts, CRM integration actions, coupling procedures, and initialization triggers. Use when user requests to create, generate, or build a list page for a CDS/Dataverse table, or mentions creating UI for Dataverse entities. Trigger phrases include \"create page for CDS table\", \"generate list page for [entity]\", \"build Dataverse page\", or when working with CDS integration tables that need user interfaces."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Business Events Code Templates",
+    "permalink": "/docs/skills/bc-business-events-generator/references/code-templates"
+  },
+  "next": {
+    "title": "CDS Page Generation Examples",
+    "permalink": "/docs/skills/bc-cds-page-generator/references/examples"
+  }
+}

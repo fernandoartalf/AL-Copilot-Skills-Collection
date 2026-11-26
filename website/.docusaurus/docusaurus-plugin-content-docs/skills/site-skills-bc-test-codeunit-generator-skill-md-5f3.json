@@ -1,0 +1,27 @@
+{
+  "id": "bc-test-codeunit-generator/SKILL",
+  "title": "Business Central Test Codeunit Generator",
+  "description": "Generates test codeunits (Subtype = Test) for Business Central extensions that verify existing module functionality including page navigation, codeunit logic, setup validation, and data operations. Creates test codeunits with [Test] attribute methods following Given/When/Then naming, handler methods ([MessageHandler], [ConfirmHandler], [PageHandler], [ModalPageHandler], [HyperlinkHandler], [SendNotificationHandler], [RecallNotificationHandler], [RequestPageHandler], [ReportHandler], [FilterPageHandler], [StrMenuHandler], [SessionSettingsHandler]), Library Assert and Library Variable Storage integration, test data factories, and standard BC test library codeunits (Library - Sales, Library - ERM, Library - Inventory, Library - Random). Also creates or updates a TestRunner codeunit (Subtype = TestRunner) with OnBeforeTestRun/OnAfterTestRun triggers, TestIsolation property, and automatic registration of test codeunits. Use when asked to create tests for a module, generate test codeunits, write unit tests, add test coverage, create a test runner, build automated tests, implement test methods, or add testing infrastructure for a Business Central extension.",
+  "source": "@site/../skills/bc-test-codeunit-generator/SKILL.md",
+  "sourceDirName": "bc-test-codeunit-generator",
+  "slug": "/bc-test-codeunit-generator/SKILL",
+  "permalink": "/skills/bc-test-codeunit-generator/SKILL",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-test-codeunit-generator/SKILL.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "name": "bc-test-codeunit-generator",
+    "description": "Generates test codeunits (Subtype = Test) for Business Central extensions that verify existing module functionality including page navigation, codeunit logic, setup validation, and data operations. Creates test codeunits with [Test] attribute methods following Given/When/Then naming, handler methods ([MessageHandler], [ConfirmHandler], [PageHandler], [ModalPageHandler], [HyperlinkHandler], [SendNotificationHandler], [RecallNotificationHandler], [RequestPageHandler], [ReportHandler], [FilterPageHandler], [StrMenuHandler], [SessionSettingsHandler]), Library Assert and Library Variable Storage integration, test data factories, and standard BC test library codeunits (Library - Sales, Library - ERM, Library - Inventory, Library - Random). Also creates or updates a TestRunner codeunit (Subtype = TestRunner) with OnBeforeTestRun/OnAfterTestRun triggers, TestIsolation property, and automatic registration of test codeunits. Use when asked to create tests for a module, generate test codeunits, write unit tests, add test coverage, create a test runner, build automated tests, implement test methods, or add testing infrastructure for a Business Central extension."
+  },
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Telemetry Reference Patterns",
+    "permalink": "/skills/bc-telemetry-generator/references/telemetry-reference"
+  },
+  "next": {
+    "title": "Test Codeunit Examples",
+    "permalink": "/skills/bc-test-codeunit-generator/references/test-examples"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bc-cds-page-generator/references/standard-components",
+  "title": "Standard Components for CDS List Pages",
+  "description": "Complete implementations of actions, triggers, and procedures required for Business Central CDS list pages.",
+  "source": "@site/../skills/bc-cds-page-generator/references/standard-components.md",
+  "sourceDirName": "bc-cds-page-generator/references",
+  "slug": "/bc-cds-page-generator/references/standard-components",
+  "permalink": "/skills/bc-cds-page-generator/references/standard-components",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/fernandoartalf/AL-Copilot-Skills-Collection/tree/main/../skills/bc-cds-page-generator/references/standard-components.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "skillsSidebar",
+  "previous": {
+    "title": "Quick Start Guide",
+    "permalink": "/skills/bc-cds-page-generator/references/quick-start"
+  },
+  "next": {
+    "title": "Business Central Dataverse Entity Generator",
+    "permalink": "/skills/bc-dataverse-entity-generator/SKILL"
+  }
+}

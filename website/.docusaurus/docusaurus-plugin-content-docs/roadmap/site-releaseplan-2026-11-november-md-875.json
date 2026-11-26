@@ -1,0 +1,24 @@
+{
+  "id": "2026/november",
+  "title": "Release Plan — November 2026",
+  "description": "Business Central 2026 Wave 2 — CU1",
+  "source": "@site/../releaseplan/2026/11-november.md",
+  "sourceDirName": "2026",
+  "slug": "/2026/november",
+  "permalink": "/roadmap/2026/november",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {},
+  "sidebar": "roadmapSidebar",
+  "previous": {
+    "title": "October",
+    "permalink": "/roadmap/2026/october"
+  },
+  "next": {
+    "title": "December",
+    "permalink": "/roadmap/2026/december"
+  }
+}
