@@ -1,133 +1,185 @@
-# --- Script to Generate AL Entities using ALTPGen based on the Dataverse Entities---
-# To run the script, use the following command:
-# reference the path where the script is located
-#2- .\Generate-Entity.ps1 -Entity account -BaseId 50100
-# Run the script with the desired entity name and Business Central Table ID
-# note: the script will create new AL files, if you want to update an schema, create the new object and paste the fields on the existing object.
-# The script will generate the AL files for the specified entity on the src folder, please move it to the table folder and save it so it uses the BCS prefix.
-# To run the command correctly the user must have administrator permissions on both Dataverse and Business Central environments and we must use an App registration (and inform it on the ClientId and RedirectUri).
-# For more technical information about the dataverse integration customization, visit: https://yzhums.com/17065/
+<#
+.SYNOPSIS
+    Generates Business Central AL proxy tables (TableType = CDS) from Dataverse entities with altpgen.
+
+.DESCRIPTION
+    Portable version of altpgen/Generate-Entity.ps1 bundled with the bc-dataverse-entity-generator skill.
+    Environment-specific values are passed as parameters, so it works in any AL project.
+
+    altpgen.exe is resolved in this order:
+      1. -AltpgenPath
+      2. <AltpgenRoot>\lib\net*-windows*\altpgen.exe (default C:\altpgen), matching an installed .NET Desktop Runtime
+      3. Install-Altpgen.ps1 (same folder) downloads the NuGet package into <AltpgenRoot> (skip with -NoInstall)
+
+    altpgen opens an interactive Microsoft sign-in; the script blocks until the user authenticates.
+    Generated *.Table.al files are written to the project folder.
+
+.PARAMETER Entity
+    Dataverse logical name(s), case-sensitive. Comma-separate to generate several (e.g. "account,contact").
+
+.PARAMETER BaseId
+    First table ID to use. altpgen increments it for each additional table.
+
+.PARAMETER ServiceUri
+    Dataverse environment URL, e.g. https://yourorg.crm4.dynamics.com/
+    If omitted, read from the settings file (see -ConfigPath).
+
+.PARAMETER ClientId
+    Application (client) ID of a multi-tenant Entra ID app registration with Dynamics CRM user_impersonation.
+    If omitted, read from the settings file (see -ConfigPath).
+
+.PARAMETER ConfigPath
+    JSON settings file with serviceUri and clientId (optional: redirectUri, packageCachePath).
+    Default: <AltpgenRoot>\altpgen.settings.json (i.e. C:\altpgen\altpgen.settings.json, outside the repository).
+    Command-line values override the file. When ServiceUri/ClientId are passed on the command line and altpgen
+    completes successfully, they are saved to this file so they are not requested again.
+    If the file is missing or invalid and no values are passed, the script exits with code 2.
+
+.PARAMETER RedirectUri
+    Default: msal<ClientId>://auth (must be registered as a Mobile and desktop redirect URI).
+
+.PARAMETER ProjectPath
+    AL project folder (contains app.json). Default: current directory.
+
+.PARAMETER PackageCachePath
+    Symbol folder. Default: <ProjectPath>\.alpackages
+
+.PARAMETER NoInstall
+    Never download: use only an existing altpgen in <AltpgenRoot>; fail if it is missing.
+
+.EXAMPLE
+    .\Generate-Entity.ps1 -Entity account -BaseId 70000 -ProjectPath C:\AL\MyApp
+.EXAMPLE
+    # First run (or to replace stored values): values are saved to C:\altpgen\altpgen.settings.json after success
+    .\Generate-Entity.ps1 -Entity account -BaseId 70000 -ServiceUri https://yourorg.crm4.dynamics.com/ -ClientId 00000000-0000-0000-0000-000000000000 -ProjectPath C:\AL\MyApp
+#>
+[CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
     [string]$Entity,
 
     [Parameter(Mandatory = $true)]
-    [int]$BaseId
+    [int]$BaseId,
+
+    [string]$ServiceUri,
+
+    [string]$ClientId,
+
+    [string]$ConfigPath,
+
+    [string]$RedirectUri,
+
+    [string]$ProjectPath = (Get-Location).Path,
+
+    [string]$PackageCachePath,
+
+    [string]$AltpgenPath,
+
+    [string]$AltpgenRoot = 'C:\altpgen',
+
+    [switch]$NoInstall
 )
 
-# --- Variables ---
-$SkillPath = $PSScriptRoot
-$BasePath = Split-Path (Split-Path (Split-Path (Split-Path $SkillPath -Parent) -Parent) -Parent) -Parent
-$ProjectPath = "$BasePath"
-$PackageCachePath = "$BasePath\.alpackages"
+$ErrorActionPreference = 'Stop'
 
-# ============================================================================
-# CONFIGURATION: SENSITIVE VARIABLES
-# ============================================================================
-# The following variables contain environment-specific and sensitive data.
-# Update these values before first use. DO NOT commit sensitive values to Git.
-# ============================================================================
-
-# --- ENVIRONMENT VARIABLE: Dataverse Service URI ---
-# TYPE: Environment-specific configuration (not secret, but environment-dependent)
-# PURPOSE: Target Dataverse environment URL for entity retrieval
-# HOW TO FIND: Power Platform Admin Center > Environments > Select environment > Environment URL
-# FORMAT: https://<org-name>.crm[region-code].dynamics.com/
-# REGIONS: .crm (NA), .crm4 (EU), .crm11 (UK), .crm5 (APAC), .crm3 (CA), .crm6 (AU)
-# EXAMPLE: "https://contoso.crm.dynamics.com/"
-# ⚠️ UPDATE THIS: Set to your Dataverse environment URL
-$ServiceUri = "https://contoso.crm.dynamics.com/"
-
-# --- SENSITIVE VARIABLE: Azure AD Application (Client) ID ---
-# TYPE: Secret - OAuth client identifier
-# PURPOSE: Authenticates to Dataverse via Azure AD App Registration
-# HOW TO FIND: Azure Portal > App Registrations > Select app > Overview > Application (client) ID
-# FORMAT: GUID (8-4-4-4-12 format)
-# REQUIRED PERMISSIONS: Dynamics CRM > user_impersonation (Delegated)
-# EXAMPLE: "12345678-1234-1234-1234-123456789abc"
-# ⚠️ SENSITIVE: Do not commit actual values to public repositories
-# ⚠️ UPDATE THIS: Set to your Azure AD App Registration client ID
-$ClientId = "12345678-1234-1234-1234-123456789abc"
-
-# --- SENSITIVE VARIABLE: Redirect URI ---
-# TYPE: Secret - OAuth redirect configuration
-# PURPOSE: OAuth authentication callback for MSAL (Microsoft Authentication Library)
-# FORMAT: msal{ClientId}://auth
-# HOW TO CONFIGURE: Azure Portal > App Registration > Authentication > Mobile/desktop > Add URI
-# AUTO-GENERATED: This value is derived from $ClientId above
-# EXAMPLE: "msal12345678-1234-1234-1234-123456789abc://auth"
-# ⚠️ SENSITIVE: Must match exactly what's configured in Azure AD
-$RedirectUri = "msal${ClientId}://auth"
-
-# --- ENVIRONMENT VARIABLE: ALTPGen Tool Path ---
-# TYPE: Environment-specific configuration (local system path)
-# PURPOSE: Path to ALTPGen.exe for generating AL table definitions from Dataverse
-# HOW TO FIND: VSCode > Extensions > "AL Language" > Check version
-# PATH PATTERN: C:\Users\{User}\.vscode\extensions\ms-dynamics-smb.al-{version}\bin\win32\altpgen\altpgen.exe
-# EXAMPLE: "C:\Users\JohnDoe\.vscode\extensions\ms-dynamics-smb.al-17.0.1869541\bin\win32\altpgen\altpgen.exe"
-# ⚠️ VERSION-SPECIFIC: Path changes when AL extension updates
-# ⚠️ UPDATE THIS: Set to your local ALTPGen.exe path
-# 💡 TIP: The agent can auto-detect and fix this path if incorrect
-$AltpgenPath = "C:\Users\JohnDoe\.vscode\extensions\ms-dynamics-smb.al-17.0.1869541\bin\win32\altpgen\altpgen.exe"
-
-# ============================================================================
-# END CONFIGURATION
-# ============================================================================
+class SettingsException : System.Exception {
+    SettingsException([string]$message) : base($message) {}
+}
 
 try {
-    # --- Check Project Directory ---
-    if (-not (Test-Path $ProjectPath)) {
-        throw "Project path not found: $ProjectPath"
+    $ProjectPath = (Resolve-Path $ProjectPath).Path
+    if (-not (Test-Path (Join-Path $ProjectPath 'app.json'))) {
+        throw "app.json not found in project path: $ProjectPath"
     }
 
-    # --- Check ALTPGen Path ---
+    if (-not $ConfigPath) { $ConfigPath = Join-Path $AltpgenRoot 'altpgen.settings.json' }
+
+    # Values passed explicitly are saved after a successful run; values taken from the file are not rewritten
+    $saveSettings = [bool]($ServiceUri -and $ClientId)
+    $cfg = $null
+    if (Test-Path $ConfigPath) {
+        try { $cfg = Get-Content $ConfigPath -Raw | ConvertFrom-Json }
+        catch { if (-not $saveSettings) { throw [SettingsException]::new("Settings file $ConfigPath is not valid JSON: $($_.Exception.Message)") } }
+    }
+    if ($cfg) {
+        if (-not $ServiceUri -and $cfg.serviceUri) { $ServiceUri = $cfg.serviceUri }
+        if (-not $ClientId -and $cfg.clientId) { $ClientId = $cfg.clientId }
+        if (-not $RedirectUri -and $cfg.redirectUri) { $RedirectUri = $cfg.redirectUri }
+        if (-not $PackageCachePath -and $cfg.packageCachePath) { $PackageCachePath = $cfg.packageCachePath }
+        Write-Host "Settings loaded from $ConfigPath"
+    }
+    if (-not $ServiceUri -or -not $ClientId) {
+        throw [SettingsException]::new("ServiceUri and ClientId not available: $ConfigPath is missing or incomplete. Ask the user for them and re-run with -ServiceUri and -ClientId (they will be saved).")
+    }
+
+    if (-not $PackageCachePath) { $PackageCachePath = Join-Path $ProjectPath '.alpackages' }
+    if (-not (Test-Path $PackageCachePath)) {
+        Write-Warning "Package cache not found: $PackageCachePath. Download symbols first if altpgen reports missing symbols."
+    }
+
+    if ($ServiceUri -notmatch '^https://[^/]+\.dynamics\.com/?$') {
+        throw [SettingsException]::new("ServiceUri '$ServiceUri' is not a Dataverse URL like https://<org>.crm[N].dynamics.com/")
+    }
+    if (-not $ServiceUri.EndsWith('/')) { $ServiceUri += '/' }
+
+    $parsedClientId = [guid]::Empty
+    if (-not [guid]::TryParse($ClientId, [ref]$parsedClientId)) {
+        throw [SettingsException]::new("ClientId '$ClientId' is not a GUID.")
+    }
+    if (-not $RedirectUri) { $RedirectUri = "msal${ClientId}://auth" }
+
+    if (-not $AltpgenPath) {
+        $installer = Join-Path $PSScriptRoot 'Install-Altpgen.ps1'
+        # The installer is idempotent: it only downloads when the folder is empty or outdated,
+        # and always returns the build matching the installed .NET Desktop Runtime.
+        $AltpgenPath = @(& $installer -InstallPath $AltpgenRoot -Offline:$NoInstall)[-1]
+    }
     if (-not (Test-Path $AltpgenPath)) {
-        throw "ALTPGen tool not found: $AltpgenPath"
+        throw "altpgen.exe not found: $AltpgenPath"
     }
 
-    # --- Move to altpgen directory ---
-    $AltpgenDir = Split-Path $AltpgenPath
-    Set-Location $AltpgenDir
+    Write-Host "Running altpgen for entity '$Entity' with BaseId $BaseId..." -ForegroundColor Cyan
+    Write-Host "  altpgen:  $AltpgenPath"
+    Write-Host "  project:  $ProjectPath"
+    Write-Host "  service:  $ServiceUri"
+    Write-Host "Complete the Microsoft sign-in when the authentication window opens." -ForegroundColor Yellow
 
-    Write-Host "Running ALTPGen for entity '$Entity' with BaseId $BaseId..." -ForegroundColor Cyan
-
-    # --- Run ALTPGen ---
-    & .\altpgen `
-        -project:$ProjectPath `
-        -packagecachepath:$PackageCachePath `
-        -serviceuri:$ServiceUri `
-        -entities:$Entity `
-        -baseid:$BaseId `
-        -tabletype:CDS `
-        -clientid:$ClientId `
-        -redirecturi:$RedirectUri
-
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "ALTPGen completed successfully ✅" -ForegroundColor Green
-        Write-Host ""
-        Write-Host "Next steps:" -ForegroundColor Yellow
-        Write-Host "1. Generated file is in project root" -ForegroundColor White
-        Write-Host "2. File will be moved to src/Table/ with CDS prefix" -ForegroundColor White
-        Write-Host "3. Update permission set if needed" -ForegroundColor White
+    Push-Location (Split-Path $AltpgenPath)
+    try {
+        & $AltpgenPath `
+            "-project:$ProjectPath" `
+            "-packagecachepath:$PackageCachePath" `
+            "-serviceuri:$ServiceUri" `
+            "-entities:$Entity" `
+            "-baseid:$BaseId" `
+            '-tabletype:CDS' `
+            "-clientid:$ClientId" `
+            "-redirecturi:$RedirectUri"
+        $altpgenExit = $LASTEXITCODE
     }
-    else {
-        throw "ALTPGen exited with code $LASTEXITCODE ❌"
+    finally {
+        Pop-Location
     }
+
+    if ($altpgenExit -ne 0) {
+        throw "altpgen exited with code $altpgenExit. If the output shows AADSTS/CDS0001 (authentication or connection) errors, the stored ServiceUri/ClientId may be wrong: confirm them with the user and re-run with -ServiceUri and -ClientId."
+    }
+    Write-Host "altpgen completed successfully" -ForegroundColor Green
+
+    if ($saveSettings) {
+        $toSave = [ordered]@{ serviceUri = $ServiceUri; clientId = $ClientId }
+        if ($cfg -and $cfg.redirectUri) { $toSave.redirectUri = $cfg.redirectUri }
+        if ($cfg -and $cfg.packageCachePath) { $toSave.packageCachePath = $cfg.packageCachePath }
+        New-Item -ItemType Directory -Path (Split-Path $ConfigPath) -Force | Out-Null
+        $toSave | ConvertTo-Json | Set-Content -Path $ConfigPath -Encoding UTF8
+        Write-Host "Settings saved to $ConfigPath"
+    }
+}
+catch [SettingsException] {
+    [Console]::Error.WriteLine("SETTINGS ERROR: $($_.Exception.Message)")
+    exit 2
 }
 catch {
-    Write-Error "Error: $_"
+    [Console]::Error.WriteLine("Error: $_")
     exit 1
 }
-# To Update the Autogenerated Comment Block Below, import the latest Solution.xml from the dataverse Solution and Use Copilot agent with the following prompt:
-# read the full file of solution.xml and create comments at the end of the generate-entity.ps1 file based on "#.\Generate-Entity.ps1 -Entity account -BaseId 50100". Replace the "acount" by the schemaName of all the roorcomponents with type 1 and the 50100 by increasing that number by 1 on each element
-# --- End of Script ---
-# -Script Call Example----------
-#.\Generate-Entity.ps1 -Entity account -BaseId 50100
-# --------------------
-
-# -----------------------------------------------------------------------------
-# Auto-generated comment block based on solution.xml RootComponents (type=1)
-# Each line is a commented example to run this script for the corresponding
-# Dataverse entity (schemaName) using an incrementing BaseId starting at 50100.
-# -----------------------------------------------------------------------------
-# .\Generate-Entity.ps1 -Entity account -BaseId 50100
