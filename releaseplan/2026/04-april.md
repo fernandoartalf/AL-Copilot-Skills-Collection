@@ -130,7 +130,7 @@ Generates list pages with proper field layouts, CRM integration actions, couplin
 | Field | Details |
 |---|---|
 | **Skill Name** | `bc-dataverse-entity-generator` |
-| **Short Description** | Generates AL CDS integration table objects from Dataverse entities using ALTPGen with PowerShell automation scripts. |
+| **Short Description** | Generates AL CDS integration tables from Dataverse entities using altpgen, with automated installation, ID allocation, configuration, and post-generation merge and permission guidance. |
 | **Target BC Version** _(optional)_ | v28.0 |
 | **Status** | ✅ Merged |
 
@@ -143,7 +143,7 @@ Generates list pages with proper field layouts, CRM integration actions, couplin
 
 #### Motivation
 
-Fully automated workflow for generating BC table objects from Dataverse entities including table ID allocation, error fixing, file organization, and permission set updates.
+Generates BC tables from Dataverse entities with ID allocation, configuration, file organization, and permission updates. The November 2026 update adds NuGet-based altpgen installation, supported-runtime selection, persistent local settings, multi-entity generation, existing-table merge guidance, and troubleshooting; see the [November 2026 release plan](../11-november.md).
 
 ---
 

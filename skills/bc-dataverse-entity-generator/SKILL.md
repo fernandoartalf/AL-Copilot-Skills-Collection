@@ -1,241 +1,221 @@
 ---
 name: bc-dataverse-entity-generator
-description: Generates AL CDS integration table objects from Dataverse entities using ALTPGen with PowerShell automation scripts. REQUIRES terminal tools. Automatically determines next available table ID, EXECUTES the generation script via terminal, monitors for errors (especially ALTPGen path issues), auto-fixes configuration problems, handles post-generation file organization to src/Table/ with BCS prefix naming convention, DELETES original generated file to prevent duplicates, and UPDATES permission set automatically. FULLY AUTOMATED workflow - agent executes all commands directly. If terminal tools are unavailable, agent must decline to proceed.
+description: "Generate Business Central AL integration (proxy) tables from Microsoft Dataverse entities with the AL Table Proxy Generator (altpgen). Downloads altpgen from the Microsoft.Dynamics.BusinessCentral.Development.Tools.Altpgen NuGet package into C:\\altpgen when missing, allocates the next free table ID from app.json, runs the bundled Generate-Entity.ps1, moves the result to src/Table with the BCS prefix, merges new fields into existing tables and updates the permission set. Use when the user asks to generate, create, import or regenerate a Dataverse/CDS/CRM entity or table in Business Central, create proxy or integration tables, install or download altpgen, or reports altpgen.exe missing from the AL Language extension."
 ---
 
 # Business Central Dataverse Entity Generator
 
-Generates AL table objects from Microsoft Dataverse entities using ALTPGen and PowerShell automation. Automates the **COMPLETE** workflow: table ID allocation, command execution, error detection/fixing, file organization with BCS prefix, **original file deletion**, and **automatic permission set updates**.
+Generates AL proxy tables (`TableType = CDS`) from Dataverse entities using **altpgen**, which since AL Language 18.x is no longer bundled with the VS Code extension and is distributed as the NuGet package `Microsoft.Dynamics.BusinessCentral.Development.Tools.Altpgen`.
 
-> **⚡ FULLY AUTOMATED:** Agent takes control of the terminal and executes all commands automatically. User interaction only required for authentication (browser popup for first-time OAuth).
+## Conventions
 
-> **🚨 TERMINAL TOOLS REQUIRED:** This skill REQUIRES terminal command execution. If unavailable, agent must decline to proceed.
+- `<skill-dir>` = the folder containing this `SKILL.md` (e.g. `.github/skills/bc-dataverse-entity-generator` or `.claude/skills/bc-dataverse-entity-generator`).
+- `<project>` = the AL project root (folder with `app.json`). Run commands from there.
+- All commands are Windows PowerShell. From a Bash shell (e.g. Claude Code on Windows) wrap them as `powershell.exe -NoProfile -ExecutionPolicy Bypass -File <script> <args>` — this form works in every shell.
+- altpgen opens an **interactive Microsoft sign-in**. Run it in a terminal visible to the user and tell them to complete authentication; the command blocks until they do.
+
+## Bundled resources
+
+| Resource | Purpose |
+|----------|---------|
+| [scripts/Install-Altpgen.ps1](./scripts/Install-Altpgen.ps1) | Downloads the altpgen NuGet package into `C:\altpgen` (idempotent) and prints the matching `altpgen.exe` path on stdout |
+| [scripts/Get-NextTableId.ps1](./scripts/Get-NextTableId.ps1) | Returns the next free table ID inside `app.json` `idRanges` |
+| [scripts/Generate-Entity.ps1](./scripts/Generate-Entity.ps1) | Runs altpgen for one or more entities; environment values are parameters, altpgen is auto-installed via `Install-Altpgen.ps1` if missing |
+| [assets/altpgen.settings.json](./assets/altpgen.settings.json) | Format example of the settings file stored in `C:\altpgen` (normally created by the script, no need to copy it) |
+| [references/merge-and-permissions.md](./references/merge-and-permissions.md) | Merging regenerated tables and permission set updates |
+| [references/troubleshooting.md](./references/troubleshooting.md) | Error codes (AADSTS50194, CDS0001/CDS0002), runtime and download issues |
 
 ## Prerequisites
 
-- **Terminal tools enabled** (REQUIRED)
-- AL Language extension installed in VS Code (includes ALTPGen)
-- Azure AD App Registration with `Dynamics CRM > user_impersonation` permission
-- Access to target Dataverse environment
-- PowerShell scripts configured in `.github/skills/bc-dataverse-entity-generator/scripts/`
+Confirm before running; ask the user for anything missing:
 
-## Automated Workflow
+- Windows with the **.NET 8 or .NET 10 Desktop Runtime** (`dotnet --list-runtimes` → `Microsoft.WindowsDesktop.App 8.x` or `10.x`).
+- Internet access to `api.nuget.org` (first run or upgrade).
+- **ServiceUri** (Dataverse environment URL, e.g. `https://yourorg.crm4.dynamics.com/`) and **ClientId** (app registration GUID) are stored once in `C:\altpgen\altpgen.settings.json` (see [Settings file](#settings-file)). **Do not ask the user for them** unless that file does not exist, is invalid, or a run fails because of them (script exit code 2, or `AADSTS`/`CDS0001` errors). Never guess them, and never store them in the repository.
+- Entra ID app registration: **multi-tenant**, redirect URI `msal<ClientId>://auth` (Mobile and desktop), API permission *Dynamics CRM / user_impersonation*.
+- Symbols in `<project>/.alpackages`.
 
-### Step 0: Check Terminal Tools Availability
+## Settings file
 
-**BEFORE starting, verify terminal tools are available:**
+The Dataverse connection values are stored **once, outside the repository**, in the altpgen folder: `C:\altpgen\altpgen.settings.json`.
 
-```
-if terminal tools NOT available:
-    ❌ This process requires terminal command execution to be enabled.
-    
-    The bc-dataverse-entity-generator skill cannot run manually because it requires:
-    - Automatic error detection and path fixing
-    - Real-time monitoring of ALTPGen output
-    - Automated file organization and cleanup
-    - Permission set updates
-    
-    Please enable terminal tools in VS Code agent settings to use this skill.
-    
-    STOP — do not proceed
+```json
+{
+  "serviceUri": "https://yourorg.crm4.dynamics.com/",
+  "clientId": "00000000-0000-0000-0000-000000000000"
+}
 ```
 
-### Step 1: Analyze Request & Determine Next Table ID
+- Created automatically: the first successful run with `-ServiceUri` and `-ClientId` saves them (nothing to copy by hand; see [assets/altpgen.settings.json](./assets/altpgen.settings.json) for the format). Optional keys: `redirectUri`, `packageCachePath`.
+- Later runs read the file; the user is **not** asked again.
+- Preserved when `Install-Altpgen.ps1` upgrades the package. Contains no secrets (sign-in is interactive).
+- Ask the user **only** when the file is missing/invalid (script exit code 2, `SETTINGS ERROR`) or altpgen fails with `AADSTS`/`CDS0001` errors. Then re-run with the corrected `-ServiceUri` and `-ClientId`; a successful run overwrites the file.
 
-- Extract entity name from user request (lowercase: "account", "contact", "quote")
-- Scan existing tables in `src/Table/*.al`
-- Extract table IDs using regex: `table\s+(\d+)`
-- Find highest ID and add 1
-- Verify within `app.json` idRanges
+## Workflow
 
-### Step 2: Execute PowerShell Generation Script
+Copy this checklist and track progress:
 
-Build and execute command:
+```
+- [ ] 1. Install / update altpgen in C:\altpgen
+- [ ] 2. Resolve entity logical name(s)
+- [ ] 3. Allocate table ID
+- [ ] 4. Run Generate-Entity.ps1
+- [ ] 5. Move generated files to src/Table
+- [ ] 6. Apply BCS naming
+- [ ] 7. Merge with existing table (if any)
+- [ ] 8. Update permission set
+- [ ] 9. Build and review
+```
+
+### Step 1: Install altpgen into C:\altpgen
+
 ```powershell
-cd .github\skills\bc-dataverse-entity-generator\scripts
-powershell -ExecutionPolicy Bypass -File ".\Generate-Entity.ps1" -Entity "{entity}" -BaseId {tableId}
+$AltpgenExe = powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-dir>\scripts\Install-Altpgen.ps1"
 ```
 
-**Agent MUST execute directly via terminal tools**
+What it does:
 
-Inform user while executing:
-```
-Generating {Entity} CDS table...
-Entity: {entity}
-Table ID: {tableId} (next available)
-Note: Browser may prompt for authentication (first run only)
-```
+1. Resolves the latest **stable** version from `https://api.nuget.org/v3-flatcontainer/microsoft.dynamics.businesscentral.development.tools.altpgen/index.json`.
+2. Skips the download if `C:\altpgen\*.nuspec` already has that version; otherwise downloads the `.nupkg` (a zip — no .NET project or `dotnet tool install` needed) and extracts the **whole package content** into `C:\altpgen`.
+3. Picks `C:\altpgen\lib\net10.0-windows7.0\altpgen.exe` or `...\net8.0-windows7.0\altpgen.exe` based on the installed .NET Desktop Runtime.
+4. Writes only the exe path to stdout (progress goes to stderr).
 
-Monitor terminal output for completion or errors.
+Options: `-Version <x>` pin a version, `-IncludePrerelease` allow `-beta` builds, `-Framework net8|net10` force a build, `-Force` reinstall, `-Offline` use only what is already installed, `-InstallPath` change the folder (default `C:\altpgen`).
 
-### Step 3: Error Handling & Auto-Fix
+`Generate-Entity.ps1` calls this installer automatically when `-AltpgenPath` is omitted, so running it explicitly is only needed to pin a version/framework or to report the installed version up front.
 
-**ALTPGen Path Error:**
-1. Search for `altpgen.exe` in VS Code extensions: `C:\Users\{User}\.vscode\extensions\ms-dynamics-smb.al-*\bin\win32\altpgen\altpgen.exe`
-2. Find latest version automatically
-3. Update `$AltpgenPath` in Generate-Entity.ps1
-4. Re-execute generation script
+If the script fails, see [troubleshooting](./references/troubleshooting.md). Do not fall back to the old `.vscode\extensions\ms-dynamics-smb.al-*\bin\win32\altpgen` path unless the user asks.
 
-**Base Path Error:**
-1. Add extra `Split-Path` to calculate correct project root
-2. Update script
-3. Re-execute
+### Step 2: Resolve the entity logical name
 
-**Other Errors:**
-- **Authentication:** Inform user to complete browser popup
-- **Entity not found:** Verify entity name (lowercase) exists in Dataverse
-- **Duplicate ID:** Find next available ID, re-execute with new ID
-- **Network:** Check ServiceUri and connectivity
+- altpgen's `-entities` value is **case-sensitive** and must be the Dataverse **logical name** (e.g. `account`, `salesorder`, `cr2e6_labbook`). A wrong case fails with `CDS0002`.
+- If unsure, look it up in `dataversesolutions/**/Entity.xml` or ask the user.
+- Several entities: comma-separate them in one run (`-Entity "account,contact"`; altpgen assigns IDs from `BaseId` upward — make sure enough consecutive IDs are free) or process them one by one.
 
-### Step 4: Post-Generation File Organization
+### Step 3: Allocate the table ID
 
-**Automatic steps:**
-
-1. **Locate generated file** in project root (e.g., `Account.al`, `CDSaccount.Table.al`)
-
-2. **Read file content and apply BCS prefix:**
-   - Find table declaration: `table \d+ "CDS {Entity}"`
-   - Update to: `table {id} "BCS CDS {Entity}"`
-
-3. **Create properly named file:**
-   - Write content to: `src/Table/BCSCDS{Entity}.Table.al`
-   - Example: `Account.al` → `src/Table/BCSCDSAccount.Table.al`
-
-4. **Delete original file** from project root to prevent duplicate object errors
-
-5. **Update permission set** (`AGENTDEMO.permissionset.al`):
-   - Parse existing Permissions section
-   - Add `tabledata "BCS CDS {Entity}"=RIMD,` in tabledata section (alphabetical order)
-   - Add `table "BCS CDS {Entity}"=X,` in table section (alphabetical order)
-   - Maintain proper comma placement (last entry ends with `;`)
-
-6. **Confirm completion:**
-```
-✅ {Entity} CDS table generated successfully!
-
-Created: src/Table/BCSCDS{Entity}.Table.al
-Table ID: {tableId}
-Table Name: "BCS CDS {Entity}"
-
-✅ Cleaned up: Deleted {originalFile} from project root
-✅ Updated: AGENTDEMO.permissionset.al with table permissions
-
-Next steps:
-- Review the generated table structure
-- Build project: Ctrl+Shift+P → AL: Build
-- Test integration with Dataverse environment
+```powershell
+$BaseId = powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-dir>\scripts\Get-NextTableId.ps1" -ProjectPath "<project>"
 ```
 
-## Configuration: Sensitive Variables
+Returns the highest table ID used inside `app.json` `idRanges` + 1 (or the range start if none). Fails when the range is exhausted — then ask the user to extend `idRanges`.
 
-Scripts contain environment-specific and sensitive values in `Generate-Entity.ps1`:
+If the entity already has a table (see Step 7), regenerate with a **temporary** free ID and merge instead of creating a duplicate.
 
-| Variable | Type | Purpose | How to Find |
-|----------|------|---------|-------------|
-| `$ServiceUri` | **ENVIRONMENT** | Dataverse environment URL | Power Platform Admin Center > Environments > Environment URL |
-| `$ClientId` | **SECRET** | Azure AD App Registration client ID | Azure Portal > App Registrations > Application (client) ID |
-| `$RedirectUri` | **SECRET** | OAuth redirect URI (auto-generated from ClientId) | Format: `msal{ClientId}://auth` |
-| `$AltpgenPath` | **ENVIRONMENT** | Path to ALTPGen.exe (version-specific) | VS Code extensions folder (agent can auto-detect) |
+### Step 4: Run the generation script
 
-**See script comments for detailed configuration instructions.**
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-dir>\scripts\Generate-Entity.ps1" `
+    -Entity <logicalname> -BaseId $BaseId -ProjectPath "<project>"
+```
 
-## Common Entity Names
+`ServiceUri` and `ClientId` are read from the [settings file](#settings-file); pass `-ServiceUri "<uri>" -ClientId "<guid>"` only when the file is missing/invalid or the values must change (they are saved after a successful run).
 
-| Entity | Description |
-|--------|-------------|
-| `account` | Customer/company |
-| `contact` | Person |
-| `lead` | Potential customer |
-| `opportunity` | Sales opportunity |
-| `quote` | Price quote |
-| `salesorder` | Sales order |
-| `invoice` | Customer invoice |
-| `product` | Product/service |
+| Parameter | Required | Default |
+|-----------|----------|---------|
+| `-Entity` | yes | — (logical name, comma-separated for several) |
+| `-BaseId` | yes | — (from Step 3) |
+| `-ServiceUri` | first run | `C:\altpgen\altpgen.settings.json` → `serviceUri` |
+| `-ClientId` | first run | `C:\altpgen\altpgen.settings.json` → `clientId` (must be a GUID) |
+| `-ConfigPath` | no | `<AltpgenRoot>\altpgen.settings.json` |
+| `-ProjectPath` | no | current directory (must contain `app.json`) |
+| `-RedirectUri` | no | `msal<ClientId>://auth` |
+| `-PackageCachePath` | no | `<project>\.alpackages` |
+| `-AltpgenPath` | no | resolved/installed via `Install-Altpgen.ps1` in `-AltpgenRoot` |
+| `-AltpgenRoot` | no | `C:\altpgen` |
+| `-NoInstall` | no | never download; fail if altpgen is not in `-AltpgenRoot` |
 
-## Troubleshooting
+The script validates inputs, then runs:
 
-### Error: "ALTPGen tool not found"
-**Auto-fix:** Agent searches for ALTPGen.exe, updates path, re-executes
+```
+altpgen -project:<project> -packagecachepath:<project>\.alpackages -serviceuri:<ServiceUri>
+        -entities:<logicalname> -baseid:<BaseId> -tabletype:CDS -clientid:<ClientId> -redirecturi:msal<ClientId>://auth
+```
 
-### Error: "Authentication failed"
-- Verify `$ClientId` is correct
-- Check redirect URI in Azure: `msal{ClientId}://auth`
-- Ensure user has Dataverse access
-- Check API permissions: `Dynamics CRM > user_impersonation`
+Exit codes: `0` success; `2` `SETTINGS ERROR` (missing/invalid ServiceUri/ClientId — ask the user); `1` any other failure (`Error: ...` on stderr). Any `error CDS....` or `AADSTS...` line → [troubleshooting](./references/troubleshooting.md).
 
-### Error: "Entity not found"
-- Verify entity exists in Dataverse
-- Use lowercase schema name (e.g., `account`, not `Account`)
+Do not use or create a project-level `altpgen/Generate-Entity.ps1` for this skill; the bundled script is the single source.
 
-### Error: "Duplicate table ID" or "Duplicate object"
-**Auto-fix (ID):** Agent rescans for next available ID, re-executes
-**Fix (duplicate object):** Check for leftover files in project root; agent should delete automatically
+### Step 5: Move generated files
 
-## Permission Set Update Details
+altpgen writes `*.Table.al` next to the project (project root, sometimes `src\`). Move only the files created by this run:
 
-**File structure:** `namespace AGENTDEMO; permissionset 70000 AGENTDEMO { Assignable = true; Permissions = ... }`
+```powershell
+$since = (Get-Date).AddMinutes(-10)
+Get-ChildItem "<project>", "<project>\src" -Filter '*.Table.al' -File |
+    Where-Object { $_.LastWriteTime -gt $since } |
+    Move-Item -Destination "<project>\src\Table" -PassThru
+```
 
-**Sections order:** tabledata → table → codeunit → page
+Create `src\Table` if it does not exist. Move any generated pages/codeunits to `src\Page` / `src\Codeunit`.
 
-**Format:**
+### Step 6: Apply BCS naming
+
+| Item | Generated | Target |
+|------|-----------|--------|
+| File | `CDSaccount.Table.al` | `BCSCDSAccount.Table.al` |
+| Object | `table 70008 "CDS account"` | `table 70008 "BCS CDS Account"` |
+
+Edit the table declaration (PascalCase the entity part), rename the file, and update any references. Object names must stay ≤ 30 characters — shorten if needed and tell the user. Follow the repo AL naming instructions if present.
+
+### Step 7: Merge with an existing table
+
+If `src/Table` already contains `"BCS CDS <Entity>"`, do **not** keep a second table: merge new fields (match on `ExternalName`) into the existing one, preserve custom code, delete the generated copy. Details and decision table: [merge-and-permissions.md](./references/merge-and-permissions.md).
+
+### Step 8: Update the permission set
+
+Add to the project permission set (skip if already present):
+
 ```al
-Permissions = 
-    tabledata "BCS CDS Account"=RIMD,
-    tabledata "BCS CDS Contact"=RIMD,
-    table "BCS CDS Account"=X,
-    table "BCS CDS Contact"=X,
-    codeunit "BCS ..."=X,
-    page "BCS ..."=X;
+tabledata "BCS CDS Account" = RIMD,
+table "BCS CDS Account" = X
 ```
 
-**Rules:**
-- Maintain alphabetical order within each section
-- Each entry ends with `,` except the last entry (ends with `;`)
-- Use proper spacing and indentation
+Mind the trailing `,` / `;`. See [merge-and-permissions.md](./references/merge-and-permissions.md).
 
-## Quick Reference
+### Step 9: Build and review
 
-### Navigate to Scripts
-```powershell
-cd .github\skills\bc-dataverse-entity-generator\scripts
-```
+- Build with whatever the environment offers: Copilot `al_build` tool, VS Code **AL: Package** (`Ctrl+Shift+B`), or ask the user to build.
+- Fix diagnostics (IDs out of range, name length, missing symbols).
+- Review `ExternalName`, `TableRelation`, `DataClassification` and option fields.
 
-### Generate Single Entity (Manual)
-```powershell
-powershell -ExecutionPolicy Bypass -File ".\Generate-Entity.ps1" -Entity "account" -BaseId 70004
-```
+## Report to the user
 
-### Find Next Table ID (Manual)
-```powershell
-Get-ChildItem ..\..\..\..\src\Table\*.al | 
-  ForEach-Object { if ((Get-Content $_.FullName -Raw) -match 'table\s+(\d+)') { [int]$matches[1] } } | 
-  Sort-Object | Select-Object -Last 1
-```
-
-## Script Locations
+Summarize:
 
 ```
-.github/skills/bc-dataverse-entity-generator/
-├── SKILL.md                          # This file
-├── scripts/
-│   ├── Generate-Entity.ps1           # Single entity generator (with sensitive variable documentation)
-│   └── Generate-Entity-List.ps1      # Batch entity generator
+✅ Generated "BCS CDS Account" (table 70008) from Dataverse entity 'account'
+   altpgen: C:\altpgen\lib\net10.0-windows7.0\altpgen.exe (package 18.1.43.24897)
+   File:    src/Table/BCSCDSAccount.Table.al
+   Merge:   new table | merged N fields into existing table
+   Perms:   AGENTDEMO.permissionset.al updated
+   Build:   succeeded | N errors (listed)
+Next: create a CDS list page, integration mapping and synchronization setup.
 ```
 
-## External Resources
+## Common entities
 
-- [ALTPGen Technical Reference](https://yzhums.com/17065/)
-- [Azure AD App Registration](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app)
-- [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/)
+| Logical name | AL table name |
+|--------------|---------------|
+| account | BCS CDS Account |
+| contact | BCS CDS Contact |
+| lead | BCS CDS Lead |
+| opportunity | BCS CDS Opportunity |
+| quote / quotedetail | BCS CDS Quote / BCS CDS Quote Detail |
+| salesorder / salesorderdetail | BCS CDS Sales Order / BCS CDS Sales Order Detail |
+| invoice | BCS CDS Invoice |
+| product | BCS CDS Product |
+| pricelevel | BCS CDS Price Level |
+| transactioncurrency | BCS CDS Transaction Currency |
+| systemuser / team | BCS CDS System User / BCS CDS Team |
 
-## Agent Workflow Summary
+## Rules
 
-1. ✅ Check terminal tools available (STOP if not)
-2. ✅ Extract entity name, determine next table ID
-3. ✅ Execute PowerShell script via terminal
-4. ✅ Monitor output, auto-fix errors (ALTPGen path, base path)
-5. ✅ Locate generated file in project root
-6. ✅ Apply BCS prefix, create file in src/Table/
-7. ✅ Delete original file from project root
-8. ✅ Update AGENTDEMO.permissionset.al automatically
-9. ✅ Confirm completion with file paths and next steps
+- Never hardcode or invent table IDs — always use `Get-NextTableId.ps1`.
+- Never commit secrets; `ClientId` and `ServiceUri` are configuration, not secrets, but do not add client secrets.
+- Do not leave generated files in the project root.
+- Reuse `C:\altpgen`; only reinstall with `-Force` or when a newer version is needed.
+
+## Related skills
+
+`bc-cds-page-generator` (list page for the new table), `bc-dataverse-mapping-generator` (integration mapping), `dataverse-solution-importer` / `dataverse-schema-generator` (entity logical names).
